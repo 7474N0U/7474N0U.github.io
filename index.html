@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterra Teste GPT</title>
+    <style>
+        body {
+            display: grid;
+            height: 100%;
+            background-image: url('C:/Users/tatan/OneDrive/Documents/Perso/Projets/Veterra/Backgrounds/sunny-horizontal-background.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        .navbar {
+            display: block;
+            margin-left: 10px;
+            left: 80px;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(255, 255, 255);
+        }        
+        .main-grid {
+            display: flex;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0px 150px;
+            margin: auto;
+            padding-top: 90px;
+        }
+        .widget-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 20px 15px;
+        }
+        .center-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 20px 15px;
+            width: 400px;
+            height: 800px;
+        }
+        .scrolling-container {
+            display: grid;
+            gap: 15px 0px;
+            width: 400px;
+            height: 800px;
+            scrollbar-width: none;
+            overflow-y: scroll;
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, 98%, rgba(0, 0, 0, 0) );
+        }
+        .weather-tile {
+            background-image: url('C:/Users/tatan/OneDrive/Documents/Perso/Projets/Veterra/Backgrounds/sunny-background-tile.png');
+            background-size: cover;
+            height: 125px;
+            border-radius: 200px;
+        }
+        .weather-widget {
+            background-size: cover;
+            height: 210px;
+            width: 190px;
+            border-radius: 28px;
+            backdrop-filter: blur(10%);
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .main-icon {
+            background-image: url('C:/Users/tatan/OneDrive/Documents/Perso/Projets/Veterra/Weather icon/PNG/Sun-Sunny.png');
+            background-size: cover;
+            height: 200px;
+            width: 200px;
+            margin: auto;
+        }
+        .center {
+        }
+        .ai-widget {
+            width: 400px;
+            height: 200px;
+            border-radius: 28px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <div class="navbar"></div>
+    </div>
+    <div class="main-grid">
+        <div class="scrolling-container">
+            <div class="weather-tile"></div>
+            <div class="weather-tile"></div>
+            <div class="weather-tile"></div>
+            <div class="weather-tile"></div>
+            <div class="weather-tile"></div>
+            <div class="weather-tile"></div>
+            <div class="weather-tile"></div>
+            <div class="weather-tile"></div>
+            <div class="weather-tile"></div>
+            <div class="weather-tile"></div>
+            <div class="weather-tile"></div>
+        </div>
+        <div class="center-grid">
+            <h1 class="center"> Grasse</h1>
+            <div class="main-icon"></div>
+            <div class="ai-widget"></div>
+        </div>
+        <div class="scrolling-container"> 
+            <div class="widget-grid">
+                <div class="weather-widget"></div>
+                <div class="weather-widget"></div>
+                <div class="weather-widget"></div>
+                <div class="weather-widget"></div>
+                <div class="weather-widget"></div>
+                <div class="weather-widget"></div>
+                <div class="weather-widget"></div>
+                <div class="weather-widget"></div>
+                <div class="weather-widget"></div>
+                <div class="weather-widget"></div>
+                <div class="weather-widget"></div>
+                <div class="weather-widget"></div>
+                <div class="weather-widget"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
