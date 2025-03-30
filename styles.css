@@ -10,7 +10,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: url('sunny_horizontal.png') center/cover fixed;
+    background: url('background_sunny.png') center/cover fixed;
 }
 
 .navbar {
@@ -44,7 +44,7 @@ body {
 }
 
 .weather-tile {
-    background: url('tile sunny.png') center/cover;
+    background: url('tile_sunny.png') center/cover;
     height: 125px;
     border-radius: 200px;
 }
