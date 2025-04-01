@@ -3,33 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veterra Developper Preview</title>
-    <link rel="icon" type="image/png" href="assets/icons/logo.png">
+    <link rel="icon" type="image/png" href="./assets/icons/logo.png">
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <title>Veterra</title>
 </head>
-<body>
-    <div class="navbar"></div>
-    <div class="main-grid">
-        <div class="scrolling-container">
-            <div class="weather-tile"></div>
-            <div class="weather-tile"></div>
-            <div class="weather-tile"></div>
-            <div class="weather-tile"></div>
-            <div class="weather-tile"></div>
-        </div>
-        <div class="center-grid">
-            <h1>Grasse</h1>
-            <div class="main-icon"></div>
-            <div class="ai-widget"></div>
-        </div>
-        <div class="scrolling-container"> 
-            <div class="widget-grid">
-                <div class="weather-widget"></div>
-                <div class="weather-widget"></div>
-                <div class="weather-widget"></div>
-                <div class="weather-widget"></div>
-            </div>
-        </div>
-    </div>
-</body>
+    <body>
+        <script>
+            function detectDevice() {
+                const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                if (isMobile) {
+                    document.body.innerHTML = `
+                        <div style="text-align: center; margin-top: 20%;">
+                            <p>L'application est en cours de construction pour les appareils mobiles.</p>
+                            <button onclick="window.location.href='/main.html'" style="padding: 10px 20px; font-size: 16px;">Ouvrir quand même</button>
+                        </div>
+                    `;
+                } else {
+                    window.location.href = '/main.html';
+                }
+            }
+
+            detectDevice();
+        </script>
+    </body>
 </html>
