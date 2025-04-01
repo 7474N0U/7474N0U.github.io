@@ -5,7 +5,7 @@ const ASSETS_TO_CACHE = [
     '/index.html',
     '/offline.html',
     '/assets/css/styles.css',
-    '/assets/icons/logo.png'
+    '/assets/img/*'
 ];
 
 // Installation du Service Worker
