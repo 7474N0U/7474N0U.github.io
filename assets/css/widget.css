@@ -19,7 +19,7 @@ body {
     border: 2px solid rgba(255, 255, 255, 0.6);
     background-clip: padding-box;
     backdrop-filter: blur(10px);
-    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.9);
+    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.8);
 }
 .icon {
     min-width: 50px;
@@ -32,7 +32,7 @@ body {
 
 .info #time{
     font-size: 14px;
-    color: #ffffffb4;
+    color: #4b4b4bce;
 }
 
 .temperature {
