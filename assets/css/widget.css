@@ -29,9 +29,16 @@ body {
 .info {
     flex-grow: 1;
 }
+
+.info #time{
+    font-size: 14px;
+    color: #ffffffb4;
+}
+
 .temperature {
     font-size: 24px;
     font-weight: bold;
+    color: #e0f7fa;
 }
 
 .weatherwidget.sunny {
