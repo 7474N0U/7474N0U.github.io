@@ -5,7 +5,7 @@ body {
     flex-direction: column;
     gap: 20px;
     height: 100vh;
-    background-color: white;
+    background: url('../img/background/background_sunny.png') center/cover fixed;
 }
 
 .weatherwidget {
