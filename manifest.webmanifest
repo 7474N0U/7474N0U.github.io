@@ -8,8 +8,8 @@
   "description": "Weather app",
   "icons": [
       {
-          "src": "assets/icons/logo.png",
-          "sizes": "500x500",
+          "src": "./assets/img/icons/logo_bg.png",
+          "sizes": "1024x1024",
           "type": "image/png"
       }
   ]
