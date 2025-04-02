@@ -1,31 +1,43 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.townpill {
-    background-image: url('../img/background/background_sunny.png');
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    width: 25vw;
-    font-size: 3vw;
-    padding: 1vw 1vw;
-    border-radius: 50px;
-}
-
-.townpill img {
-    width: 10vw;
-}
-
-.townpill .text {
-    display: flex;
     flex-direction: column;
+    gap: 20px;
+    height: 100vh;
+    background-color: white;
 }
 
-.townpill .text p {
-    margin: 0px;
+.weatherwidget {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    color: black;
+    width: 300px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    background-clip: padding-box;
+    backdrop-filter: blur(10px);
 }
-
-.townpill #town {
+.icon {
+    min-width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+.info {
+    flex-grow: 1;
+}
+.temperature {
+    font-size: 24px;
     font-weight: bold;
+}
+
+.weatherwidget.sunny {
+    background: url('../img/background/background_sunny.png') center/cover;
+}
+
+.weatherwidget.cloudy {
+    background: url('../img/background/background_cloudy.png') center/cover;
 }
