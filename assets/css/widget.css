@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.townpill {
+    background-image: url('../img/background/background_sunny.png');
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 25vw;
+    font-size: 3vw;
+    padding: 1vw 1vw;
+    border-radius: 50px;
+}
+
+.townpill img {
+    width: 10vw;
+}
+
+.townpill .text {
+    display: flex;
+    flex-direction: column;
+}
+
+.townpill .text p {
+    margin: 0px;
+}
+
+.townpill #town {
+    font-weight: bold;
+}
