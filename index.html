@@ -8,58 +8,63 @@
     <link rel="manifest" href="manifest.webmanifest">
     <title>Veterra</title>
 </head>
-    <body>
-        <script>
-            function detectDevice() {
-                const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-                if (isMobile) {
-                    document.body.innerHTML = `
-                        <div style="text-align: center;">
-                            <h1>Veterra</h1>
-                            <button id="installButton" style="padding: 10px 20px; font-size: 16px; cursor: pointer; display: none;">
-                                Installer l'application
-                            </button>
+<body>
+    <div id="content">
+        <h1>Veterra</h1>
+        <img src="./assets/img/icons/logo.png" alt="Logo" style="width: 100px; height: auto;">
+        <p id="message"></p>
+        <div id="buttons" style="text-align: center; margin-top: 20%;"></div>
+    </div>
 
-                            <script>
-                                let deferredPrompt;
+    <button id="install-button" style="display: none; padding: 10px 20px; font-size: 16px; margin-top: 10px;">
+        Installer l'application
+    </button>
 
-                                window.addEventListener("beforeinstallprompt", (event) => {
-                                    event.preventDefault();
-                                    deferredPrompt = event;
-                                    document.getElementById("installButton").style.display = "block";
-                                });
+    <script>
+        function detectDevice() {
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            const message = document.getElementById("message");
+            const buttons = document.getElementById("buttons");
 
-                                document.getElementById("installButton").addEventListener("click", async () => {
-                                    if (deferredPrompt) {
-                                        deferredPrompt.prompt();
-                                        const { outcome } = await deferredPrompt.userChoice;
-                                        if (outcome === "accepted") {
-                                            console.log("L'utilisateur a installé l'application");
-                                        }
-                                        deferredPrompt = null;
-                                    }
-                                });
-
-                                window.addEventListener("appinstalled", () => {
-                                    console.log("L'application est installée");
-                                    document.getElementById("installButton").style.display = "none";
-                                });
-                            </script>
-                            <img src="./assets/img/icons/logo.png" alt="Logo" style="width: 100px; height: auto;">
-                            <p>Cette application est optimisée pour les ordinateurs de bureau.</p>
-                            <p>Veuillez utiliser un ordinateur pour une meilleure expérience.</p>
-                        <div style="text-align: center; margin-top: 20%;">
-                            <p>L'application est en cours de construction pour les appareils mobiles.</p>
-                            <button onclick="window.location.href='/main.html'" style="padding: 10px 20px; font-size: 16px;">Ouvrir quand même</button>
-                            <button onclick="window.location.href='/widget.html'" style="padding: 10px 20px; font-size: 16px;">Page de test des widget</button>                        
-                            </div>
-                    `;
-                } else {
-                    window.location.href = '/main.html';
-                }
+            if (isMobile) {
+                message.innerHTML = "Cette application est optimisée pour les ordinateurs de bureau.<br>Veuillez utiliser un ordinateur pour une meilleure expérience.<br><br>L'application est en cours de construction pour les appareils mobiles.";
+                
+                buttons.innerHTML = `
+                    <button onclick="window.location.href='/main.html'" style="padding: 10px 20px; font-size: 16px;">Ouvrir quand même</button>
+                    <button onclick="window.location.href='/widget.html'" style="padding: 10px 20px; font-size: 16px;">Page de test des widgets</button>
+                `;
+            } else {
+                window.location.href = '/main.html';
             }
+        }
 
-            detectDevice();
-        </script>
-    </body>
+        detectDevice();
+
+        // Gestion du bouton d'installation PWA
+        let deferredPrompt;
+
+        window.addEventListener("beforeinstallprompt", (event) => {
+            event.preventDefault();
+            deferredPrompt = event;
+
+            const installButton = document.getElementById("install-button");
+            installButton.style.display = "block";
+
+            installButton.addEventListener("click", async () => {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    const { outcome } = await deferredPrompt.userChoice;
+                    console.log(outcome === "accepted" ? "Installation acceptée" : "Installation refusée");
+                    deferredPrompt = null;
+                    installButton.style.display = "none";
+                }
+            });
+        });
+
+        window.addEventListener("appinstalled", () => {
+            console.log("PWA installée !");
+            document.getElementById("install-button").style.display = "none";
+        });
+    </script>
+</body>
 </html>
