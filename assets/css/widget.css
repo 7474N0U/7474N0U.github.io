@@ -20,6 +20,7 @@ body {
     border: 2px solid rgba(255, 255, 255, 0.6);
     background-clip: padding-box;
     backdrop-filter: blur(10px);
+    inset: 1px 1px 50px #fff;
 }
 .icon {
     min-width: 50px;
