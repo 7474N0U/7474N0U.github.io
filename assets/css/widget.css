@@ -15,15 +15,34 @@ body {
     overflow: hidden;
 }
 
+@keyframes moveBackground {
+    0% { background-size: 110%; }
+    50% { background-size: 115%; }
+    100% { background-size: 110%; }
+}
 
-.finisher-header { 
+.finisher-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 110%;
     height: 110%;
-    filter: blur(50px);
     z-index: -1;
+}
+
+.finisher-header::after {
+    content: "";
+    position: absolute; /* Ajouté */
+    top: 0;           /* Ajouté */
+    left: 0;          /* Ajouté */
+    width: 100%;      /* Ajouté */
+    height: 100%;     /* Ajouté */
+    background-image: url("../img/icons/svg/grainy_effect.svg");
+    background-size: cover; /* Peut nécessiter ajustement */
+    opacity: 1; /* Ou une valeur plus faible si trop intense */
+    animation: moveBackground 30s linear infinite;
+    z-index: 0; /* Essayer une valeur différente de celle du parent */
+    pointer-events: none; /* Empêche l'overlay d'interférer avec les clics */
 }
 
 .weatherwidget {
