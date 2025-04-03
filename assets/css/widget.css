@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -5,8 +11,19 @@ body {
     flex-direction: column;
     gap: 20px;
     height: 100vh;
-    background: url('../img/background/background_sunny.png') center/cover fixed;
     margin: 0;
+    overflow: hidden;
+}
+
+
+.finisher-header { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 110%;
+    height: 110%;
+    filter: blur(50px);
+    z-index: -1;
 }
 
 .weatherwidget {

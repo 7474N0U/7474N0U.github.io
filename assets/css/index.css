@@ -1,3 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background: url('../img/background/background_sunny.png') center/cover fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.finisher-header { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 110%;
+    height: 110%;
+    
+    z-index: -1;
 }
