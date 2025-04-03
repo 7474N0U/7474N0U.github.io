@@ -32,17 +32,17 @@ body {
 
 .finisher-header::after {
     content: "";
-    position: absolute; /* Ajouté */
-    top: 0;           /* Ajouté */
-    left: 0;          /* Ajouté */
-    width: 100%;      /* Ajouté */
-    height: 100%;     /* Ajouté */
+    position: absolute; 
+    top: 0;           
+    left: 0;          
+    width: 100%;      
+    height: 100%;     
     background-image: url("../img/icons/svg/grainy_effect.svg");
-    background-size: cover; /* Peut nécessiter ajustement */
-    opacity: 1; /* Ou une valeur plus faible si trop intense */
+    background-size: 120%;
+    opacity: 1; 
     animation: moveBackground 30s linear infinite;
-    z-index: 0; /* Essayer une valeur différente de celle du parent */
-    pointer-events: none; /* Empêche l'overlay d'interférer avec les clics */
+    z-index: 0; 
+    pointer-events: none; 
 }
 
 .weatherwidget {
