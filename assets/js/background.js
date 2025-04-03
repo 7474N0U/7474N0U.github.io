@@ -3,32 +3,43 @@ document.addEventListener('DOMContentLoaded', function () {
     if (document.querySelector('.finisher-header.sunny')) {
         console.log('Finisher Header Sunny loaded');
         new FinisherHeader({
-            "count": 100,  // densité
+            "count": 12, // particules
             "size": {
-                "min": 1300,  
-                "max": 1550,  
-                "pulse": 0.1  // pulsation
+              "min": 1076, // min
+              "max": 1280, // max
+              "pulse": 0 // pulsation
             },
             "speed": {
-                "x": { "min": 0.2, "max": 1.2 },  // vitesseX
-                "y": { "min": 0.2, "max": 1.2 }   // vitesseY
+              "x": {
+                "min": 0.6, // vitesse
+                "max": 1 // vitesse
+              },
+              "y": {
+                "min": 0.6, // vitesse
+                "max": 1 // vitesse
+              }
             },
             "colors": {
-                "background": "#d9e7ec",
-                "particles": [
-                    "#1b3b6f", "#104b8e", "#487ebe",
-                    "#66cdf9", "#ccf4fb", "#70ecfd",
-                    "#32b9fc", "#026efa", "#003366", "#001a33"
-                ]
+              "background": "#b1d0db", // fond
+              "particles": [
+                "#52ebff", // couleur
+                "#0270ff",
+                "#33bbff",
+                "#01caee",
+                "#276ab9",
+                "#38c3ff"
+              ]
             },
-            "blending": "soft-light",  // fusion
+            "blending": "lighten", // fusion
             "opacity": {
-                "center": 0.7,  // opacitéCentre
-                "edge": 0.4   // opacitéBord
+              "center": 0.55, // centre
+              "edge": 0 // bord
             },
-            "skew": -0.5,  // distorsion
-            "shapes": [ "c", "o" ]  // formes
-        });
+            "skew": -2, // inclinaison
+            "shapes": [
+              "c" // forme
+            ]
+          });
     }
     console.log('Page loaded');
 });
