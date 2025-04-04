@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "xyz.appmaker.qenees",
+      "sha256_cert_fingerprints": ["D2:51:DE:B7:45:E6:80:F7:84:CE:85:D2:93:A3:11:E4:D2:82:31:20:05:18:9F:05:55:84:62:E3:B4:89:FF:C8"]
+    }
+  }
+]
