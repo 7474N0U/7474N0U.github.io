@@ -75,11 +75,20 @@ body {
 }
 
 .weatherwidget.sunny {
-    background: url('../img/background/background_sunny.png') center/cover;
+    background-image: linear-gradient(to right bottom, #52ebff, #00d8ff, #00c4ff, #00aeff, #0096ff, #0e90ff, #1e8aff, #2c84ff, #4492ff, #59a0ff, #6fadff, #84baff);
 }
 
 .weatherwidget.cloudy {
-    background: url('../img/background/background_cloudy.png') center/cover;
+    background: linear-gradient(45deg, rgba(68,68,68,1) 0%, rgba(102,161,190,1) 41%, rgba(143,163,187,1) 69%, rgba(128,130,136,1) 100%);
+}
+
+.weatherwidget.rainy {
+    background: linear-gradient(180deg, rgba(68,68,68,1) 0%, rgba(116,124,147,1) 47%, rgba(143,163,187,1) 69%, rgba(102,161,190,1) 87%);
+}
+
+.weatherwidget.windy {
+    background: rgb(255,187,0);
+    background: linear-gradient(45deg, rgba(255,187,0,1) 0%, rgba(113,196,255,1) 14%, rgba(78,78,245,1) 41%, rgba(82,86,133,1) 69%, rgba(128,130,136,1) 100%);
 }
 
 .icon {
