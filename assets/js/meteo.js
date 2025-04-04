@@ -235,6 +235,18 @@ function enableDragAndDrop() {
             .map(widget => widget.getAttribute('data-city'));
         cities = newOrder;
         saveCities();
+
+        // Sélectionner le widget qui vient d'être déplacé
+        const dragging = document.querySelector('.dragging');
+        if (dragging) {
+            document.querySelectorAll('.weatherwidget').forEach(widget => widget.classList.remove('selected'));
+            dragging.classList.add('selected');
+            const city = dragging.getAttribute('data-city');
+            const temperature = parseInt(dragging.getAttribute('data-temp'), 10);
+            const weatherLabel = dragging.getAttribute('data-label');
+            const iconSrc = dragging.getAttribute('data-icon');
+            updateMainPanel(city, temperature, weatherLabel, iconSrc);
+        }
     });
 
     function getDragAfterElement(container, y) {
