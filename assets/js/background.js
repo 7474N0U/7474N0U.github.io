@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function () {
               "center": 0.55, // centre
               "edge": 0 // bord
             },
-            "skew": -2, // inclinaison
             "shapes": [
               "c" // forme
             ]
