@@ -69,6 +69,10 @@ body {
     cursor: grabbing;
 }
 
+.weatherwidget.selected {
+    border: 2px solid #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
 
 .weatherwidget.sunny {
     background: url('../img/background/background_sunny.png') center/cover;
