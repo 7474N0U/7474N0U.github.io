@@ -177,13 +177,6 @@ body {
     background-image: url("../img/icons/svg/grainy_effect.svg");
     background-size: 150%;
     opacity: 1;
-    animation: moveBackground 30s linear infinite;
     z-index: 0;
     pointer-events: none;
-}
-
-@keyframes moveBackground {
-    0% { background-size: 110%; }
-    50% { background-size: 115%; }
-    100% { background-size: 110%; }
 }
