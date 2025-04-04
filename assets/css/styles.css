@@ -26,6 +26,14 @@ body {
     border-radius: 20px;
 }
 
+.widget-title {
+    font-size: 1vw;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .left-panel, .center-panel, .right-panel {
     overflow-y: auto;
     width: auto; 
@@ -91,6 +99,16 @@ body {
     text-align: center;
 }
 
+.brief-container {
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: auto;
+    backdrop-filter: blur(10px);
+}
+
+
 .city-title {
     font-size: 2.5em;
     color: #fff;
@@ -130,12 +148,6 @@ body {
     backdrop-filter: blur(10px);
 }
 
-.forecast-header {
-    display: flex;
-    align-items: center;
-    font-size: 20px;
-    font-weight: bold;
-}
 
 .forecast {
     display: flex;
