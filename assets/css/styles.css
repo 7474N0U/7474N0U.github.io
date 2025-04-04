@@ -63,6 +63,13 @@ body {
     background-size: 110% !important;
 }
 
+.weatherwidget.dragging {
+    opacity: 0.5;
+    border: 2px dashed #aaa;
+    cursor: grabbing;
+}
+
+
 .weatherwidget.sunny {
     background: url('../img/background/background_sunny.png') center/cover;
 }
