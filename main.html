@@ -6,28 +6,82 @@
     <title>Veterra Developper Preview</title>
     <link rel="icon" type="image/png" href="./assets/img/icons/logo.png">
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <script src="./assets/js/finisher-header.es5.min.js"></script>
+    <script src="./assets/js/background.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="navbar"></div>
-    <div class="main-grid">
-        <div class="scrolling-container">
-            <div class="weather-tile"></div>
-            <div class="weather-tile"></div>
-            <div class="weather-tile"></div>
-            <div class="weather-tile"></div>
-            <div class="weather-tile"></div>
+    <div class="finisher-header sunny"></div>
+    <div class="container"> 
+        <div class="left-panel">
+            <p class="panel-title">Villes et Météo</p>
+            <div class="weatherwidget sunny">
+                <img class="icon" src="./assets/img/icons/svg/sun_sunny.svg"></img>
+                <div class="info">
+                    <div><strong>Grasse</strong></div>
+                    <div>Ensoleillée</div>
+                    <div id="time">12:61</div>
+                </div>
+                <div class="temperature">24°</div>
+            </div>
+            <div class="weatherwidget cloudy">
+                <img class="icon" src="./assets/img/icons/svg/sun_cloudy.svg"></img>
+                <div class="info">
+                    <div><strong>Paris</strong></div>
+                    <div>Nuageux</div>
+                    <div id="time">14:30</div>
+                </div>
+                <div class="temperature">18°</div>
+            </div>
         </div>
-        <div class="center-grid">
-            <h1>Grasse</h1>
-            <div class="main-icon"></div>
-            <div class="ai-widget"></div>
+        <div class="center-panel">
+            <h1 class="city-title">Grasse</h1>
+            <div class="main-temp">12°</div>
+            <div class="feels-like">Ressenti 25°</div>
+            <div class="wind-info">
+                <i class="fas fa-wind"></i> 26↑17 ↓
+            </div>
+            <div class="main-icon"><img src="./assets/img/icons/svg/sun_sunny.svg" alt="Sunny"></div>
         </div>
-        <div class="scrolling-container"> 
-            <div class="widget-grid">
-                <div class="weather-widget"></div>
-                <div class="weather-widget"></div>
-                <div class="weather-widget"></div>
-                <div class="weather-widget"></div>
+        <div class="right-panel">
+            <p class="panel-title">Prévisions</p>
+            <div class="forecast-container">
+                <div class="forecast-header">
+                    <img src="clock_icon.png" alt="Clock Icon">
+                    Prévision horaire
+                </div>
+                <div class="forecast">
+                    <div class="hourly">
+                        <div class="temperature">24°</div>
+                        <img src="./assets/img/icons/svg/sun_sunny.svg" alt="Sunny">
+                        <div>Maintenant</div>
+                    </div>
+                    <div class="hourly">
+                        <div class="temperature">25°</div>
+                        <img src="./assets/img/icons/svg/sun_windy.svg" alt="Windy">
+                        <div>12:00</div>
+                    </div>
+                    <div class="hourly">
+                        <div class="temperature">27°</div>
+                        <img src="./assets/img/icons/svg/sun_cloudy.svg" alt="Cloudy">
+                        <div>13:00</div>
+                    </div>
+                    <div class="hourly">
+                        <div class="temperature">27°</div>
+                        <img src="./assets/img/icons/svg/sun_rainy.svg" alt="Rainy">
+                        <div>14:00</div>
+                    </div>
+                    <div class="hourly">
+                        <div class="temperature">27°</div>
+                        <img src="./assets/img/icons/svg/sun_stormy.svg" alt="Storm">
+                        <div>15:00</div>
+                    </div>
+                    <div class="hourly">
+                        <div class="temperature">26°</div>
+                        <img src="./assets/img/icons/svg/sun_snowy.svg" alt="Snow">
+                        <div>16:00</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
