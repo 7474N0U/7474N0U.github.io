@@ -97,10 +97,12 @@ body {
 }
 
 .info {
+    font-family: "Ubuntu Sans", sans-serif;
     flex-grow: 1;
 }
 
 .info #time {
+    font-family: "Ubuntu Sans", sans-serif;
     font-size: 14px;
     color: #3f3f3f59;
 }
