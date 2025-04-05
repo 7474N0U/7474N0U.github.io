@@ -108,6 +108,7 @@ body {
 }
 
 .temperature {
+    font-family: "Ubuntu Sans", sans-serif;
     font-size: 24px;
     font-weight: bold;
     color: #ffffffb4;
