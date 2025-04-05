@@ -132,7 +132,7 @@ body {
 .city-title {
     font-family: "Ultra", serif;
     font-size: 2.5em;
-    color: #fff;
+    color: #000000;
     margin-bottom: 10px;
 }
 
@@ -224,5 +224,4 @@ body {
     font-family: "Ultra", serif;
     font-weight: 400;
     font-style: normal;
-  }
-  
+}
