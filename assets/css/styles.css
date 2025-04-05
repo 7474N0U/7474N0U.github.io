@@ -61,7 +61,7 @@ body {
     position: relative;
     overflow: hidden;
     z-index: 1;
-    background-size: 110% !important;
+    background-size: 120% !important;
 }
 
 .weatherwidget.dragging {
