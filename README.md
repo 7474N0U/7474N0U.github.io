@@ -1,7 +1,3 @@
-# 📝 Notes
+# 📝 Notion
 
-- monter le city-title
-- agrandir les icones du mid
-
-
-je sais que un readme sert pas a sa mais az modifiez le comme vous voulez 
+https://www.notion.so/T-ches-a-faire-et-a-proposer-1cc64d40f57680cfae74c6662dfb7c56?pvs=4
