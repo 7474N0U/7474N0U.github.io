@@ -179,7 +179,6 @@ body {
     overflow-y: scroll;
     scrollbar-width: none;
     mask-image: linear-gradient(to bottom, black 90%, transparent 99%);
-    backdrop-filter: blur(10px);
 }
 
 .forecast-container {
@@ -188,6 +187,7 @@ body {
     padding: 20px;
     border-radius: 28px;
     margin-top: 10px;
+    backdrop-filter: blur(10px);
 }
 
 
