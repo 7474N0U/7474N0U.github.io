@@ -80,18 +80,6 @@ body {
     background-repeat: no-repeat;
     margin: 115px 0 0 184px;
 }
-.sun {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background-image: url('images/logo.svg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: 291px;
-    left: 249px;
-}
 .oleo-script-swash-caps-regular {
     font-family: "Oleo Script Swash Caps", serif;
     font-weight: 400;
@@ -103,15 +91,6 @@ body {
     font-weight: 700;
     font-style: normal;
   }
-.Veterra {
-    font-family: "Oleo Script Swash Caps", serif;
-    font-weight: 700;
-    font-style: normal;
-    position: absolute;
-    top: 303px;
-    left: 362px;
-    font-size: 48px;
-}  
 .ubuntu-sans {
     font-family: "Ubuntu Sans", serif;
     font-weight: 400;
