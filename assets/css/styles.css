@@ -17,12 +17,12 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: auto 1fr auto; 
-    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 150px;
     width: 90%;
-    max-width: 1200px;
+    max-width: 1500px;
+    max-height: 900px;
     padding: 20px;
-    border-radius: 28px;
 }
 
 .widget-title {
@@ -52,9 +52,11 @@ body {
     align-items: center;
     padding: 20px;
     margin: 10px;
-    border-radius: 50px;
+    border-radius: 100px;
     color: black;
-    width: 300px;
+    width: auto;
+    height: 120px;
+    min-width: 250px;
     outline: 2px solid rgb(255, 255, 255, 0.5);
     box-shadow: inset 0 0 30px rgba(255, 255, 255, 1);
     position: relative;
@@ -65,12 +67,12 @@ body {
 
 .weatherwidget.dragging {
     opacity: 0.4;
-    outline: 5px solid rgba(0, 0, 0, 0.5);
+    outline: 7px solid rgba(0, 0, 0, 0.5);
     cursor: grabbing;
 }
 
 .weatherwidget.selected {
-    outline: 5px solid rgb(255, 255, 255, 0.5);
+    outline: 7px solid rgb(255, 255, 255, 0.5);
 }
 
 .weatherwidget.sunny {
@@ -91,8 +93,8 @@ body {
 }
 
 .icon {
-    min-width: 50px;
-    height: 50px;
+    min-width: 60px;
+    height: 60px;
     margin-right: 15px;
 }
 
@@ -123,9 +125,11 @@ body {
 
 .brief-container {
     font-family: "Ubuntu Sans", sans-serif;
-    outline: 2px solid rgb(255, 255, 255, 0.5);
+    border: 2px solid rgb(255, 255, 255, 0.5);
     box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.9);
-    padding: 20px;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
     border-radius: 28px;
     margin-top: auto;
     backdrop-filter: blur(10px);
@@ -167,7 +171,7 @@ body {
 }
 
 .forecast-container {
-    outline: 2px solid rgb(255, 255, 255, 0.5);
+    border: 2px solid rgb(255, 255, 255, 0.5);
     box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 28px;
