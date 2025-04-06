@@ -62,7 +62,10 @@ body {
     font-weight: 400;
     font-style: normal;
   }
-  .title {
+.title {
+    z-index: 1000;
+    position: sticky;
+    top: 0;
     font-size: 24px;
     font-family: "Ubuntu Sans", serif;
     font-weight: 400;
