@@ -5,15 +5,15 @@ body {
     justify-content: flex-start;
     height: 100vh;
     margin: 0;
-    background-size: cover; /* Pour couvrir toute la page */
-    background-position: center; /* Pour centrer l'image */
-    background-repeat: no-repeat; /* Pour éviter la répétition de l'image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     user-select: none;
 }
 
 .navbar {
     border: 1px solid #8b8b8b79;
-    margin-left: 25px; /* Ajoutez cette ligne pour espacer la barre de navigation de la gauche */
+    margin-left: 25px;
     height: 250px; 
     width: 20px; 
     display: flex; 
@@ -36,8 +36,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(255, 255, 255, 0.336); /* Couleur de fond semi-transparente */
-    filter: blur(10px); /* Effet de flou */
+    background-color: rgba(255, 255, 255, 0.336);
+    filter: blur(10px);
     z-index: -1;
 }
 
@@ -46,9 +46,9 @@ body {
 }
 
 .navbar img {
-    width: 36px; /* Ajustez cette valeur selon vos besoins */
-    height: 50px; /* Ajustez cette valeur selon vos besoins */
-    z-index: 1; /* Assurez-vous que les images sont au-dessus du fond flou */
+    width: 36px;
+    height: 50px;
+    z-index: 1;
 }
 
 .ultra-regular {
@@ -75,9 +75,9 @@ body {
     height: 209px;
     border-radius: 27.5px;
     background-image: url('images/BackgroundHorintal-2\ 1.jpg');
-    background-size: cover; /* Pour couvrir toute la taille du conteneur */
-    background-position: center; /* Pour centrer l'image */
-    background-repeat: no-repeat; /* Pour éviter la répétition de l'image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     margin: 115px 0 0 184px;
 }
 .sun {
@@ -85,12 +85,12 @@ body {
     height: 90px;
     border-radius: 50%;
     background-image: url('images/logo.svg');
-    background-size: cover; /* Pour couvrir toute la taille du conteneur */
-    background-position: center; /* Pour centrer l'image */
-    background-repeat: no-repeat; /* Pour éviter la répétition de l'image */
-    position: absolute; /* Positionne l'élément de manière absolue par rapport au conteneur parent */
-    top: 291px; /* Ajustez cette valeur selon vos besoins */
-    left: 249px; /* Ajustez cette valeur selon vos besoins */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 291px;
+    left: 249px;
 }
 .oleo-script-swash-caps-regular {
     font-family: "Oleo Script Swash Caps", serif;
@@ -107,9 +107,9 @@ body {
     font-family: "Oleo Script Swash Caps", serif;
     font-weight: 700;
     font-style: normal;
-    position: absolute; /* Positionne l'élément de manière absolue par rapport au conteneur parent */
-    top: 303px; /* Ajustez cette valeur selon vos besoins */
-    left: 362px; /* Ajustez cette valeur selon vos besoins */
+    position: absolute;
+    top: 303px;
+    left: 362px;
     font-size: 48px;
 }  
 .ubuntu-sans {
@@ -120,9 +120,9 @@ body {
 .devlopper {
     font-style: italic;
     font-family: "Ubuntu Sans", serif;
-    position: absolute; /* Positionne l'élément de manière absolue par rapport au conteneur parent */
-    top: 359px; /* Ajustez cette valeur selon vos besoins */
-    left: 362px; /* Ajustez cette valeur selon vos besoins */
+    position: absolute;
+    top: 359px;
+    left: 362px;
     font-size: 16px;
 }
 .langue {
@@ -130,13 +130,13 @@ body {
     width: 382px;
     height: 55px;
     background-color: #F9F9F9;
-    position: absolute; /* Positionne l'élément de manière absolue par rapport au conteneur parent */
-    top: 452px; /* Ajustez cette valeur selon vos besoins */
-    left: 179px; /* Ajustez cette valeur selon vos besoins */
+    position: absolute;
+    top: 452px;
+    left: 179px;
     border-radius: 40px;
     border : 1px solid #8b8b8b36;
     display: flex;
-    align-items: center; /* Centre le texte verticalement */
+    align-items: center;
     padding-left: 22px;
 }
 .btn1 button {
@@ -144,10 +144,10 @@ body {
     font-family: "Ubuntu Sans", serif;
     width: 130px;
     height: 35px;
-    border: none; /* Enlève la bordure du bouton */
-    background: #e5e5e586; /* Enlève le fond du bouton */
-    padding: 10px; /* Ajoute un peu de padding pour le bouton */
-    cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+    border: none;
+    background: #e5e5e586;
+    padding: 10px;
+    cursor: pointer;
     margin: 0 0 0 185px;
     border-radius: 24.5px;
 }
@@ -156,13 +156,13 @@ body {
     width: 382px;
     height: 55px;
     background-color: #F9F9F9;
-    position: absolute; /* Positionne l'élément de manière absolue par rapport au conteneur parent */
-    top: 519px; /* Ajustez cette valeur selon vos besoins */
-    left: 179px; /* Ajustez cette valeur selon vos besoins */
+    position: absolute;
+    top: 519px;
+    left: 179px;
     border-radius: 40px;
     border : 1px solid #8b8b8b36;
     display: flex;
-    align-items: center; /* Centre le texte verticalement */
+    align-items: center;
     padding-left: 22px;
 }
 .btn2 button{
@@ -170,10 +170,10 @@ body {
     font-family: "Ubuntu Sans", serif;
     width: 66px;
     height: 35px;
-    border: none; /* Enlève la bordure du bouton */
-    background: #e5e5e586; /* Enlève le fond du bouton */
-    padding: 10px; /* Ajoute un peu de padding pour le bouton */
-    cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+    border: none;
+    background: #e5e5e586;
+    padding: 10px;
+    cursor: pointer;
     margin: 0 0 0 180px;
     border-radius: 24.5px;
 }
@@ -182,13 +182,13 @@ body {
     width: 382px;
     height: 55px;
     background-color: #F9F9F9;
-    position: absolute; /* Positionne l'élément de manière absolue par rapport au conteneur parent */
-    top: 586px; /* Ajustez cette valeur selon vos besoins */
-    left: 179px; /* Ajustez cette valeur selon vos besoins */
+    position: absolute;
+    top: 586px;
+    left: 179px;
     border-radius: 40px;
     border : 1px solid #8b8b8b36;
     display: flex;
-    align-items: center; /* Centre le texte verticalement */
+    align-items: center;
     padding-left: 22px;
 }
 .btn3 button{
@@ -196,10 +196,10 @@ body {
     font-family: "Ubuntu Sans", serif;
     width: 130px;
     height: 35px;
-    border: none; /* Enlève la bordure du bouton */
-    background: #e5e5e586; /* Enlève le fond du bouton */
-    padding: 10px; /* Ajoute un peu de padding pour le bouton */
-    cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+    border: none; 
+    background: #e5e5e586;
+    padding: 10px;
+    cursor: pointer;
     margin: 0 0 0 188px;
     border-radius: 24.5px;
 }
@@ -208,13 +208,13 @@ body {
     width: 382px;
     height: 55px;
     background-color: #F9F9F9;
-    position: absolute; /* Positionne l'élément de manière absolue par rapport au conteneur parent */
-    top: 653px; /* Ajustez cette valeur selon vos besoins */
-    left: 179px; /* Ajustez cette valeur selon vos besoins */
+    position: absolute;
+    top: 653px;
+    left: 179px;
     border-radius: 40px;
     border : 1px solid #8b8b8b36;
     display: flex;
-    align-items: center; /* Centre le texte verticalement */
+    align-items: center;
     padding-left: 22px;
 }
 .btn4 button{
@@ -222,10 +222,10 @@ body {
     font-family: "Ubuntu Sans", serif;
     width: 158px;
     height: 35px;
-    border: none; /* Enlève la bordure du bouton */
-    background: #e5e5e586; /* Enlève le fond du bouton */
-    padding: 10px; /* Ajoute un peu de padding pour le bouton */
-    cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+    border: none;
+    background: #e5e5e586;
+    padding: 10px;
+    cursor: pointer;
     margin: 0 0 0 150px;
     border-radius: 24.5px;
 }
@@ -234,13 +234,13 @@ body {
     width: 382px;
     height: 55px;
     background-color: #F9F9F9;
-    position: absolute; /* Positionne l'élément de manière absolue par rapport au conteneur parent */
-    top: 720px; /* Ajustez cette valeur selon vos besoins */
-    left: 179px; /* Ajustez cette valeur selon vos besoins */
+    position: absolute;
+    top: 720px;
+    left: 179px;
     border-radius: 30px 30px 5px 5px;
     border : 1px solid #8b8b8b36;
     display: flex;
-    align-items: center; /* Centre le texte verticalement */
+    align-items: center;
     padding-left: 22px;
 }
 .switch {
@@ -294,13 +294,13 @@ input:checked + .slider:before {
     width: 382px;
     height: 55px;
     background-color: #F9F9F9;
-    position: absolute; /* Positionne l'élément de manière absolue par rapport au conteneur parent */
-    top: 787px; /* Ajustez cette valeur selon vos besoins */
-    left: 179px; /* Ajustez cette valeur selon vos besoins */
+    position: absolute;
+    top: 787px;
+    left: 179px;
     border-radius: 5px 5px 30px 30px;
     border : 1px solid #8b8b8b36;
     display: flex;
-    align-items: center; /* Centre le texte verticalement */
+    align-items: center;
     padding-left: 22px;
 }
 .ai-features{
@@ -308,12 +308,12 @@ input:checked + .slider:before {
     width: 382px;
     height: 55px;
     background-color: #F9F9F9;
-    position: absolute; /* Positionne l'élément de manière absolue par rapport au conteneur parent */
-    top: 854px; /* Ajustez cette valeur selon vos besoins */
-    left: 179px; /* Ajustez cette valeur selon vos besoins */
+    position: absolute; 
+    top: 854px;
+    left: 179px;
     border-radius: 40px;
     border : 1px solid #8b8b8b36;
     display: flex;
-    align-items: center; /* Centre le texte verticalement */
+    align-items: center;
     padding-left: 22px;
 }
