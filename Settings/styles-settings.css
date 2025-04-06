@@ -1,0 +1,319 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100vh;
+    margin: 0;
+    background-size: cover; /* Pour couvrir toute la page */
+    background-position: center; /* Pour centrer l'image */
+    background-repeat: no-repeat; /* Pour éviter la répétition de l'image */
+    user-select: none;
+}
+
+.navbar {
+    border: 1px solid #8b8b8b79;
+    margin-left: 25px; /* Ajoutez cette ligne pour espacer la barre de navigation de la gauche */
+    height: 250px; 
+    width: 20px; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 50%; 
+    left: 0;
+    transform: translateY(-50%); 
+    padding: 20px; 
+    border-radius: 50px; 
+    overflow: hidden; 
+}
+
+.navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.336); /* Couleur de fond semi-transparente */
+    filter: blur(10px); /* Effet de flou */
+    z-index: -1;
+}
+
+.navbar a {
+    margin: 25px 0;
+}
+
+.navbar img {
+    width: 36px; /* Ajustez cette valeur selon vos besoins */
+    height: 50px; /* Ajustez cette valeur selon vos besoins */
+    z-index: 1; /* Assurez-vous que les images sont au-dessus du fond flou */
+}
+
+.ultra-regular {
+    font-family: "Ultra", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+.ubuntu-sans {
+    font-family: "Ubuntu Sans", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .title {
+    font-size: 24px;
+    font-family: "Ubuntu Sans", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0 0 0 184px;
+
+}
+.background {
+    width: 398px;
+    height: 209px;
+    border-radius: 27.5px;
+    background-image: url('images/BackgroundHorintal-2\ 1.jpg');
+    background-size: cover; /* Pour couvrir toute la taille du conteneur */
+    background-position: center; /* Pour centrer l'image */
+    background-repeat: no-repeat; /* Pour éviter la répétition de l'image */
+    margin: 115px 0 0 184px;
+}
+.sun {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-image: url('images/logo.svg');
+    background-size: cover; /* Pour couvrir toute la taille du conteneur */
+    background-position: center; /* Pour centrer l'image */
+    background-repeat: no-repeat; /* Pour éviter la répétition de l'image */
+    position: absolute; /* Positionne l'élément de manière absolue par rapport au conteneur parent */
+    top: 291px; /* Ajustez cette valeur selon vos besoins */
+    left: 249px; /* Ajustez cette valeur selon vos besoins */
+}
+.oleo-script-swash-caps-regular {
+    font-family: "Oleo Script Swash Caps", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .oleo-script-swash-caps-bold {
+    font-family: "Oleo Script Swash Caps", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+.Veterra {
+    font-family: "Oleo Script Swash Caps", serif;
+    font-weight: 700;
+    font-style: normal;
+    position: absolute; /* Positionne l'élément de manière absolue par rapport au conteneur parent */
+    top: 303px; /* Ajustez cette valeur selon vos besoins */
+    left: 362px; /* Ajustez cette valeur selon vos besoins */
+    font-size: 48px;
+}  
+.ubuntu-sans {
+    font-family: "Ubuntu Sans", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+.devlopper {
+    font-style: italic;
+    font-family: "Ubuntu Sans", serif;
+    position: absolute; /* Positionne l'élément de manière absolue par rapport au conteneur parent */
+    top: 359px; /* Ajustez cette valeur selon vos besoins */
+    left: 362px; /* Ajustez cette valeur selon vos besoins */
+    font-size: 16px;
+}
+.langue {
+    font-family: "Ubuntu Sans", serif;
+    width: 382px;
+    height: 55px;
+    background-color: #F9F9F9;
+    position: absolute; /* Positionne l'élément de manière absolue par rapport au conteneur parent */
+    top: 452px; /* Ajustez cette valeur selon vos besoins */
+    left: 179px; /* Ajustez cette valeur selon vos besoins */
+    border-radius: 40px;
+    border : 1px solid #8b8b8b36;
+    display: flex;
+    align-items: center; /* Centre le texte verticalement */
+    padding-left: 22px;
+}
+.btn1 button {
+    font-size: 16px;
+    font-family: "Ubuntu Sans", serif;
+    width: 130px;
+    height: 35px;
+    border: none; /* Enlève la bordure du bouton */
+    background: #e5e5e586; /* Enlève le fond du bouton */
+    padding: 10px; /* Ajoute un peu de padding pour le bouton */
+    cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+    margin: 0 0 0 185px;
+    border-radius: 24.5px;
+}
+.unite {
+    font-family: "Ubuntu Sans", serif;
+    width: 382px;
+    height: 55px;
+    background-color: #F9F9F9;
+    position: absolute; /* Positionne l'élément de manière absolue par rapport au conteneur parent */
+    top: 519px; /* Ajustez cette valeur selon vos besoins */
+    left: 179px; /* Ajustez cette valeur selon vos besoins */
+    border-radius: 40px;
+    border : 1px solid #8b8b8b36;
+    display: flex;
+    align-items: center; /* Centre le texte verticalement */
+    padding-left: 22px;
+}
+.btn2 button{
+    font-size: 16px;
+    font-family: "Ubuntu Sans", serif;
+    width: 66px;
+    height: 35px;
+    border: none; /* Enlève la bordure du bouton */
+    background: #e5e5e586; /* Enlève le fond du bouton */
+    padding: 10px; /* Ajoute un peu de padding pour le bouton */
+    cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+    margin: 0 0 0 180px;
+    border-radius: 24.5px;
+}
+.theme{
+    font-family: "Ubuntu Sans", serif;
+    width: 382px;
+    height: 55px;
+    background-color: #F9F9F9;
+    position: absolute; /* Positionne l'élément de manière absolue par rapport au conteneur parent */
+    top: 586px; /* Ajustez cette valeur selon vos besoins */
+    left: 179px; /* Ajustez cette valeur selon vos besoins */
+    border-radius: 40px;
+    border : 1px solid #8b8b8b36;
+    display: flex;
+    align-items: center; /* Centre le texte verticalement */
+    padding-left: 22px;
+}
+.btn3 button{
+    font-size: 16px;
+    font-family: "Ubuntu Sans", serif;
+    width: 130px;
+    height: 35px;
+    border: none; /* Enlève la bordure du bouton */
+    background: #e5e5e586; /* Enlève le fond du bouton */
+    padding: 10px; /* Ajoute un peu de padding pour le bouton */
+    cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+    margin: 0 0 0 188px;
+    border-radius: 24.5px;
+}
+.position {
+    font-family: "Ubuntu Sans", serif;
+    width: 382px;
+    height: 55px;
+    background-color: #F9F9F9;
+    position: absolute; /* Positionne l'élément de manière absolue par rapport au conteneur parent */
+    top: 653px; /* Ajustez cette valeur selon vos besoins */
+    left: 179px; /* Ajustez cette valeur selon vos besoins */
+    border-radius: 40px;
+    border : 1px solid #8b8b8b36;
+    display: flex;
+    align-items: center; /* Centre le texte verticalement */
+    padding-left: 22px;
+}
+.btn4 button{
+    font-size: 16px;
+    font-family: "Ubuntu Sans", serif;
+    width: 158px;
+    height: 35px;
+    border: none; /* Enlève la bordure du bouton */
+    background: #e5e5e586; /* Enlève le fond du bouton */
+    padding: 10px; /* Ajoute un peu de padding pour le bouton */
+    cursor: pointer; /* Change le curseur pour indiquer que c'est cliquable */
+    margin: 0 0 0 150px;
+    border-radius: 24.5px;
+}
+.notif-precipitation{
+    font-family: "Ubuntu Sans", serif;
+    width: 382px;
+    height: 55px;
+    background-color: #F9F9F9;
+    position: absolute; /* Positionne l'élément de manière absolue par rapport au conteneur parent */
+    top: 720px; /* Ajustez cette valeur selon vos besoins */
+    left: 179px; /* Ajustez cette valeur selon vos besoins */
+    border-radius: 30px 30px 5px 5px;
+    border : 1px solid #8b8b8b36;
+    display: flex;
+    align-items: center; /* Centre le texte verticalement */
+    padding-left: 22px;
+}
+.switch {
+    margin: 0 0 0 145px;
+    position: relative;
+    display: inline-block;
+    width: 61px;
+    height: 35px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #CECECE;
+    transition: 0.4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 29px;
+    width: 29px;
+    left: 3px;
+    bottom: 9%;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background: linear-gradient(90deg, #476CFF, #0051FF);
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+.notif-alertes {
+    font-family: "Ubuntu Sans", serif;
+    width: 382px;
+    height: 55px;
+    background-color: #F9F9F9;
+    position: absolute; /* Positionne l'élément de manière absolue par rapport au conteneur parent */
+    top: 787px; /* Ajustez cette valeur selon vos besoins */
+    left: 179px; /* Ajustez cette valeur selon vos besoins */
+    border-radius: 5px 5px 30px 30px;
+    border : 1px solid #8b8b8b36;
+    display: flex;
+    align-items: center; /* Centre le texte verticalement */
+    padding-left: 22px;
+}
+.ai-features{
+    font-family: "Ubuntu Sans", serif;
+    width: 382px;
+    height: 55px;
+    background-color: #F9F9F9;
+    position: absolute; /* Positionne l'élément de manière absolue par rapport au conteneur parent */
+    top: 854px; /* Ajustez cette valeur selon vos besoins */
+    left: 179px; /* Ajustez cette valeur selon vos besoins */
+    border-radius: 40px;
+    border : 1px solid #8b8b8b36;
+    display: flex;
+    align-items: center; /* Centre le texte verticalement */
+    padding-left: 22px;
+}
