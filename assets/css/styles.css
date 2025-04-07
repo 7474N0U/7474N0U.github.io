@@ -173,9 +173,11 @@ body {
 }
 
 .main-icon img {
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    max-width: 250px; 
+    height: auto; 
     margin: 10px 0;
+    display: block;
 }
 
 .right-panel { /*Droite*/
