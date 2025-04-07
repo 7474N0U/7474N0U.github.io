@@ -42,3 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     console.log('Page loaded');
 });
+document.addEventListener("contextmenu", function(event) {
+  event.preventDefault();
+});
