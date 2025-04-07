@@ -70,13 +70,19 @@ body {
     overflow: hidden;
     z-index: 1;
     background-size: 120% !important;
+    transition: transform 0.1s ease;
 }
+
+.weatherwidget:hover {
+    transform: scale(1.05); 
+  }
 
 .weatherwidget.dragging {
     opacity: 0.001;
     border: 7px solid rgba(0, 0, 0, 0.9);
     border-radius: 100px;
     cursor: grabbing;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .weatherwidget.selected {
