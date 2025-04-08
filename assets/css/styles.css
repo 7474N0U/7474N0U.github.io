@@ -49,8 +49,12 @@ body {
     overflow-y: scroll;
     scrollbar-width: none;
     gap: 10px;
-    mask-image: linear-gradient(to bottom, black 90%, transparent 99%);
-
+    mask-image: linear-gradient(to bottom, black 90%, transparent 99%), 
+                linear-gradient(to top, black 90%, transparent 99%);
+    mask-composite: intersect;
+    -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 99%), 
+                        linear-gradient(to top, black 90%, transparent 99%);
+    -webkit-mask-composite: intersect; /* Compatibilité Safari */
 }
 
 .weatherwidget {
