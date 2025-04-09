@@ -92,7 +92,7 @@ async function updateForecast(city) {
         const forecastContainer = document.querySelector('.forecast');
         forecastContainer.innerHTML = "";
 
-        for (let i = 0; i < 6 && i < hourlyTemps.length && i < hourlyCodes.length && i < hours.length; i++) {
+        for (let i = 0; i < 12 && i < hourlyTemps.length && i < hourlyCodes.length && i < hours.length; i++) {
             const temp = Math.round(hourlyTemps[i]);
             const weatherInfo = weatherMap[hourlyCodes[i]] || { icon: "sun_sunny.svg" };
             const weatherIcon = weatherInfo.icon;

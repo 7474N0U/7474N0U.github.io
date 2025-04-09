@@ -42,15 +42,29 @@ body {
     overflow: hidden;
 }
 
-
 .left-panel { /*Gauche*/
-    display: flex;
-    flex-direction: column;
+    position: relative;
     overflow-y: scroll;
     scrollbar-width: none;
     gap: 10px;
-    mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%); /* Compatibilité Safari */
+}
+
+.left-panel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    mask-image: linear-gradient(to bottom, black 90%, transparent 99%);
+    -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 99%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.left-panel > * {
+    position: relative;
+    z-index: 2;
 }
 
 .search-bar-container {
@@ -128,8 +142,8 @@ body {
   }
 
 .weatherwidget.dragging {
-    opacity: 0.001;
-    border: 7px solid rgba(0, 0, 0, 0.9);
+    opacity: 0.8;
+    border: 3px dashed rgba(255, 255, 255, 0.8);
     border-radius: 100px;
     cursor: grabbing;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
@@ -154,6 +168,14 @@ body {
 .weatherwidget.windy {
     background: rgb(255,187,0);
     background: linear-gradient(45deg, rgba(255,187,0,1) 0%, rgba(113,196,255,1) 14%, rgba(78,78,245,1) 41%, rgba(82,86,133,1) 69%, rgba(128,130,136,1) 100%);
+}
+
+.weatherwidget .info strong {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    max-width: 150px; /* Ajuster selon la taille du widget */
 }
 
 .icon {
