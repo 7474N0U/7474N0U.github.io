@@ -236,8 +236,20 @@ function getDragAfterElement(container, y) {
 async function updateAllWidgets() {
     const panel = document.querySelector('.left-panel');
     if (!panel) return;
+
+    // Sauvegarder la barre de recherche
+    const searchBar = document.querySelector('.search-bar-container');
+    const searchBarHTML = searchBar ? searchBar.outerHTML : '';
+
+    // Vider le panneau gauche
     panel.innerHTML = "";
 
+    // Réinsérer la barre de recherche
+    if (searchBarHTML) {
+        panel.insertAdjacentHTML('afterbegin', searchBarHTML);
+    }
+
+    // Ajouter les widgets météo
     for (const city of cities) {
         await createWeatherWidget(city);
     }
@@ -263,4 +275,110 @@ function delCity(city) {
 document.addEventListener("DOMContentLoaded", () => {
     updateAllWidgets();
     setTimeout(selectFirstCity, 300);
+    
+    async function fetchSuggestions(query) {
+        try {
+            const res = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${query}&count=5&language=fr&format=json`);
+            const data = await res.json();
+
+            // Trier les résultats pour afficher d'abord les villes en France
+            const sortedResults = (data.results || []).sort((a, b) => {
+                if (a.country === "France" && b.country !== "France") return -1;
+                if (a.country !== "France" && b.country === "France") return 1;
+                return 0;
+            });
+
+            return sortedResults;
+        } catch (error) {
+            console.error("Erreur de suggestion :", error);
+            return [];
+        }
+    }
+    
+    function debounce(func, delay) {
+        let timeout;
+        return (...args) => {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                func.apply(null, args);
+            }, delay);
+        };
+    }
+
+    async function createSuggestionWidget(place) {
+        const geoUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${place.name}&count=1&language=fr&format=json`;
+        const geoData = await fetchJson(geoUrl);
+        const location = geoData.results?.[0];
+        if (!location) return;
+
+        const { latitude, longitude, name } = location;
+        const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&timezone=auto`;
+        const weatherData = await fetchJson(weatherUrl);
+        const current = weatherData.current_weather;
+
+        const temperature = Math.round(current.temperature);
+        const weatherCode = current.weathercode;
+        const weatherInfo = weatherMap[weatherCode] || { label: "Inconnu", icon: "sun_sunny.svg", class: "sunny" };
+
+        const panel = document.querySelector('.left-panel');
+
+        // Vérifier si un widget pour cette ville existe déjà
+        const existingWidget = Array.from(panel.querySelectorAll('.weatherwidget.suggestion'))
+            .find(widget => widget.getAttribute('data-city') === name);
+
+        if (existingWidget) return; // Ne pas ajouter de doublon
+
+        const suggestionHTML = `
+            <div class="weatherwidget ${weatherInfo.class}" data-city="${name}" data-temp="${temperature}" data-label="${weatherInfo.label}" data-icon="./assets/img/icons/svg/${weatherInfo.icon}" draggable="true">
+                <img class="icon" src="./assets/img/icons/svg/${weatherInfo.icon}" alt="${weatherInfo.label}">
+                <div class="info">
+                    <div><strong>${name}</strong></div>
+                    <div>${weatherInfo.label}</div>
+                    <div class="temperature">${temperature}°</div>
+                </div>
+            </div>
+        `;
+
+        panel.insertAdjacentHTML('afterbegin', suggestionHTML);
+
+        const widgetElement = panel.firstElementChild;
+        widgetElement.addEventListener('click', () => {
+            addCity(name);
+            document.getElementById('city-search').value = '';
+            panel.querySelectorAll('.weatherwidget.suggestion').forEach(el => el.remove());
+            panel.querySelectorAll('.weatherwidget').forEach(el => el.style.display = '');
+        });
+        widgetElement.classList.add('suggestion');
+    }
+
+    document.getElementById('city-search').addEventListener('input', debounce(async function(e) {
+        const searchValue = e.target.value.trim();
+        const panel = document.querySelector('.left-panel');
+
+        // Masquer les widgets existants
+        panel.querySelectorAll('.weatherwidget:not(.suggestion)').forEach(el => el.style.display = 'none');
+
+        // Supprimer les suggestions précédentes
+        panel.querySelectorAll('.weatherwidget.suggestion').forEach(el => el.remove());
+
+        if (!searchValue) {
+            // Réafficher les widgets existants si le champ est vide
+            panel.querySelectorAll('.weatherwidget').forEach(el => el.style.display = '');
+            return;
+        }
+
+        // Récupérer les suggestions
+        const suggestions = await fetchSuggestions(searchValue);
+
+        // Si on a des résultats, les afficher comme widgets météo
+        if (suggestions.length > 0) {
+            for (const place of suggestions) {
+                await createSuggestionWidget(place);
+            }
+        } else {
+            // Optionnel: afficher un message "Aucune ville trouvée"
+            const noResultHTML = `<div class="weatherwidget suggestion">Aucune ville trouvée</div>`;
+            panel.insertAdjacentHTML('afterbegin', noResultHTML);
+        }
+    }, 300));
 });
