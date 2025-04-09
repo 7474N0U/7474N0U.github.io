@@ -142,7 +142,7 @@ body {
   }
 
 .weatherwidget.dragging {
-    opacity: 0.8;
+    opacity: 0.001;
     border: 3px dashed rgba(255, 255, 255, 0.8);
     border-radius: 100px;
     cursor: grabbing;
