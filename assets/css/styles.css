@@ -19,7 +19,7 @@ body {
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 50px;
+    gap: 100px;
     width: 90%;
     max-width: 1500px;
     max-height: 900px;
@@ -68,8 +68,8 @@ body {
 .search-bar-container {
     width: auto;
     height: 50px;
-    margin-left: 10px; /* Ajoute 30px d'espace à gauche */
-    margin-right: 10px; /* Ajoute 30px d'espace à droite */
+    margin-left: 10px;
+    margin-right: 10px;
     display: flex;
     align-items: center;
     padding: 0 15px;
