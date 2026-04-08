@@ -31,8 +31,10 @@
     <div id="page-history" class="main-container page-content" style="display: none; margin-top: 120px;">
         
         <div class="case-container">
-        
-            <img class="maestro-logo" src="./icons/Maestro.svg" alt="Logo">
+            <img class="centred-component" src="./icons/Maestro.svg" alt="Logo" style="margin-bottom: 50px">
+        </div>
+
+        <div class="case-container">
 
             <div class="title-header">
                 <span class="title">Date</span>
@@ -47,8 +49,14 @@
     <div id="page-console" class="main-container page-content" style="margin-top: 120px;">
 
         <div class="case-container">
-        
-            <img class="maestro-logo" src="./icons/Maestro.svg" alt="Logo">
+            <img class="centred-component" src="./icons/Maestro.svg" alt="Logo" style="margin-bottom: 50px">
+        </div>
+
+        <div class="case-container">
+            <img class="centred-component" src="./posters/maestroProduct.png" style="width: 350px;" alt="Product image">
+        </div>
+
+        <div class="case-container">
 
             <div class="title-header">
                 <span class="title">Custom</span>
@@ -75,7 +83,7 @@
             <div class="title-header">
                 <span class="title">Volume</span>
             </div>
-        
+                        
         </div> 
         
 
@@ -86,8 +94,10 @@
     <div id="page-settings" class="main-container page-content" style="display: none; margin-top: 120px;">
 
         <div class="case-container">
-        
-            <img class="maestro-logo" src="./icons/Maestro.svg" alt="Logo">
+            <img class="centred-component" src="./icons/Maestro.svg" alt="Logo" style="margin-bottom: 50px">
+        </div>
+
+        <div class="case-container">
 
             <div class="title-header">
                 <span class="title">Settings</span>
@@ -216,18 +226,15 @@
                 e.preventDefault();
                 const id = item.id;
 
-                // 1. Gestion de l'affichage des pages
                 document.querySelectorAll('.page-content').forEach(p => p.style.display = 'none');
                 const targetId = navLinks[id];
                 document.getElementById(targetId).style.display = 'flex';
 
-                // 2. Gestion de la couleur (Classe Active)
-                items.forEach(nav => nav.classList.remove('active')); // On nettoie tout le monde
-                item.classList.add('active'); // On allume celui sur lequel on a cliqué
+                items.forEach(nav => nav.classList.remove('active'));
+                item.classList.add('active');
             });
         });
 
-        // Optionnel : Définir la page par défaut au chargement
         document.getElementById('nav-console').classList.add('active');
     </script>
 
