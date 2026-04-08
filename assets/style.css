@@ -50,7 +50,7 @@ body {
     flex-direction: column;  
     align-items: center;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 20px;
     width: 100%;
     max-width: 1200px;       
     min-width: 170px;
@@ -333,4 +333,20 @@ body {
 /* --- État Hover --- */
 .nav-item:hover {
     opacity: 0.4;
+}
+
+/* -- État Actif pour la Navigation -- */
+.nav-item.active .nav-label {
+    color: #FF1A1A;
+    font-weight: bold;
+}
+
+/* Si tes icônes sont des .svg noirs, ce filtre les passera en rouge #FF1A1A */
+.nav-item.active .nav-icon {
+    filter: invert(21%) sepia(100%) saturate(7414%) hue-rotate(359deg) brightness(101%) contrast(107%);
+}
+
+/* On désactive l'opacité au survol pour l'élément déjà actif */
+.nav-item.active {
+    opacity: 1 !important;
 }

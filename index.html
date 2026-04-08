@@ -12,23 +12,78 @@
     <div class="glow-background"></div>
 
     <nav class="bottom-nav">
-        <a href="#" class="nav-item">
-            <img src="./icons/history.svg" alt="Routine" class="nav-icon">
+        <a href="#" class="nav-item" id="nav-history">
+            <img src="./icons/history.svg" alt="History" class="nav-icon">
             <span class="nav-label">History</span>
         </a>
-        
-        <a href="#" class="nav-item">
-            <img src="./icons/console.svg" alt="History" class="nav-icon">
+        <a href="#" class="nav-item" id="nav-console">
+            <img src="./icons/console.svg" alt="Console" class="nav-icon">
             <span class="nav-label">Console</span>
         </a>
-        
-        <a href="#" class="nav-item">
+        <a href="#" class="nav-item" id="nav-settings">
             <img src="./icons/settings.svg" alt="Settings" class="nav-icon">
             <span class="nav-label">Settings</span>
         </a>
     </nav>
 
-    <div class="main-container" style="margin-top: 120px;">
+<!-- History -->
+
+    <div id="page-history" class="main-container page-content" style="display: none; margin-top: 120px;">
+        
+        <div class="case-container">
+        
+            <img class="maestro-logo" src="./icons/Maestro.svg" alt="Logo">
+
+            <div class="title-header">
+                <span class="title">Date</span>
+            </div>
+        
+        </div>  
+
+    </div>
+
+<!-- Console -->
+
+    <div id="page-console" class="main-container page-content" style="margin-top: 120px;">
+
+        <div class="case-container">
+        
+            <img class="maestro-logo" src="./icons/Maestro.svg" alt="Logo">
+
+            <div class="title-header">
+                <span class="title">Custom</span>
+            </div>
+
+            <div class="disclosure-case">
+                <img src="./icons/profil.svg" alt="Personality icon" class="icon">
+
+                <h2 class="case-title">Personality</h2>
+                <p class="case-subtitle">state</p>
+            </div>
+            
+            <div class="disclosure-case">
+                <img src="./icons/female1.svg" alt="Voice icon" class="icon">
+                
+                <h2 class="case-title">Voice</h2>
+                <p class="case-subtitle">state</p>
+            </div>
+
+        </div>  
+        
+        <div class="case-container">
+        
+            <div class="title-header">
+                <span class="title">Volume</span>
+            </div>
+        
+        </div> 
+        
+
+    </div>
+
+<!-- Settings -->
+
+    <div id="page-settings" class="main-container page-content" style="display: none; margin-top: 120px;">
 
         <div class="case-container">
         
@@ -145,4 +200,35 @@
     </div>
     
 </body>
+
+    <script>
+        const navLinks = {
+            'nav-history': 'page-history',
+            'nav-console': 'page-console',
+            'nav-settings': 'page-settings'
+        };
+
+        // On récupère tous les liens de navigation
+        const items = document.querySelectorAll('.nav-item');
+
+        items.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const id = item.id;
+
+                // 1. Gestion de l'affichage des pages
+                document.querySelectorAll('.page-content').forEach(p => p.style.display = 'none');
+                const targetId = navLinks[id];
+                document.getElementById(targetId).style.display = 'flex';
+
+                // 2. Gestion de la couleur (Classe Active)
+                items.forEach(nav => nav.classList.remove('active')); // On nettoie tout le monde
+                item.classList.add('active'); // On allume celui sur lequel on a cliqué
+            });
+        });
+
+        // Optionnel : Définir la page par défaut au chargement
+        document.getElementById('nav-console').classList.add('active');
+    </script>
+
 </html>
