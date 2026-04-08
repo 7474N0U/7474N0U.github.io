@@ -1,0 +1,336 @@
+/* ---------------------------------------------------------
+- FONDATIONS ET LAYOUT GLOBAL
+------------------------------------------------------------ */
+
+body {
+    background-color: #FFF6EA;
+    margin: 0;
+    font-family: 'Space Mono', monospace;
+}
+
+/* - background glow effect - */
+.glow-background {
+    position: absolute;
+    top: -670px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65%;
+    height: 900px;
+    background-color: #FF1A1A;
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.maestro-logo {
+    display: block;
+    margin: 0 auto 100px;
+    width: auto;
+    min-width: 100px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* -- Conteneur Principal des Cartes -- */
+.case-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    max-width: 800px; 
+    padding: 15px;
+    flex: 1;
+    min-width: 170px;
+    box-sizing: border-box;
+}
+
+.main-container {
+    display: flex;           
+    flex-direction: column;  
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;       
+    min-width: 170px;
+    margin: 0 auto;
+    padding-bottom: 90px;          
+}
+
+/* --- Ajustements de flexibilité interne --- */
+.case-container .title-header {
+    flex: 0 0 100%;
+}
+
+
+/* ---------------------------------------------------------
+- COMPOSANT : EN-TÊTES (HEADERS)
+------------------------------------------------------------ */
+
+.title-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+/* -- Décorations (Lignes latérales) -- */
+.title-header::before,
+.title-header::after {
+    content: "";
+    height: 2px;
+    background-color: #FF1A1A;
+}
+
+.title-header::before {
+    width: 15px;
+}
+
+.title-header::after {
+    flex: 1;
+}
+
+/* -- Typographie du Titre -- */
+.title-header .title {   
+    color: #FF1A1A;
+    font-family: monospace;
+    font-size: 24px;
+    text-height: lighter;
+}
+
+
+/* ---------------------------------------------------------
+- COMPOSANT : BOUTONS D'ACTION
+------------------------------------------------------------ */
+
+.btn {
+    font-family: 'Space Mono', monospace;
+    font-size: 14px;
+    padding: 18px 20px;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    flex: 1;
+    min-width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* -- Variantes de Style -- */
+.btn-primary {
+    background-color: #FF1A1A;
+    color: white;
+    border: none;
+    border-radius: 50px;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #FF1A1A;
+    border: 1.5px solid #FF1A1A;
+    border-radius: 20px;
+}
+
+/* -- Interactions et Icônes -- */
+.btn-primary:hover,
+.btn-secondary:hover {
+    filter: brightness(0.75);
+}
+
+.icon {
+    width: 35px;
+    height: 35px;
+    stroke: #000000;
+    transition: stroke 0.3s;
+}
+
+
+/* ---------------------------------------------------------
+- COMPOSANT : CARTES D'INFORMATION (CASES)
+------------------------------------------------------------ */
+.info-case {
+    border: 1.5px solid #000000;
+    padding: 10px 10px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    box-sizing: border-box;
+    flex: 1;
+    min-width: 140px;
+}
+
+.disclosure-case {
+    border: 1.5px solid #000000;
+    padding: 10px 10px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    transition: border-color 0.3s, color 0.3s;
+    color: #000000;
+    flex: 1;
+    min-width: 140px;
+}
+
+/* -- Contenu textuel des cartes -- */
+.case-title {
+    font-size: 16px;
+    margin: 0px 0px -10px 0;
+    font-weight: lighter;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.case-subtitle {
+    font-size: 12px;
+    margin: 0;
+    font-weight: lighter;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* -- Spécificités Toggle-Case -- */
+
+.toggle-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+}
+
+/* ---------------------------------------------------------
+- COMPOSANT : SYSTÈME DE SWITCH (TOGGLE)
+------------------------------------------------------------ */
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 66px; 
+    height: 28px;
+    cursor: pointer;
+}
+
+.toggle-input {
+    display: none;
+}
+
+/* -- Structure interne du Switch -- */
+.toggle-slider {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 20px;
+    border: 1.5px solid #000000;
+    transition: background 0.3s, border-color 0.3s;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.indicator {
+    position: absolute;
+    left: 6px;
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    border: 1.5px solid #000000;
+    border-radius: 50%;
+    transition: transform 0.3s, background-color 0.3s, border-color 0.3s;
+    z-index: 2;
+}
+
+/* --- Labels On/Off --- */
+.label-on, .label-off {
+    position: absolute;
+    font-size: 12px;
+    font-weight: lighter;
+    pointer-events: none;
+}
+
+.label-off { right: 8px; color: #000000; }
+.label-on { left: 10px; color: white; opacity: 0; }
+
+/* -- ÉTATS ACTIFS (Checked) -- */
+/* --- Case --- */
+.info-case:has(.toggle-input:checked) {
+    border-color: #FF1A1A;
+    color: #FF1A1A;
+}
+
+.info-case:has(.toggle-input:checked) .gear-icon {
+    stroke: #FF1A1A;
+}
+
+/* --- Switch --- */
+.toggle-input:checked + .toggle-slider {
+    background-color: #FF1A1A;
+    border-color: #FF1A1A;
+}
+
+.toggle-input:checked + .toggle-slider .indicator {
+    transform: translateX(34px);
+    background-color: white;
+    border-color: white;
+}
+
+.toggle-input:checked + .toggle-slider .label-off { opacity: 0; }
+.toggle-input:checked + .toggle-slider .label-on { opacity: 1; }
+
+
+/* ---------------------------------------------------------
+- COMPOSANT : BARRE DE NAVIGATION (BOTTOM NAV)
+------------------------------------------------------------ */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0; 
+    width: 100%;
+    background-color: #FFF6EA;
+    border-top: 1px solid #000000;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+/* -- Éléments de Navigation -- */
+.nav-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0;
+    text-decoration: none;
+    color: #000000;
+    transition: opacity 0.2s;
+}
+
+/* --- Icônes et Labels --- */
+.nav-icon {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.nav-label {
+    font-size: 12px;
+    font-family: 'Space Mono', monospace;
+}
+
+/* --- État Hover --- */
+.nav-item:hover {
+    opacity: 0.4;
+}

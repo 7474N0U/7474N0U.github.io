@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <title>Maestro Application</title>
+</head>
+<body>
+
+    <div class="glow-background"></div>
+
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item">
+            <img src="./icons/history.svg" alt="Routine" class="nav-icon">
+            <span class="nav-label">History</span>
+        </a>
+        
+        <a href="#" class="nav-item">
+            <img src="./icons/console.svg" alt="History" class="nav-icon">
+            <span class="nav-label">Console</span>
+        </a>
+        
+        <a href="#" class="nav-item">
+            <img src="./icons/settings.svg" alt="Settings" class="nav-icon">
+            <span class="nav-label">Settings</span>
+        </a>
+    </nav>
+
+    <div class="main-container" style="margin-top: 120px;">
+
+        <div class="case-container">
+        
+            <img class="maestro-logo" src="./icons/Maestro.svg" alt="Logo">
+
+            <div class="title-header">
+                <span class="title">Settings</span>
+            </div>
+
+            <div class="info-case">
+                <h2 class="case-title">SelfDrive</h2>
+                <p class="case-subtitle">Creating scripts to complete hard tasks.</p>
+                <div class="toggle-wrapper">
+                    <label class="toggle-switch">
+                        <input type="checkbox" class="toggle-input">
+                        <div class="toggle-slider">
+                            <span class="label-off">OFF</span>
+                            <span class="label-on">ON</span>
+                            <div class="indicator"></div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="info-case">
+                <h2 class="case-title">Voice wake-up</h2>
+                <p class="case-subtitle">Activate the assistant with a voice command.</p>
+                <div class="toggle-wrapper">
+                    <label class="toggle-switch">
+                        <input type="checkbox" class="toggle-input">
+                        <div class="toggle-slider">
+                            <span class="label-off">OFF</span>
+                            <span class="label-on">ON</span>
+                            <div class="indicator"></div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="info-case" style="flex: 0 0 100%; height: 25%;">
+                <h2 class="case-title">Screen</h2>
+                <p class="case-subtitle">Indicate the states with screen.</p>
+                <div class="toggle-wrapper">
+                    <label class="toggle-switch">
+                        <input type="checkbox" class="toggle-input">
+                        <div class="toggle-slider">
+                            <span class="label-off">OFF</span>
+                            <span class="label-on">ON</span>
+                            <div class="indicator"></div>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="disclosure-case">
+                <img src="./icons/auto.svg" alt="Settings" class="icon">
+
+                <h2 class="case-title">Theme Mod</h2>
+                <p class="case-subtitle">state</p>
+            </div>
+            
+            <div class="disclosure-case">
+                <img src="./icons/language.svg" alt="Settings" class="icon">
+                
+                <h2 class="case-title">Language</h2>
+                <p class="case-subtitle">state</p>
+            </div>
+
+        </div>
+
+        <div class="case-container">
+
+            <div class="title-header">
+                <span class="title">Google Workspace</span>
+            </div>
+        
+            <div class="info-case">
+                <h2 class="case-title">Google Workspace Integration</h2>
+                <p class="case-subtitle">Sync your Google tools to streamline your workflow and unlock advanced AI features.</p>
+                
+                <div class="toggle-wrapper">
+                    <div class="btn btn-primary" style="margin: 0px 15%;">Connect Google account</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="case-container">
+
+            <div class="title-header">
+                <span class="title">Informations</span>
+            </div>
+
+            <div class="info-case">
+                <h2 class="case-title">Mistral Large</h2>
+                <p class="case-subtitle">Mistral Large 3</p>
+            </div>
+            <div class="info-case">
+                <h2 class="case-title">Maestro APP Version</h2>
+                <p class="case-subtitle">V0.0.1</p>
+            </div>
+            <div class="info-case" style="flex: 0 0 100%;">
+                <h2 class="case-title">Firmware Version</h2>
+                <p class="case-subtitle">V0.0.3</p>
+            </div>
+            
+
+            <div class="btn btn-secondary">Github</div>
+            <div class="btn btn-secondary">Mistral</div>
+            <div class="btn btn-primary">Check for updates</div>
+
+        </div>
+    </div>
+    
+</body>
+</html>
