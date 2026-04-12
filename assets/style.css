@@ -8,6 +8,10 @@ body {
     font-family: 'Space Mono', monospace;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 /* - background glow effect - */
 .glow-background {
     position: absolute;
@@ -40,7 +44,6 @@ body {
     width: 100%;
     max-width: 800px; 
     padding: 15px;
-    flex: 1;
     min-width: 170px;
     box-sizing: border-box;
 }
@@ -114,7 +117,7 @@ body {
     width: 100%;
     text-align: center;
     flex: 1;
-    min-width: 140px;
+    min-width: 180px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -162,7 +165,8 @@ body {
     justify-content: center;
     box-sizing: border-box;
     flex: 1;
-    min-width: 140px;
+    min-width: 180px;
+    /* height: 130px; */
 }
 
 .disclosure-case {
@@ -177,7 +181,7 @@ body {
     transition: border-color 0.3s, color 0.3s;
     color: #000000;
     flex: 1;
-    min-width: 140px;
+    min-width: 180px;
 }
 
 /* -- Contenu textuel des cartes -- */
@@ -192,7 +196,7 @@ body {
 }
 
 .case-subtitle {
-    font-size: 12px;
+    font-size: 14px;
     margin: 0;
     font-weight: lighter;
     display: -webkit-box;
@@ -253,7 +257,7 @@ body {
 /* --- Labels On/Off --- */
 .label-on, .label-off {
     position: absolute;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: lighter;
     pointer-events: none;
 }
@@ -266,10 +270,6 @@ body {
 .info-case:has(.toggle-input:checked) {
     border-color: #FF1A1A;
     color: #FF1A1A;
-}
-
-.info-case:has(.toggle-input:checked) .gear-icon {
-    stroke: #FF1A1A;
 }
 
 /* --- Switch --- */
@@ -297,7 +297,7 @@ body {
     bottom: 0; 
     left: 50%;
     transform: translateX(-50%);
-    width: calc(100% - 30px); 
+    width: calc(100% - 29px); 
     max-width: 770px;
     background-color: #FFF6EA;
     border-top: 1px solid #000000;
@@ -315,7 +315,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 12px 0;
+    padding: 14px 0;
     text-decoration: none;
     color: #000000;
     transition: opacity 0.2s;
@@ -329,7 +329,7 @@ body {
 }
 
 .nav-label {
-    font-size: 12px;
+    font-size: 14px;
     font-family: 'Space Mono', monospace;
 }
 
@@ -353,3 +353,201 @@ body {
     opacity: 1 !important;
 }
 
+/* =========================================
+   SÉLECTEUR À CHOIX MULTIPLE
+========================================= */
+
+/* CONTENEUR GLOBAL */
+.selector-container {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    width: fit-content;
+}
+
+/* VARIANTE VERTICALE */
+.selector-container.is-vertical {
+    flex-direction: column;
+    min-width: 200px;
+}
+
+.selector-container input[type="radio"] {
+    display: none;
+}
+
+.selector-item {
+    background-color: #00000030;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.selector-item.item-icon {
+    padding: 10px;
+    justify-content: center;
+}
+
+.selector-item.item-icon .icon {
+    width: 35px;
+    height: 35px;
+    transition: filter 0.2s ease-in-out;
+}
+
+/* MODIFICATEUR : ÉLÉMENT AVEC TEXTE */
+.selector-item.item-text {
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+    color: #000000;
+    font-size: 14px;
+}
+
+input[type="radio"]:checked + .selector-item {
+    background-color: #FF1A1A;
+}
+
+input[type="radio"]:checked + .selector-item.item-icon .icon {
+    filter: brightness(0) invert(1);
+}
+
+input[type="radio"]:checked + .selector-item.item-text {
+    color: #FFFFFF;
+}
+
+.selector-container.is-scrollable {
+    overflow-x: auto;
+    max-width: 100%;
+    justify-content: flex-start;
+}
+
+.selector-container.is-scrollable::-webkit-scrollbar {
+    display: none;
+}
+
+/* MODIFICATEUR : ÉLÉMENT AVEC WIDGET */
+.selector-item.item-card {
+    flex-direction: column;
+    padding: 10px;
+    gap: 8px;
+    width: 120px;
+    flex-shrink: 0;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.selector-item.item-card .card-image {
+    width: 100%;
+    height: auto;
+    /*box-shadow: 0 0px 15px rgba(0, 0, 0, 0.7);*/
+}
+
+.selector-item.item-card .card-label {
+    font-size: 14px;
+    color: #000000;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+input[type="radio"]:checked + .selector-item.item-card .card-label {
+    color: #FFFFFF;
+}
+
+/* =========================================
+   OVERLAYS
+========================================= */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 9999;
+    display: none;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+/* --- OVERLAY PANEL --- */
+
+.overlay-panel {
+    width: 100%;
+    max-width: 800px;
+    height: 90vh;
+    background-color: #FFF6EA;
+    border-top: 2px solid #FF1A1A;
+    display: flex;
+    flex-direction: column;
+    animation: slideUp 0.3s ease-out forwards;
+    box-sizing: border-box;
+}
+
+.overlay-icon {
+    width: 140px;
+    margin: 60px;
+    filter: invert(19%) sepia(73%) saturate(4819%) hue-rotate(352deg) brightness(105%) contrast(104%);
+}
+
+/* --- OVERLAY BODY --- */
+
+.overlay-body {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.overlay-body::-webkit-scrollbar {
+    display: none;
+}
+
+/* --- OVERLAY FOOTER --- */
+
+.overlay-footer {
+    padding: 15px 20px 30px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* --- ANIMATIONS --- */
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   Screen Maestro
+========================================= */
+
+.screen-maestro {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65%;
+    max-width: 400px;
+    background-color: #FFF6EA;
+    margin: 0 auto;
+}
+
+.maestro-widget {
+    position: absolute;
+    z-index: 10;
+    width: 65%;
+    top: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+}
