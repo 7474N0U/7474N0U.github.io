@@ -2,10 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#FF1A1A">
+
     <link rel="stylesheet" href="./assets/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="apple-touch-icon" href="./posters/maskable-icon.png">
+    <link rel="icon" type="image/png" href="./posters/favicon.png">
+    <link rel="stylesheet" href="./assets/style.css">
+    
     <title>Maestro Application</title>
+
 </head>
 <body>
 
@@ -31,7 +40,7 @@
     <div id="page-history" class="main-container page-content" style="display: none; margin-top: 120px;">
         
         <div class="case-container">
-            <img class="centred-component" src="./icons/Maestro.svg" alt="Logo" style="margin-bottom: 50px">
+            <img class="centred-component" src="./icons/maestro.svg" alt="Logo" style="margin-bottom: 50px">
         </div>
 
         <div class="case-container">
@@ -51,7 +60,7 @@
     <div id="page-console" class="main-container page-content" style="margin-top: 120px;">
 
         <div class="case-container">
-            <img class="centred-component" src="./icons/Maestro.svg" alt="Logo" style="margin-bottom: 50px">
+            <img class="centred-component" src="./icons/maestro.svg" alt="Logo" style="margin-bottom: 50px">
         </div>
 
         <div class="case-container">
@@ -110,7 +119,7 @@
     <div id="page-settings" class="main-container page-content" style="display: none; margin-top: 120px;">
 
         <div class="case-container">
-            <img class="centred-component" src="./icons/Maestro.svg" alt="Logo" style="margin-bottom: 50px">
+            <img class="centred-component" src="./icons/maestro.svg" alt="Logo" style="margin-bottom: 50px">
         </div>
 
         <div class="case-container">
@@ -233,7 +242,7 @@
             
             <div class="overlay-body">
                 <div class="case-container" style="flex: 0 0 auto; flex-direction: column; align-items: center; text-align: center;">
-                    <h2 style="font-weight: lighter; color: #FF1A1A; width: 100%;">Language</h2>
+                    <h1 style="font-weight: lighter; color: #FF1A1A; width: 100%;">Language</h1>
                     
                     <img src="./icons/language.svg" alt="Language icon" class="overlay-icon">
 
@@ -264,7 +273,7 @@
             
             <div class="overlay-body">
                 <div class="case-container" style="flex: 0 0 auto; flex-direction: column; align-items: center; text-align: center;">
-                    <h2 style="font-weight: lighter; color: #FF1A1A; width: 100%;">Theme</h2>
+                    <h1 style="font-weight: lighter; color: #FF1A1A; width: 100%;">Theme</h1>
                     
                     <img src="./icons/auto.svg" alt="Theme icon" class="overlay-icon">
 
@@ -304,8 +313,8 @@
             
             <div class="overlay-body">
                 <div class="case-container" style="flex: 0 0 auto; flex-direction: column; align-items: center; text-align: center;">
-                    <h2 style="font-weight: lighter; color: #FF1A1A; width: 100%;">Voice</h2>
-                    
+                    <h1 style="font-weight: lighter; color: #FF1A1A; width: 100%;">Voice</h1>
+
                     <img src="./icons/female1.svg" alt="Voice icon" class="overlay-icon">
 
                     <h2 style="font-weight: lighter;">State</h2>
@@ -326,7 +335,7 @@
                         <label class="selector-item item-icon" for="voice3">
                             <img src="./icons/female3.svg" alt="Female 3 icon" class="icon">
                         </label>
-                        
+
                         <input type="radio" id="voice4" name="voice">
                         <label class="selector-item item-icon" for="voice4">
                             <img src="./icons/male1.svg" alt="Male 1 icon" class="icon">
@@ -359,8 +368,8 @@
             
             <div class="overlay-body">
                 <div class="case-container" style="flex: 0 0 auto; flex-direction: column; align-items: center; text-align: center;">
-                    <h2 style="font-weight: lighter; color: #FF1A1A; width: 100%;">Personality</h2>
-                    
+                    <h1 style="font-weight: lighter; color: #FF1A1A; width: 100%;">Personality</h1>
+
                     <img src="./icons/profil.svg" alt="Personality icon" class="overlay-icon">
 
                 </div>
@@ -377,12 +386,131 @@
     <!--Touch Overlay-->
     <div id="overlay-touch" class="overlay" style="display: none;">
         <div class="overlay-panel">
-            
+                
             <div class="overlay-body">
                 <div class="case-container" style="flex: 0 0 auto; flex-direction: column; align-items: center; text-align: center;">
-                    <h2 style="font-weight: lighter; color: #FF1A1A; width: 100%;">Touch</h2>
+                    <h1 style="font-weight: lighter; color: #FF1A1A; width: 100%;">Touch</h1>
+
+                    <div class="case-container" style="align-items: center; justify-content: center;">
+                        
+                        <div class="title-header">
+                            <span class="title">One Click</span>
+                        </div>
+
+                        <div class="tactile-container">
+                            <img src="./posters/maestro-front-face.png" alt="maestro front face" style="width: auto; max-width: 200px; display: block;">
+                            <div class="tactile-icon anim-tap"></div>
+                        </div>
+                            
+                        <div class="selector-container is-vertical" style="height: auto;">
+                            <input type="radio" id="one-click-wakeup" name="touch-one-click" checked>
+                            <label class="selector-item item-text" for="one-click-wakeup">Wake-Up</label>
+
+                            <input type="radio" id="one-click-next" name="touch-one-click">
+                            <label class="selector-item item-text" for="one-click-next">Next widget</label>
+
+                            <input type="radio" id="one-click-custom" name="touch-one-click">
+                            <label class="selector-item item-text" for="one-click-custom">Custom action</label>
+                        </div>
+                    </div>     
+
+                    <div class="case-container" style="align-items: center; justify-content: center;">
+                        
+                        <div class="title-header">
+                            <span class="title">Double Click</span>
+                        </div>
+
+                        <div class="tactile-container">
+                            <img src="./posters/maestro-front-face.png" alt="maestro front face" style="width: auto; max-width: 200px; display: block;">
+                            <div class="tactile-icon anim-double-tap"></div>
+                        </div>
+
+                        <div class="selector-container is-vertical" style="height: auto;">
+                            <input type="radio" id="double-click-wakeup" name="touch-double-click">
+                            <label class="selector-item item-text" for="double-click-wakeup">Wake-Up</label>
+
+                            <input type="radio" id="double-click-next" name="touch-double-click" checked>
+                            <label class="selector-item item-text" for="double-click-next">Next widget</label>
+
+                            <input type="radio" id="double-click-custom" name="touch-double-click">
+                            <label class="selector-item item-text" for="double-click-custom">Custom action</label>
+                        </div>
+                    </div>
+
+                    <div class="case-container" style="align-items: center; justify-content: center;">
+                        
+                        <div class="title-header">
+                            <span class="title">Long Click</span>
+                        </div>
+
+                        <div class="tactile-container">
+                            <img src="./posters/maestro-front-face.png" alt="maestro front face" style="width: auto; max-width: 200px; display: block;">
+                            <div class="tactile-icon anim-long-tap"></div>
+                        </div>
+                            
+                        <div class="selector-container is-vertical" style="height: auto;">
+                            <input type="radio" id="long-click-wakeup" name="touch-long-click">
+                            <label class="selector-item item-text" for="long-click-wakeup">Wake-Up</label>
+
+                            <input type="radio" id="long-click-next" name="touch-long-click">
+                            <label class="selector-item item-text" for="long-click-next">Next widget</label>
+
+                            <input type="radio" id="long-click-custom" name="touch-long-click" checked>
+                            <label class="selector-item item-text" for="long-click-custom">Custom action</label>
+                        </div>
+                    </div>
                     
-                    <img src="./icons/touch.svg" alt="Touch icon" class="overlay-icon">
+                    <div class="case-container" style="align-items: center; justify-content: center;">
+                        
+                        <div class="title-header">
+                            <span class="title">Slide Up</span>
+                        </div>
+
+                        <div class="tactile-container">
+                            <img src="./posters/maestro-front-face.png" alt="maestro front face" style="width: auto; max-width: 200px; display: block;">
+                            <div class="tactile-icon anim-slide-up"></div>
+                        </div>
+                            
+                        <div class="selector-container is-vertical" style="height: auto;">
+                            <input type="radio" id="slide-up-vol-up" name="touch-slide-up" checked>
+                            <label class="selector-item item-text" for="slide-up-vol-up">Volume Up</label>
+
+                            <input type="radio" id="slide-up-vol-down" name="touch-slide-up">
+                            <label class="selector-item item-text" for="slide-up-vol-down">Volume Down</label>
+
+                            <input type="radio" id="slide-up-next" name="touch-slide-up">
+                            <label class="selector-item item-text" for="slide-up-next">Next widget</label>
+                            
+                            <input type="radio" id="slide-up-prev" name="touch-slide-up">
+                            <label class="selector-item item-text" for="slide-up-prev">Previous widget</label>
+                        </div>
+                    </div>
+
+                    <div class="case-container" style="align-items: center; justify-content: center;">
+                        
+                        <div class="title-header">
+                            <span class="title">Slide Down</span>
+                        </div>
+
+                        <div class="tactile-container">
+                            <img src="./posters/maestro-front-face.png" alt="maestro front face" style="width: auto; max-width: 200px; display: block;">
+                            <div class="tactile-icon anim-slide-down"></div>
+                        </div>
+                            
+                        <div class="selector-container is-vertical" style="height: auto;">
+                            <input type="radio" id="slide-down-vol-up" name="touch-slide-down">
+                            <label class="selector-item item-text" for="slide-down-vol-up">Volume Up</label>
+
+                            <input type="radio" id="slide-down-vol-down" name="touch-slide-down" checked>
+                            <label class="selector-item item-text" for="slide-down-vol-down">Volume Down</label>
+
+                            <input type="radio" id="slide-down-next" name="touch-slide-down">
+                            <label class="selector-item item-text" for="slide-down-next">Next widget</label>
+                            
+                            <input type="radio" id="slide-down-prev" name="touch-slide-down">
+                            <label class="selector-item item-text" for="slide-down-prev">Previous widget</label>
+                        </div>
+                    </div> 
 
                 </div>
 
@@ -401,10 +529,10 @@
             
             <div class="overlay-body">
                 <div class="case-container" style="flex: 0 0 auto; flex-direction: column; align-items: center; text-align: center;">
-                    <h2 style="font-weight: lighter; color: #FF1A1A; width: 100%;">Always On Display</h2>
+                    <h1 style="font-weight: lighter; color: #FF1A1A; width: 100%;">Always On Display</h1>
                     
                     <div class="screen-maestro">
-                        <img src="./posters/maestro-front-face.png" alt="maestro front face" style="width: 100%; height: auto; display: block;">
+                        <img src="./posters/maestro-top-face.png" alt="maestro top face" style="width: 100%; height: auto; display: block;">
                         
                         <img src="./posters/widgets/ClockHorizontal.png" alt="Widget" class="maestro-widget" id="dynamic-widget">
                     </div>
@@ -453,22 +581,22 @@
                     
                     <div class="selector-container is-scrollable">
                         
-                        <input type="radio" id="weather" name="widget" checked>
+                        <input type="radio" id="weather" name="widget">
                         <label class="selector-item item-card" for="weather">
                             <img src="./posters/widgets/Weather.png" alt="Météo" class="card-image">
                             <span class="card-label">Météo</span>
                         </label>
 
-                        <input type="radio" id="WeatherSunCycle" name="widget">
-                        <label class="selector-item item-card" for="WeatherSunCycle">
-                            <img src="./posters/widgets/WeatherSunCycle.png" alt="Météo Cycle du Soleil" class="card-image">
-                            <span class="card-label">Météo Cycle du Soleil</span>
+                        <input type="radio" id="SunCycle" name="widget">
+                        <label class="selector-item item-card" for="SunCycle">
+                            <img src="./posters/widgets/SunCycle.png" alt="Météo Cycle du Soleil" class="card-image">
+                            <span class="card-label">Cycle du Soleil</span>
                         </label>
 
-                        <input type="radio" id="WeatherMoonFace" name="widget">
-                        <label class="selector-item item-card" for="WeatherMoonFace">
-                            <img src="./posters/widgets/WeatherMoonFace.png" alt="Météo Visage de la Lune" class="card-image">
-                            <span class="card-label">Météo Visage de la Lune</span>
+                        <input type="radio" id="MoonFace" name="widget">
+                        <label class="selector-item item-card" for="MoonFace">
+                            <img src="./posters/widgets/MoonFace.png" alt="Météo Visage de la Lune" class="card-image">
+                            <span class="card-label">Visage de la Lune</span>
                         </label>
                         
                     </div>
