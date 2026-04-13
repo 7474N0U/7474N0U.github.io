@@ -102,7 +102,7 @@ body::-webkit-scrollbar {
 .title-header .title {   
     color: #FF1A1A;
     font-family: monospace;
-    font-size: 20px;
+    font-size: 18px;
     text-height: lighter;
 }
 
@@ -138,7 +138,7 @@ body::-webkit-scrollbar {
 .btn-secondary {
     background-color: transparent;
     color: #FF1A1A;
-    border: 1.5px solid #FF1A1A;
+    border: 1px solid #FF1A1A;
     border-radius: 15px;
 }
 
@@ -160,7 +160,7 @@ body::-webkit-scrollbar {
 - COMPOSANT : CARTES D'INFORMATION (CASES)
 ------------------------------------------------------------ */
 .info-case {
-    border: 1.5px solid #000000;
+    border: 1px solid #000000;
     padding: 10px 10px;
     display: flex;
     gap: 10px;
@@ -174,7 +174,7 @@ body::-webkit-scrollbar {
 }
 
 .disclosure-case {
-    border: 1.5px solid #000000;
+    border: 1px solid #000000;
     padding: 10px 10px;
     display: flex;
     gap: 10px;
@@ -239,7 +239,7 @@ body::-webkit-scrollbar {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     border-radius: 20px;
-    border: 1.5px solid #000000;
+    border: 1px solid #000000;
     transition: background 0.3s, border-color 0.3s;
     display: flex;
     align-items: center;
@@ -252,7 +252,7 @@ body::-webkit-scrollbar {
     width: 16px;
     height: 16px;
     background-color: transparent;
-    border: 1.5px solid #000000;
+    border: 1px solid #000000;
     border-radius: 50%;
     transition: transform 0.3s, background-color 0.3s, border-color 0.3s;
     z-index: 2;
@@ -307,7 +307,7 @@ body::-webkit-scrollbar {
     border-top: 1px solid #000000;
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 5px;
     box-sizing: border-box;
     z-index: 1000;
 }
@@ -319,7 +319,7 @@ body::-webkit-scrollbar {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 14px 0;
+    padding: 10px 0;
     text-decoration: none;
     color: #000000;
     transition: opacity 0.2s;
@@ -327,13 +327,13 @@ body::-webkit-scrollbar {
 
 /* --- Icônes et Labels --- */
 .nav-icon {
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
     margin-bottom: 5px;
 }
 
 .nav-label {
-    font-size: 14px;
+    font-size: 12px;
     font-family: 'Space Mono', monospace;
 }
 
