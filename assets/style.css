@@ -586,7 +586,6 @@ input[type="radio"]:checked + .selector-item.item-card .card-label {
     justify-content: center;
     width: 65%;
     max-width: 400px;
-    background-color: #FFF6EA;
     margin: 0 auto;
 }
 
