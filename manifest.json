@@ -2,19 +2,19 @@
   "name": "Maestro Application",
   "short_name": "Maestro",
   "start_url": "/",
-  "display": "fullscreen",
-  "background_color": "#000000",
+  "display": "standalone",
   "theme_color": "#FF1A1A",
+  "background_color": "#FFF6EA",
   "icons": [
     {
-      "src": "./posters/maskable-icon.png", 
+      "src": "./posters/maskable-icon.png",
       "sizes": "1024x1024",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
       "src": "./posters/monochrome-icon.png",
-      "sizes": "512x512", 
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "monochrome"
     },
