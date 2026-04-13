@@ -2,7 +2,7 @@
   "name": "Maestro Application",
   "short_name": "Maestro",
   "start_url": "/",
-  "display": "fullscreen",
+  "display": "standalone",
   "theme_color": "#FF1A1A",
   "background_color": "#FFF6EA",
   "icons": [

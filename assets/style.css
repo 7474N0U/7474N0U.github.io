@@ -3,234 +3,231 @@
 ------------------------------------------------------------ */
 
 * {
-    -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
-    background-color: #FFF6EA;
-    margin: 0;
-    font-family: 'Space Mono', monospace;
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
+  background-color: #fff6ea;
+  margin: 0;
+  font-family: "Space Mono", monospace;
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
 
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* - background glow effect - */
 .glow-background {
-    position: absolute;
-    top: -670px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 65%;
-    height: 900px;
-    background-color: #FF1A1A;
-    border-radius: 50%;
-    filter: blur(60px);
-    z-index: -1;
-    pointer-events: none;
+  position: absolute;
+  top: -670px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65%;
+  height: 900px;
+  background-color: #ff1a1a;
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .centred-component {
-    display: block;
-    width: auto;
-    min-width: 100px;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
+  display: block;
+  width: auto;
+  min-width: 100px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
 }
 
 /* -- Conteneur Principal des Cartes -- */
 .case-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    width: 100%;
-    max-width: 800px; 
-    padding: 15px;
-    min-width: 170px;
-    box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  max-width: 800px;
+  padding: 15px;
+  min-width: 170px;
+  box-sizing: border-box;
 }
 
 .main-container {
-    display: flex;           
-    flex-direction: column;  
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    width: 100%;
-    max-width: 1200px;       
-    min-width: 170px;
-    margin: 0 auto;
-    padding-bottom: 90px;          
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  min-width: 170px;
+  margin: 0 auto;
+  padding-bottom: 90px;
 }
 
 /* --- Ajustements de flexibilité interne --- */
 .case-container .title-header {
-    flex: 0 0 100%;
+  flex: 0 0 100%;
 }
-
 
 /* ---------------------------------------------------------
 - COMPOSANT : EN-TÊTES (HEADERS)
 ------------------------------------------------------------ */
 
 .title-header {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
 }
 
 /* -- Décorations (Lignes latérales) -- */
 .title-header::before,
 .title-header::after {
-    content: "";
-    height: 2px;
-    background-color: #FF1A1A;
+  content: "";
+  height: 2px;
+  background-color: #ff1a1a;
 }
 
 .title-header::before {
-    width: 15px;
+  width: 15px;
 }
 
 .title-header::after {
-    flex: 1;
+  flex: 1;
 }
 
 /* -- Typographie du Titre -- */
-.title-header .title {   
-    color: #FF1A1A;
-    font-family: monospace;
-    font-size: 18px;
-    text-height: lighter;
+.title-header .title {
+  color: #ff1a1a;
+  font-family: monospace;
+  font-size: 18px;
+  text-height: lighter;
 }
-
 
 /* ---------------------------------------------------------
 - COMPOSANT : BOUTONS D'ACTION
 ------------------------------------------------------------ */
 
 .btn {
-    font-family: 'Space Mono', monospace;
-    font-size: 14px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: filter 0.3s ease;
-    box-sizing: border-box;
-    width: 100%;
-    text-align: center;
-    flex: 1;
-    min-width: 160px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  font-family: "Space Mono", monospace;
+  font-size: 14px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  flex: 1;
+  min-width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* -- Variantes de Style -- */
 .btn-primary {
-    background-color: #FF1A1A;
-    color: white;
-    border: none;
-    border-radius: 50px;
+  background-color: #ff1a1a;
+  color: white;
+  border: none;
+  border-radius: 50px;
 }
 
 .btn-secondary {
-    background-color: transparent;
-    color: #FF1A1A;
-    border: 1px solid #FF1A1A;
-    border-radius: 15px;
+  background-color: transparent;
+  color: #ff1a1a;
+  border: 1px solid #ff1a1a;
+  border-radius: 15px;
 }
 
 /* -- Interactions et Icônes -- */
 .btn-primary:hover,
 .btn-secondary:hover {
-    filter: brightness(0.75);
+  filter: brightness(0.75);
 }
 
 .icon {
-    width: 35px;
-    height: 35px;
-    stroke: #000000;
-    transition: stroke 0.3s;
+  width: 35px;
+  height: 35px;
+  stroke: #000000;
+  transition: stroke 0.3s;
 }
-
 
 /* ---------------------------------------------------------
 - COMPOSANT : CARTES D'INFORMATION (CASES)
 ------------------------------------------------------------ */
 .info-case {
-    border: 1px solid #000000;
-    padding: 10px 10px;
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-    align-items: left;
-    justify-content: center;
-    box-sizing: border-box;
-    flex: 1;
-    min-width: 160px;
-    /* height: 130px; */
+  border: 1px solid #000000;
+  padding: 10px 10px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  box-sizing: border-box;
+  flex: 1;
+  min-width: 160px;
+  /* height: 130px; */
 }
 
 .disclosure-case {
-    border: 1px solid #000000;
-    padding: 10px 10px;
-    display: flex;
-    gap: 10px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    transition: border-color 0.3s, color 0.3s;
-    color: #000000;
-    flex: 1;
-    min-width: 160px;
+  border: 1px solid #000000;
+  padding: 10px 10px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  transition:
+    border-color 0.3s,
+    color 0.3s;
+  color: #000000;
+  flex: 1;
+  min-width: 160px;
 }
 
-.disclosure-subtitle
-{
-    font-size: 12px;
-    margin: 0;
-    font-weight: lighter;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
+.disclosure-subtitle {
+  font-size: 12px;
+  margin: 0;
+  font-weight: lighter;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 /* -- Contenu textuel des cartes -- */
 .case-title {
-    font-size: 14px;
-    margin: 0px 0px -10px 0;
-    font-weight: lighter;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
+  font-size: 14px;
+  margin: 0px 0px -10px 0;
+  font-weight: lighter;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .case-subtitle {
-    font-size: 12px;
-    margin: 0;
-    font-weight: lighter;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  font-size: 12px;
+  margin: 0;
+  font-weight: lighter;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* -- Spécificités Toggle-Case -- */
 
 .toggle-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
 }
 
 /* ---------------------------------------------------------
@@ -238,136 +235,156 @@ body::-webkit-scrollbar {
 ------------------------------------------------------------ */
 
 .toggle-switch {
-    position: relative;
-    display: inline-block;
-    width: 66px; 
-    height: 28px;
-    cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 66px;
+  height: 28px;
+  cursor: pointer;
 }
 
 .toggle-input {
-    display: none;
+  display: none;
 }
 
 /* -- Structure interne du Switch -- */
 .toggle-slider {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    border-radius: 20px;
-    border: 1px solid #000000;
-    transition: background 0.3s, border-color 0.3s;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  border: 1px solid #000000;
+  transition:
+    background 0.3s,
+    border-color 0.3s;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
 
 .indicator {
-    position: absolute;
-    left: 6px;
-    width: 16px;
-    height: 16px;
-    background-color: transparent;
-    border: 1px solid #000000;
-    border-radius: 50%;
-    transition: transform 0.3s, background-color 0.3s, border-color 0.3s;
-    z-index: 2;
+  position: absolute;
+  left: 6px;
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  transition:
+    transform 0.3s,
+    background-color 0.3s,
+    border-color 0.3s;
+  z-index: 2;
 }
 
 /* --- Labels On/Off --- */
-.label-on, .label-off {
-    position: absolute;
-    font-size: 14px;
-    font-weight: lighter;
-    pointer-events: none;
+.label-on,
+.label-off {
+  position: absolute;
+  font-size: 14px;
+  font-weight: lighter;
+  pointer-events: none;
 }
 
-.label-off { right: 8px; color: #000000; }
-.label-on { left: 10px; color: white; opacity: 0; }
+.label-off {
+  right: 8px;
+  color: #000000;
+}
+.label-on {
+  left: 10px;
+  color: white;
+  opacity: 0;
+}
 
 /* -- ÉTATS ACTIFS (Checked) -- */
 /* --- Case --- */
 .info-case:has(.toggle-input:checked) {
-    border-color: #FF1A1A;
-    color: #FF1A1A;
+  border-color: #ff1a1a;
+  color: #ff1a1a;
 }
 
 /* --- Switch --- */
 .toggle-input:checked + .toggle-slider {
-    background-color: #FF1A1A;
-    border-color: #FF1A1A;
+  background-color: #ff1a1a;
+  border-color: #ff1a1a;
 }
 
 .toggle-input:checked + .toggle-slider .indicator {
-    transform: translateX(34px);
-    background-color: white;
-    border-color: white;
+  transform: translateX(34px);
+  background-color: white;
+  border-color: white;
 }
 
-.toggle-input:checked + .toggle-slider .label-off { opacity: 0; }
-.toggle-input:checked + .toggle-slider .label-on { opacity: 1; }
-
+.toggle-input:checked + .toggle-slider .label-off {
+  opacity: 0;
+}
+.toggle-input:checked + .toggle-slider .label-on {
+  opacity: 1;
+}
 
 /* ---------------------------------------------------------
 - COMPOSANT : BARRE DE NAVIGATION (BOTTOM NAV)
 ------------------------------------------------------------ */
 
 .bottom-nav {
-    position: fixed;
-    bottom: 0; 
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 29px); 
-    max-width: 770px;
-    background-color: #FFF6EA;
-    border-top: 1px solid #000000;
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
-    box-sizing: border-box;
-    z-index: 1000;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 29px);
+  max-width: 770px;
+  background-color: #fff6ea;
+  border-top: 1px solid #000000;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  box-sizing: border-box;
+  z-index: 1000;
 }
 
 /* -- Éléments de Navigation -- */
 .nav-item {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    text-decoration: none;
-    color: #000000;
-    transition: opacity 0.2s;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  text-decoration: none;
+  color: #000000;
+  transition: opacity 0.2s;
 }
 
 /* --- Icônes et Labels --- */
 .nav-icon {
-    width: 26px;
-    height: 26px;
-    margin-bottom: 5px;
+  width: 26px;
+  height: 26px;
+  margin-bottom: 5px;
 }
 
 .nav-label {
-    font-size: 12px;
-    font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-family: "Space Mono", monospace;
 }
 
 /* --- État Hover --- */
 .nav-item:hover {
-    opacity: 0.4;
+  opacity: 0.4;
 }
 
 /* -- État Actif pour la Navigation -- */
 .nav-item.active .nav-label {
-    color: #FF1A1A;
+  color: #ff1a1a;
 }
 
 .nav-item.active .nav-icon {
-    filter: invert(19%) sepia(73%) saturate(4819%) hue-rotate(352deg) brightness(105%) contrast(104%);
+  filter: invert(19%) sepia(73%) saturate(4819%) hue-rotate(352deg)
+    brightness(105%) contrast(104%);
 }
 
 .nav-item.active {
-    opacity: 1 !important;
+  opacity: 1 !important;
 }
 
 /* =========================================
@@ -376,101 +393,103 @@ body::-webkit-scrollbar {
 
 /* CONTENEUR GLOBAL */
 .selector-container {
-    display: flex;
-    border-radius: 10px;
-    overflow: hidden;
-    width: fit-content;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  width: fit-content;
 }
 
 /* VARIANTE VERTICALE */
 .selector-container.is-vertical {
-    flex-direction: column;
-    min-width: 200px;
+  flex-direction: column;
+  min-width: 200px;
 }
 
 .selector-container input[type="radio"] {
-    display: none;
+  display: none;
 }
 
 .selector-item {
-    background-color: #00000030;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  background-color: #00000030;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
 }
 
 .selector-item.item-icon {
-    padding: 10px;
-    justify-content: center;
+  padding: 10px;
+  justify-content: center;
 }
 
 .selector-item.item-icon .icon {
-    width: 35px;
-    height: 35px;
-    transition: filter 0.2s ease-in-out;
+  width: 35px;
+  height: 35px;
+  transition: filter 0.2s ease-in-out;
 }
 
 /* MODIFICATEUR : ÉLÉMENT AVEC TEXTE */
 .selector-item.item-text {
-    padding: 10px;
-    justify-content: center;
-    text-align: center;
-    color: #000000;
-    font-size: 14px;
+  padding: 10px;
+  justify-content: center;
+  text-align: center;
+  color: #000000;
+  font-size: 14px;
 }
 
 input[type="radio"]:checked + .selector-item {
-    background-color: #FF1A1A;
+  background-color: #ff1a1a;
 }
 
 input[type="radio"]:checked + .selector-item.item-icon .icon {
-    filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
 }
 
 input[type="radio"]:checked + .selector-item.item-text {
-    color: #FFFFFF;
+  color: #ffffff;
 }
 
 .selector-container.is-scrollable {
-    overflow-x: auto;
-    max-width: 100%;
-    justify-content: flex-start;
+  overflow-x: auto;
+  max-width: 100%;
+  justify-content: flex-start;
 }
 
 .selector-container.is-scrollable::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* MODIFICATEUR : ÉLÉMENT AVEC WIDGET */
 .selector-item.item-card {
-    flex-direction: column;
-    padding: 10px;
-    gap: 8px;
-    width: 110px;
-    flex-shrink: 0;
-    text-align: center;
-    box-sizing: border-box;
+  flex-direction: column;
+  padding: 10px;
+  gap: 8px;
+  width: 110px;
+  flex-shrink: 0;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .selector-item.item-card .card-image {
-    width: 100%;
-    height: auto;
-    /*box-shadow: 0 0px 15px rgba(0, 0, 0, 0.7);*/
+  width: 100%;
+  height: auto;
+  /*box-shadow: 0 0px 15px rgba(0, 0, 0, 0.7);*/
 }
 
 .selector-item.item-card .card-label {
-    font-size: 12px;
-    color: #000000;
-    width: 100%;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  font-size: 12px;
+  color: #000000;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 input[type="radio"]:checked + .selector-item.item-card .card-label {
-    color: #FFFFFF;
+  color: #ffffff;
 }
 
 /* =========================================
@@ -478,101 +497,102 @@ input[type="radio"]:checked + .selector-item.item-card .card-label {
 ========================================= */
 
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    z-index: 9999;
-    display: none;
-    align-items: flex-end;
-    justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 9999;
+  display: none;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 /* --- OVERLAY PANEL --- */
 
 .overlay-panel {
-    width: 100%;
-    max-width: 800px;
-    height: 90vh;
-    background-color: #FFF6EA;
-    border-top: 2px solid #FF1A1A;
-    display: flex;
-    flex-direction: column;
-    animation: OverlayslideUp 0.3s ease-out forwards;
-    box-sizing: border-box;
+  width: 100%;
+  max-width: 800px;
+  height: 90vh;
+  background-color: #fff6ea;
+  border-top: 2px solid #ff1a1a;
+  display: flex;
+  flex-direction: column;
+  animation: OverlayslideUp 0.3s ease-out forwards;
+  box-sizing: border-box;
 }
 
 .overlay-state {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .overlay-state-icon {
-    width: 130px;
-    margin: 35px;
-    object-fit: contain;
-    filter: invert(19%) sepia(73%) saturate(4819%) hue-rotate(352deg) brightness(105%) contrast(104%);
+  width: 130px;
+  margin: 35px;
+  object-fit: contain;
+  filter: invert(19%) sepia(73%) saturate(4819%) hue-rotate(352deg)
+    brightness(105%) contrast(104%);
 }
 
 .overlay-title {
-    font-size: 22px;
-    color: #FF1A1A;
-    font-family: 'Space Mono', monospace;
-    font-weight: lighter;
+  font-size: 22px;
+  color: #ff1a1a;
+  font-family: "Space Mono", monospace;
+  font-weight: lighter;
 }
 
 .overlay-state-text {
-    font-size: 16px;
-    font-family: 'Space Mono', monospace;
-    color: #000000;
-    font-weight: bold;
+  font-size: 16px;
+  font-family: "Space Mono", monospace;
+  color: #000000;
+  font-weight: bold;
 }
 
 .overlay-subtitle {
-    font-size: 13px;
-    color: #000000;
-    font-family: 'Space Mono', monospace;
-    font-weight: lighter;
+  font-size: 13px;
+  color: #000000;
+  font-family: "Space Mono", monospace;
+  font-weight: lighter;
 }
 
 /* --- OVERLAY BODY --- */
 
 .overlay-body {
-    flex: 1;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
 }
 
 .overlay-body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* --- OVERLAY FOOTER --- */
 
 .overlay-footer {
-    padding: 15px 20px 30px 20px;
-    display: flex;
-    justify-content: center;
+  padding: 15px 20px 30px 20px;
+  display: flex;
+  justify-content: center;
 }
 
 /* --- ANIMATIONS --- */
 
 @keyframes OverlayslideUp {
-    from {
-        transform: translateY(100%);
-    }
-    to {
-        transform: translateY(0);
-    }
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 /* =========================================
@@ -580,102 +600,187 @@ input[type="radio"]:checked + .selector-item.item-card .card-label {
 ========================================= */
 
 .screen-maestro {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 65%;
-    max-width: 400px;
-    background-color: #FFF6EA;
-    margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 65%;
+  max-width: 400px;
+  background-color: #fff6ea;
+  margin: 0 auto;
 }
 
 .maestro-widget {
-    position: absolute;
-    z-index: 10;
-    width: 65%;
-    top: 18%;
-    left: 50%;
-    transform: translateX(-50%);
+  position: absolute;
+  z-index: 10;
+  width: 65%;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .tactile-container {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .tactile-icon {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    background-color: rgba(255, 26, 26, 0.6);
-    border: 2px solid #FF1A1A;
-    border-radius: 50%;
-    z-index: 10;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 26, 26, 0.6);
+  border: 2px solid #ff1a1a;
+  border-radius: 50%;
+  z-index: 10;
 }
 
 /* Slide Down */
 .anim-slide-down {
-    animation: SlideDown 2s infinite ease-in-out;
+  animation: SlideDown 2s infinite ease-in-out;
 }
 
 @keyframes SlideDown {
-    0%   { top: 20%; left: 50%; opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
-    20%  { top: 20%; left: 50%; opacity: 1; transform: translate(-50%, -50%) scale(0.8); }
-    80%  { top: 80%; left: 50%; opacity: 1; transform: translate(-50%, -50%) scale(0.8); }
-    100% { top: 80%; left: 50%; opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
+  0% {
+    top: 20%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  20% {
+    top: 20%;
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  80% {
+    top: 80%;
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    top: 80%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
 }
 
 /* Slide Up */
 .anim-slide-up {
-    animation: slideUp 2s infinite ease-in-out;
+  animation: slideUp 2s infinite ease-in-out;
 }
 @keyframes slideUp {
-    0%   { top: 85%; left: 50%; opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
-    20%  { top: 85%; left: 50%; opacity: 1; transform: translate(-50%, -50%) scale(0.8); }
-    80%  { top: 15%; left: 50%; opacity: 1; transform: translate(-50%, -50%) scale(0.8); }
-    100% { top: 15%; left: 50%; opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
+  0% {
+    top: 85%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  20% {
+    top: 85%;
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  80% {
+    top: 15%;
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    top: 15%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
 }
 
 /* tap */
 .anim-tap {
-    top: 50%;
-    left: 50%;
-    animation: tap 2s infinite;
+  top: 50%;
+  left: 50%;
+  animation: tap 2s infinite;
 }
 
 @keyframes tap {
-    0%   { opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
-    30%  { opacity: 1; transform: translate(-50%, -50%) scale(0.7); background-color: rgba(255, 26, 26, 0.9); }
-    60%  { opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
-    100% { opacity: 0; }
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  30% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.7);
+    background-color: rgba(255, 26, 26, 0.9);
+  }
+  60% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* tap Long */
 .anim-long-tap {
-    top: 50%;
-    left: 50%;
-    animation: longtap 2.5s infinite ease-in-out;
+  top: 50%;
+  left: 50%;
+  animation: longtap 2.5s infinite ease-in-out;
 }
 @keyframes longtap {
-    0%   { opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
-    20%  { opacity: 1; transform: translate(-50%, -50%) scale(0.7); box-shadow: 0 0 0 0px rgba(255, 26, 26, 0); }
-    70%  { opacity: 1; transform: translate(-50%, -50%) scale(0.7); box-shadow: 0 0 0 20px rgba(255, 26, 26, 0); }
-    80%  { opacity: 0; transform: translate(-50%, -50%) scale(1.2); }
-    100% { opacity: 0; }
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.7);
+    box-shadow: 0 0 0 0px rgba(255, 26, 26, 0);
+  }
+  70% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.7);
+    box-shadow: 0 0 0 20px rgba(255, 26, 26, 0);
+  }
+  80% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* Double Tap */
 .anim-double-tap {
-    top: 50%;
-    left: 50%;
-    animation: doubleTap 2.5s infinite;
+  top: 50%;
+  left: 50%;
+  animation: doubleTap 2.5s infinite;
 }
 @keyframes doubleTap {
-    0%   { opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
-    20%  { opacity: 1; transform: translate(-50%, -50%) scale(0.7); }
-    30%  { opacity: 0.3; transform: translate(-50%, -50%) scale(1.2); }
-    40%  { opacity: 1; transform: translate(-50%, -50%) scale(0.7); }
-    60%  { opacity: 0; transform: translate(-50%, -50%) scale(1.5); }
-    100% { opacity: 0; }
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+  30% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  40% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+  60% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  100% {
+    opacity: 0;
+  }
 }
