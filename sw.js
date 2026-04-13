@@ -1,8 +1,10 @@
-/*const CACHE = 'maestro-v0.0.2';
+const CACHE = 'maestro-v0.0.2';
 const ASSETS = [
-  // './', './index.html', './components.html', './assets/style.css', './manifest.json',
-  
-  // Posters
+  './', 
+  './index.html', 
+  './components.html', 
+  './assets/style.css', 
+  './manifest.json',
   './posters/favicon.png',
   './posters/maskable-icon.png',
   './posters/monochrome-icon.png',
@@ -10,8 +12,6 @@ const ASSETS = [
   './posters/maestro-product.png',
   './posters/maestro-top-face.png',
   './posters/phone.png',
-  
-  // Widgets
   './posters/widgets/CalendarDay.png',
   './posters/widgets/CalendarMonth.png',
   './posters/widgets/ClockHorizontal.png',
@@ -19,8 +19,6 @@ const ASSETS = [
   './posters/widgets/MoonFace.png',
   './posters/widgets/SunCycle.png',
   './posters/widgets/Weather.png',
-  
-  // Icônes UI
   './icons/arrow_back_ios_new.svg',
   './icons/auto.svg',
   './icons/brush.svg',
@@ -52,5 +50,8 @@ const ASSETS = [
   './icons/sentiment_very_satisfied.svg'
 ];
 
+// install
 self.addEventListener('install', e => e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS))));
+
+// fetch
 self.addEventListener('fetch', e => e.respondWith(caches.match(e.request).then(res => res || fetch(e.request))));
