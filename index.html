@@ -60,7 +60,7 @@
     <div id="page-console" class="main-container page-content" style="margin-top: 120px;">
 
         <div class="case-container">
-            <img class="centred-component" src="./icons/maestro.svg" alt="Logo" style="margin-bottom: 50px">
+            <img class="centred-component" src="./icons/maestro.svg" alt="Logo">
         </div>
 
         <div class="case-container">
@@ -77,28 +77,27 @@
                 <img src="./icons/screen.svg" alt="Screen icon" class="icon">
 
                 <h2 class="case-title">Always On Display</h2>
-                <p class="case-subtitle">state</p>
+                <p class="disclosure-subtitle">state</p>
             </div>
             
             <div class="disclosure-case" data-target="overlay-voice">
                 <img src="./icons/female1.svg" alt="Voice icon" class="icon">
                 
                 <h2 class="case-title">Voice</h2>
-                <p class="case-subtitle">state</p>
+                <p class="disclosure-subtitle">state</p>
             </div>
 
             <div class="disclosure-case"data-target="overlay-personality">
                 <img src="./icons/profil.svg" alt="Personality icon" class="icon">
 
                 <h2 class="case-title">Personality</h2>
-                <p class="case-subtitle">state</p>
+                <p class="disclosure-subtitle">state</p>
             </div>
 
             <div class="disclosure-case"data-target="overlay-touch">
                 <img src="./icons/touch.svg" alt="Touch icon" class="icon">
 
-                <h2 class="case-title">Touch Button</h2>
-                <p class="case-subtitle">state</p>
+                <h2 class="case-title">Press Button</h2>
             </div>
 
         </div>  
@@ -177,14 +176,14 @@
                 <img src="./icons/auto.svg" alt="Settings" class="icon">
 
                 <h2 class="case-title">Theme Mod</h2>
-                <p class="case-subtitle">state</p>
+                <p class="disclosure-subtitle">state</p>
             </div>
             
             <div class="disclosure-case" data-target="overlay-language">
                 <img src="./icons/language.svg" alt="Settings" class="icon">
                 
                 <h2 class="case-title">Language</h2>
-                <p class="case-subtitle">state</p>
+                <p class="disclosure-subtitle">state</p>
             </div>
 
         </div>
@@ -219,11 +218,11 @@
             </div>
             <div class="info-case">
                 <h2 class="case-title">Maestro APP Version</h2>
-                <p class="case-subtitle">V0.0.1</p>
+                <p class="case-subtitle">V0.0.2</p>
             </div>
             <div class="info-case" style="flex: 0 0 100%;">
                 <h2 class="case-title">Firmware Version</h2>
-                <p class="case-subtitle">V0.0.3</p>
+                <p class="case-subtitle">development</p>
             </div>
             
 
@@ -242,12 +241,13 @@
             
             <div class="overlay-body">
                 <div class="case-container" style="flex: 0 0 auto; flex-direction: column; align-items: center; text-align: center;">
-                    <h1 style="font-weight: lighter; color: #FF1A1A; width: 100%;">Language</h1>
-                    
-                    <img src="./icons/language.svg" alt="Language icon" class="overlay-icon">
+                    <h2 class="overlay-title">Language</h2>
 
-                    <h2 style="font-weight: lighter;">State</h2>
-                    <h4 style="font-weight: lighter; margin-top: -20px;">Select the language of your choice.</h4>
+                    <div class="overlay-state">
+                        <img src="./icons/language.svg" class="overlay-state-icon">
+                        <span class="overlay-state-text">English</span>
+                        <h4 class="overlay-subtitle">Select the language of your choice.</h4>
+                    </div>
 
                     <div class="selector-container is-vertical" style="margin-bottom: 40px;">
                         <input type="radio" id="lang2" name="choix-lang" checked>
@@ -273,12 +273,13 @@
             
             <div class="overlay-body">
                 <div class="case-container" style="flex: 0 0 auto; flex-direction: column; align-items: center; text-align: center;">
-                    <h1 style="font-weight: lighter; color: #FF1A1A; width: 100%;">Theme</h1>
-                    
-                    <img src="./icons/auto.svg" alt="Theme icon" class="overlay-icon">
+                    <h2 class="overlay-title">Theme</h2>
 
-                    <h2 style="font-weight: lighter;">State</h2>
-                    <h4 style="font-weight: lighter; margin-top: -20px;">Select the theme of your choice.</h4>
+                    <div class="overlay-state">
+                        <img src="./icons/light_mode.svg" class="overlay-state-icon">
+                        <span class="overlay-state-text">Light Mode</span>
+                        <h4 class="overlay-subtitle">Select the theme of your choice.</h4>
+                    </div>
 
                     <div class="selector-container">
                         <input type="radio" id="light" name="theme" checked>
@@ -313,12 +314,13 @@
             
             <div class="overlay-body">
                 <div class="case-container" style="flex: 0 0 auto; flex-direction: column; align-items: center; text-align: center;">
-                    <h1 style="font-weight: lighter; color: #FF1A1A; width: 100%;">Voice</h1>
+                    <h2 class="overlay-title">Voice</h2>
 
-                    <img src="./icons/female1.svg" alt="Voice icon" class="overlay-icon">
-
-                    <h2 style="font-weight: lighter;">State</h2>
-                    <h4 style="font-weight: lighter; margin-top: -20px;">Select the voice of your choice.</h4>
+                    <div class="overlay-state">
+                        <img src="./icons/female1.svg" class="overlay-state-icon">
+                        <span class="overlay-state-text">Female 1</span>
+                        <h4 class="overlay-subtitle">Select the voice of your choice.</h4>
+                    </div>
 
                     <div class="selector-container">
                         <input type="radio" id="voice1" name="voice" checked>
@@ -368,9 +370,12 @@
             
             <div class="overlay-body">
                 <div class="case-container" style="flex: 0 0 auto; flex-direction: column; align-items: center; text-align: center;">
-                    <h1 style="font-weight: lighter; color: #FF1A1A; width: 100%;">Personality</h1>
+                    <h2 class="overlay-title">Personality</h2>
 
-                    <img src="./icons/profil.svg" alt="Personality icon" class="overlay-icon">
+                    <div class="overlay-state">
+                        <img src="./icons/profil.svg" class="overlay-state-icon">
+                        <span class="overlay-state-text">State</span>
+                    </div>
 
                 </div>
 
@@ -389,12 +394,12 @@
                 
             <div class="overlay-body">
                 <div class="case-container" style="flex: 0 0 auto; flex-direction: column; align-items: center; text-align: center;">
-                    <h1 style="font-weight: lighter; color: #FF1A1A; width: 100%;">Touch</h1>
+                    <h2 class="overlay-title">Touch Button</h2>
 
                     <div class="case-container" style="align-items: center; justify-content: center;">
                         
                         <div class="title-header">
-                            <span class="title">One Click</span>
+                            <span class="title">One Tap</span>
                         </div>
 
                         <div class="tactile-container">
@@ -417,7 +422,7 @@
                     <div class="case-container" style="align-items: center; justify-content: center;">
                         
                         <div class="title-header">
-                            <span class="title">Double Click</span>
+                            <span class="title">Double Tap</span>
                         </div>
 
                         <div class="tactile-container">
@@ -440,7 +445,7 @@
                     <div class="case-container" style="align-items: center; justify-content: center;">
                         
                         <div class="title-header">
-                            <span class="title">Long Click</span>
+                            <span class="title">Long Tap</span>
                         </div>
 
                         <div class="tactile-container">
@@ -529,7 +534,7 @@
             
             <div class="overlay-body">
                 <div class="case-container" style="flex: 0 0 auto; flex-direction: column; align-items: center; text-align: center;">
-                    <h1 style="font-weight: lighter; color: #FF1A1A; width: 100%;">Always On Display</h1>
+                    <h2 class="overlay-title">Always On Display</h2>
                     
                     <div class="screen-maestro">
                         <img src="./posters/maestro-top-face.png" alt="maestro top face" style="width: 100%; height: auto; display: block;">
@@ -549,25 +554,25 @@
                         <input type="radio" id="ClockHorizontal" name="widget" checked>
                         <label class="selector-item item-card" for="ClockHorizontal">
                             <img src="./posters/widgets/ClockHorizontal.png" alt="Horloge Horizontale" class="card-image">
-                            <span class="card-label">Horloge Horizontale Complète</span>
+                            <span class="card-label">Horizontal Clock</span>
                         </label>
 
                         <input type="radio" id="ClockVertical" name="widget">
                         <label class="selector-item item-card" for="ClockVertical">
                             <img src="./posters/widgets/ClockVertical.png" alt="Horloge Verticale" class="card-image">
-                            <span class="card-label">Horloge Verticale</span>
+                            <span class="card-label">Vertical Clock</span>
                         </label>
 
                         <input type="radio" id="CalendarDay" name="widget">
                         <label class="selector-item item-card" for="CalendarDay">
                             <img src="./posters/widgets/CalendarDay.png" alt="Calendrier Jour" class="card-image">
-                            <span class="card-label">Calendrier Journalier</span>
+                            <span class="card-label">Daily Calendar</span>
                         </label>
 
                         <input type="radio" id="CalendarMonth" name="widget">
                         <label class="selector-item item-card" for="CalendarMonth">
                             <img src="./posters/widgets/CalendarMonth.png" alt="Calendrier Mois" class="card-image">
-                            <span class="card-label">Calendrier Mensuel</span>
+                            <span class="card-label">Monthly Calendar</span>
                         </label>
                         
                     </div>
@@ -584,19 +589,19 @@
                         <input type="radio" id="weather" name="widget">
                         <label class="selector-item item-card" for="weather">
                             <img src="./posters/widgets/Weather.png" alt="Météo" class="card-image">
-                            <span class="card-label">Météo</span>
+                            <span class="card-label">Current Weather</span>
                         </label>
 
                         <input type="radio" id="SunCycle" name="widget">
                         <label class="selector-item item-card" for="SunCycle">
                             <img src="./posters/widgets/SunCycle.png" alt="Météo Cycle du Soleil" class="card-image">
-                            <span class="card-label">Cycle du Soleil</span>
+                            <span class="card-label">Sun Cycle</span>
                         </label>
 
                         <input type="radio" id="MoonFace" name="widget">
                         <label class="selector-item item-card" for="MoonFace">
                             <img src="./posters/widgets/MoonFace.png" alt="Météo Visage de la Lune" class="card-image">
-                            <span class="card-label">Visage de la Lune</span>
+                            <span class="card-label">Moon Face</span>
                         </label>
                         
                     </div>
@@ -616,33 +621,24 @@
     <script>
 
         // -- Navigation Bar --
-        const navLinks = {
-            'nav-history': 'page-history',
-            'nav-console': 'page-console',
-            'nav-settings': 'page-settings'
-        };
+        const navItems = document.querySelectorAll('.nav-item');
+        const pages = document.querySelectorAll('.page-content');
 
-        const items = document.querySelectorAll('.nav-item');
-
-        items.forEach(item => {
+        navItems.forEach(item => {
             item.addEventListener('click', (e) => {
                 e.preventDefault();
-                const id = item.id;
-
-                document.querySelectorAll('.page-content').forEach(p => p.style.display = 'none');
-                const targetId = navLinks[id];
-                document.getElementById(targetId).style.display = 'flex';
-
-                items.forEach(nav => nav.classList.remove('active'));
+                pages.forEach(p => p.style.display = 'none');
+                navItems.forEach(nav => nav.classList.remove('active'));
                 item.classList.add('active');
+                const targetId = item.id.replace('nav-', 'page-');
+                document.getElementById(targetId).style.display = 'flex';
             });
         });
 
-        document.getElementById('nav-console').classList.add('active');
+        document.getElementById('nav-console').click();
 
 
         //-- Save radio button state in localStorage
-
         const allRadios = document.querySelectorAll('.selector-container input[type="radio"]');
         const groupNames = [...new Set(Array.from(allRadios).map(radio => radio.name))];
 
@@ -668,6 +664,7 @@
         const closeBtns = document.querySelectorAll('.close-overlay-btn');
         const allOverlays = document.querySelectorAll('.overlay');
 
+        // OUVERTURE
         disclosureElements.forEach(element => {
             element.addEventListener('click', () => {
                 const targetId = element.getAttribute('data-target');
@@ -675,24 +672,31 @@
                     const targetOverlay = document.getElementById(targetId);
                     if (targetOverlay) {
                         targetOverlay.style.display = 'flex';
+                        const scrollableArea = targetOverlay.querySelector('.overlay-body');
+                        if (scrollableArea) scrollableArea.scrollTop = 0;
+                        document.body.style.overflow = 'hidden';
                     }
                 }
             });
         });
 
+        // FERMETURE (Bouton Close)
         closeBtns.forEach(btn => {
             btn.addEventListener('click', (event) => {
                 const overlayToClose = event.target.closest('.overlay');
                 if (overlayToClose) {
                     overlayToClose.style.display = 'none';
+                    document.body.style.overflow = '';
                 }
             });
         });
 
+        // FERMETURE (Clic à l'extérieur de la zone)
         allOverlays.forEach(overlay => {
             overlay.addEventListener('click', (event) => {
                 if (event.target === overlay) {
                     overlay.style.display = 'none';
+                    document.body.style.overflow = '';
                 }
             });
         });
@@ -714,6 +718,64 @@
         // -- Service Worker Registration --
         if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');
 
+        // -- State Sync radio buttons subtitles and icons --
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./sw.js');
+        }
+
+        // -- State Sync radio buttons subtitles and icons --
+        document.addEventListener('change', (e) => {
+            if (e.target.type !== 'radio') return;
+
+            const overlay = e.target.closest('.overlay');
+            const label = document.querySelector(`label[for="${e.target.id}"]`);
+            
+            if (!overlay || !label) return; 
+
+            // --- EXTRACTION DES DONNÉES ---
+            const iconSrc = label.querySelector('img.icon')?.src;
+            const rawText = label.textContent.trim() || label.querySelector('img')?.alt.replace(' icon', '') || e.target.id;
+            const text = rawText.charAt(0).toUpperCase() + rawText.slice(1);
+
+            // --- CIBLAGE DES PARENTS À METTRE À JOUR ---
+            const targets = [
+                { 
+                    container: document.querySelector(`.disclosure-case[data-target="${overlay.id}"]`), 
+                    textSel: '.disclosure-subtitle', 
+                    iconSel: 'img.icon' 
+                },
+                { 
+                    container: overlay, 
+                    textSel: '.overlay-state-text', 
+                    iconSel: 'img.overlay-state-icon' 
+                }
+            ];
+
+            // --- APPLICATION (Boucle DRY) ---
+            targets.forEach(({ container, textSel, iconSel }) => {
+                if (!container) return;
+                
+                const textEl = container.querySelector(textSel);
+                const iconEl = container.querySelector(iconSel);
+
+                if (textEl) textEl.textContent = text;
+                if (iconEl && iconSrc) iconEl.src = iconSrc;
+            });
+        });
+
+        // --- Initialisation au chargement ---
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.overlay input[type="radio"]:checked').forEach(radio => {
+                radio.dispatchEvent(new Event('change', { bubbles: true }));
+            });
+        });
+
+        // --- Initialisation au chargement ---
+        setTimeout(() => {
+            document.querySelectorAll('.overlay input[type="radio"]:checked').forEach(radio => {
+                radio.dispatchEvent(new Event('change', { bubbles: true }));
+            });
+        }, 100);
     </script>
 
 </html>

@@ -2,6 +2,10 @@
 - FONDATIONS ET LAYOUT GLOBAL
 ------------------------------------------------------------ */
 
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
 body {
     background-color: #FFF6EA;
     margin: 0;
@@ -188,6 +192,17 @@ body::-webkit-scrollbar {
     min-width: 160px;
 }
 
+.disclosure-subtitle
+{
+    font-size: 12px;
+    margin: 0;
+    font-weight: lighter;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
 /* -- Contenu textuel des cartes -- */
 .case-title {
     font-size: 14px;
@@ -319,7 +334,7 @@ body::-webkit-scrollbar {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px 0;
+    padding: 10px;
     text-decoration: none;
     color: #000000;
     transition: opacity 0.2s;
@@ -491,10 +506,39 @@ input[type="radio"]:checked + .selector-item.item-card .card-label {
     box-sizing: border-box;
 }
 
-.overlay-icon {
-    width: 140px;
-    margin: 60px;
+.overlay-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay-state-icon {
+    width: 130px;
+    margin: 35px;
+    object-fit: contain;
     filter: invert(19%) sepia(73%) saturate(4819%) hue-rotate(352deg) brightness(105%) contrast(104%);
+}
+
+.overlay-title {
+    font-size: 22px;
+    color: #FF1A1A;
+    font-family: 'Space Mono', monospace;
+    font-weight: lighter;
+}
+
+.overlay-state-text {
+    font-size: 16px;
+    font-family: 'Space Mono', monospace;
+    color: #000000;
+    font-weight: bold;
+}
+
+.overlay-subtitle {
+    font-size: 13px;
+    color: #000000;
+    font-family: 'Space Mono', monospace;
+    font-weight: lighter;
 }
 
 /* --- OVERLAY BODY --- */

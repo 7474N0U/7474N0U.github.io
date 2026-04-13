@@ -1,8 +1,8 @@
-const CACHE = 'maestro-v0.0.2';
+/*const CACHE = 'maestro-v0.0.2';
 const ASSETS = [
-  './', './index.html', './components.html', './assets/style.css', './manifest.json',
+  // './', './index.html', './components.html', './assets/style.css', './manifest.json',
   
-  // PWA & Posters
+  // Posters
   './posters/favicon.png',
   './posters/maskable-icon.png',
   './posters/monochrome-icon.png',
@@ -37,8 +37,6 @@ const ASSETS = [
   './icons/screen.svg',
   './icons/settings.svg',
   './icons/touch.svg',
-  
-  // Avatars & Sentiments
   './icons/female1.svg',
   './icons/female2.svg',
   './icons/female3.svg',
