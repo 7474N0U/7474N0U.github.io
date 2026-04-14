@@ -37,7 +37,7 @@
 
 <!-- History -->
 
-    <div id="page-history" class="main-container page-content" style="display: none; margin-top: 120px;">
+    <div id="page-history" class="main-container page-content">
         
         <div class="case-container">
             <img class="centred-component" src="./icons/maestro.svg" alt="Logo" style="margin-bottom: 50px">
@@ -57,7 +57,7 @@
 <!-- Console -->
 
 
-    <div id="page-console" class="main-container page-content" style="margin-top: 120px;">
+    <div id="page-console" class="main-container page-content">
 
         <div class="case-container">
             <img class="centred-component" src="./icons/maestro.svg" alt="Logo">
@@ -111,7 +111,7 @@
 <!-- Settings -->
 
 
-    <div id="page-settings" class="main-container page-content" style="display: none; margin-top: 120px;">
+    <div id="page-settings" class="main-container page-content">
 
         <div class="case-container">
             <img class="centred-component" src="./icons/maestro.svg" alt="Logo" style="margin-bottom: 50px">
@@ -507,25 +507,23 @@
     <!--AOD Overlay-->
     <div id="overlay-aod" class="overlay" style="display: none;">
         <div class="overlay-panel">
-            <div class="overlay-body">
-                <div class="case-container" style="flex: 0 0 auto; flex-direction: column; align-items: center; text-align: center;">
-                    <h2 class="overlay-title">Always On Display</h2>
-                    
-                    <div class="screen-maestro">
-                        <img src="./posters/maestro-top-face.png" alt="maestro top face" style="width: 100%; height: auto; display: block;">
-                        
-                        <img src="./posters/widgets/ClockHorizontal.png" alt="Widget" class="maestro-widget" id="dynamic-widget">
-                    </div>
+            
+            <div class="overlay-fixed-header">
+                <h2 class="overlay-title">Always On Display</h2>
+                
+                <div class="screen-maestro">
+                    <img src="./posters/maestro-top-face.png" alt="maestro top face" style="width: 100%; height: auto; display: block;">
+                    <img src="./posters/widgets/ClockHorizontal.png" alt="Widget" class="maestro-widget" id="dynamic-widget">
                 </div>
+            </div>
 
+            <div class="overlay-body">
                 <div class="case-container">
                     <div class="title-header">
                         <span class="title">Date</span>
                     </div>
                     
-                    
                     <div class="selector-container is-scrollable">
-                        
                         <input type="radio" id="ClockHorizontal" name="widget" checked>
                         <label class="selector-item item-card" for="ClockHorizontal">
                             <img src="./posters/widgets/ClockHorizontal.png" alt="Horloge Horizontale" class="card-image">
@@ -561,7 +559,6 @@
                             <img src="./posters/widgets/MonthlyCalendar.png" alt="Monthly Calendar" class="card-image">
                             <span class="card-label">Monthly Calendar</span>
                         </label>
-                        
                     </div>
                 </div>
 
@@ -570,9 +567,7 @@
                         <span class="title">Weather</span>
                     </div>
                     
-                    
                     <div class="selector-container is-scrollable">
-                        
                         <input type="radio" id="CurrentWeather" name="widget">
                         <label class="selector-item item-card" for="CurrentWeather">
                             <img src="./posters/widgets/CurrentWeather.png" alt="Current Weather" class="card-image">
@@ -584,7 +579,6 @@
                             <img src="./posters/widgets/Temperature.png" alt="Temperature" class="card-image">
                             <span class="card-label">Temperature</span>
                         </label>
-                        
                     </div>
                 </div>
 
@@ -593,9 +587,7 @@
                         <span class="title">Astronomy</span>
                     </div>
                     
-                    
                     <div class="selector-container is-scrollable">
-                        
                         <input type="radio" id="MoonPosition" name="widget">
                         <label class="selector-item item-card" for="MoonPosition">
                             <img src="./posters/widgets/MoonPosition.png" alt="Moon Position" class="card-image">
@@ -613,10 +605,8 @@
                             <img src="./posters/widgets/SunCycle.png" alt="Sun Cycle" class="card-image">
                             <span class="card-label">Sun Cycle</span>
                         </label>
-                        
                     </div>
                 </div>
-
             </div>
 
             <div class="overlay-footer">
@@ -787,6 +777,23 @@
             });
         }, 100);
 
+        // --- Shrink Screen on Scroll ---
+        const overlayAod = document.getElementById('overlay-aod');
+
+        if (overlayAod) {
+            const body = overlayAod.querySelector('.overlay-body');
+            const maestro = overlayAod.querySelector('.screen-maestro');
+            const header = overlayAod.querySelector('.overlay-fixed-header');
+
+            if (body && maestro && header) {
+                body.addEventListener('scroll', () => {
+                    const scrollFactor = Math.min(Math.max(body.scrollTop, 0) / 150, 1);
+
+                    maestro.style.width = `${70 - (scrollFactor * 20)}%`;
+                    header.style.paddingBottom = `${10 - (scrollFactor * 10)}px`;
+                });
+            }
+        }
         // --- Caroussel Indicator ---
 
     </script>

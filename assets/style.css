@@ -56,16 +56,16 @@ body::-webkit-scrollbar {
 }
 
 .main-container {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1300px;
   min-width: 170px;
-  margin: 0 auto;
   padding-bottom: 90px;
+  margin-top: 90px;
 }
 
 /* --- Ajustements de flexibilité interne --- */
@@ -502,9 +502,9 @@ input[type="radio"]:checked + .selector-item.item-card .card-label {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   z-index: 9999;
   display: none;
   align-items: flex-end;
@@ -569,19 +569,47 @@ input[type="radio"]:checked + .selector-item.item-card .card-label {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0;
+  padding: 20px 0 80px 0;
 }
 
 .overlay-body::-webkit-scrollbar {
   display: none;
 }
 
+.overlay-fixed-header {
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff6ea;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    flex-shrink: 0;
+}
+
+.overlay-fixed-header::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(to bottom, rgba(255, 246, 234, 1) 0%, rgba(255, 246, 234, 0) 100%);
+    pointer-events: none;
+}
+
 /* --- OVERLAY FOOTER --- */
 
 .overlay-footer {
-  padding: 15px 20px 30px 20px;
+  padding: 0px 20px 30px 20px;
   display: flex;
   justify-content: center;
+  margin-top: -100px;
+  position: relative;
+  z-index: 10;
+  background: linear-gradient(to bottom, rgba(255, 246, 234, 0) 0%, rgba(255, 246, 234, 1) 40%);
 }
 
 /* --- ANIMATIONS --- */
@@ -628,8 +656,6 @@ input[type="radio"]:checked + .selector-item.item-card .card-label {
     flex-shrink: 0;
 }
 
-/* Indicateurs de pagination (points) */
-
 .carousel-indicators {
     display: flex;
     justify-content: center;
@@ -666,6 +692,9 @@ input[type="radio"]:checked + .selector-item.item-card .card-label {
     max-width: 400px;
     background-color: #FFF6EA;
     margin: 0 auto;
+    transform-origin: top center;
+    will-change: transform;
+    transition: transform 0.1s ease-out;
 }
 
 .maestro-widget {
