@@ -596,6 +596,64 @@ input[type="radio"]:checked + .selector-item.item-card .card-label {
 }
 
 /* =========================================
+   Carousel
+========================================= */
+
+.carousel-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    width: 100%; 
+    height: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 10px;
+    gap: 30px;
+}
+
+.carousel-slide .selector-container {
+    width: 100%;
+    max-width: 300px;
+    flex-shrink: 0;
+}
+
+/* Indicateurs de pagination (points) */
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.carousel-indicators .dot {
+    width: 6px;
+    height: 6px;
+    background-color: #00000030;
+    border-radius: 1.5px;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-indicators .dot.active {
+    background-color: #ff1a1a;
+    border-radius: 20px;
+    transform: scale(1.2);
+}
+
+/* =========================================
    Screen Maestro
 ========================================= */
 
@@ -697,14 +755,14 @@ input[type="radio"]:checked + .selector-item.item-card .card-label {
   }
 }
 
-/* tap */
-.anim-tap {
+/* press */
+.anim-press {
   top: 50%;
   left: 50%;
-  animation: tap 2s infinite;
+  animation: press 2s infinite;
 }
 
-@keyframes tap {
+@keyframes press {
   0% {
     opacity: 0;
     transform: translate(-50%, -50%) scale(1.5);
@@ -723,13 +781,13 @@ input[type="radio"]:checked + .selector-item.item-card .card-label {
   }
 }
 
-/* tap Long */
-.anim-long-tap {
+/* press Long */
+.anim-long-press {
   top: 50%;
   left: 50%;
-  animation: longtap 2.5s infinite ease-in-out;
+  animation: longpress 2.5s infinite ease-in-out;
 }
-@keyframes longtap {
+@keyframes longpress {
   0% {
     opacity: 0;
     transform: translate(-50%, -50%) scale(1.5);
@@ -753,13 +811,13 @@ input[type="radio"]:checked + .selector-item.item-card .card-label {
   }
 }
 
-/* Double Tap */
-.anim-double-tap {
+/* Double press */
+.anim-double-press {
   top: 50%;
   left: 50%;
-  animation: doubleTap 2.5s infinite;
+  animation: doublepress 2.5s infinite;
 }
-@keyframes doubleTap {
+@keyframes doublepress {
   0% {
     opacity: 0;
     transform: translate(-50%, -50%) scale(1.5);
