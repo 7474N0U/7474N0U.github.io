@@ -789,7 +789,7 @@
                 body.addEventListener('scroll', () => {
                     const scrollFactor = Math.min(Math.max(body.scrollTop, 0) / 150, 1);
 
-                    maestro.style.width = `${70 - (scrollFactor * 20)}%`;
+                    maestro.style.width = `${70 - (scrollFactor * 25)}%`;
                     header.style.paddingBottom = `${10 - (scrollFactor * 10)}px`;
                 });
             }

@@ -473,9 +473,9 @@ input[type="radio"]:checked + .selector-item.item-text {
 }
 
 .selector-item.item-card .card-image {
-  width: 100%;
+  width: 87%;
   height: auto;
-  /*box-shadow: 0 0px 15px rgba(0, 0, 0, 0.7);*/
+  filter: drop-shadow(0px 0px 15px rgba(0,0,0,0.8));
 }
 
 .selector-item.item-card .card-label {
