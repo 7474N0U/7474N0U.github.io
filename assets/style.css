@@ -50,7 +50,7 @@ body::-webkit-scrollbar {
   gap: 10px;
   width: 100%;
   max-width: 800px;
-  padding: 15px;
+  padding: 15px 15px 25px 15px;
   min-width: 170px;
   box-sizing: border-box;
 }
@@ -64,7 +64,6 @@ body::-webkit-scrollbar {
   width: 100%;
   max-width: 1200px;
   min-width: 170px;
-  padding-bottom: 90px;
   margin-top: 290px;
   margin: 90px auto;
 }
@@ -194,6 +193,7 @@ body::-webkit-scrollbar {
 .disclosure-subtitle {
   font-size: 12px;
   margin: 0;
+  color: rgba(0, 0, 0, 0.7);
   font-weight: lighter;
   white-space: nowrap;
   overflow: hidden;
@@ -216,6 +216,7 @@ body::-webkit-scrollbar {
   font-size: 12px;
   margin: 0;
   font-weight: lighter;
+  color: rgba(0, 0, 0, 0.7);
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -476,7 +477,7 @@ input[type="radio"]:checked + .selector-item.item-text {
 .selector-item.item-card .card-image {
   width: 87%;
   height: auto;
-  filter: drop-shadow(0px 0px 15px rgba(0,0,0,1.05));
+  filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.4));
 }
 
 .selector-item.item-card .card-label {
@@ -493,6 +494,39 @@ input[type="radio"]:checked + .selector-item.item-card .card-label {
   color: #ffffff;
 }
 
+
+/* =========================================
+   ROW CONTAINER
+========================================= */
+
+.row-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 16px;
+    box-sizing: border-box;
+}
+
+.text-left {
+    color: #000000;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+    font-size: 14px;
+}
+
+.text-right {
+    color: rgba(0, 0, 0, 0.7);
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+    font-size: 14px;
+}
+
 /* =========================================
    OVERLAYS
 ========================================= */
@@ -503,7 +537,7 @@ input[type="radio"]:checked + .selector-item.item-card .card-label {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   z-index: 9999;
@@ -557,7 +591,7 @@ input[type="radio"]:checked + .selector-item.item-card .card-label {
 
 .overlay-subtitle {
   font-size: 13px;
-  color: #000000;
+  color: rgba(0, 0, 0, 0.7);
   font-family: "Space Mono", monospace;
   font-weight: lighter;
 }

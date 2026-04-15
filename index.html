@@ -208,28 +208,113 @@
                 <span class="title">Informations</span>
             </div>
 
-            <div class="info-case">
-                <h2 class="case-title">Mistral Large</h2>
-                <p class="case-subtitle">Mistral Large 3</p>
+            <div class="info-case" data-target="overlay-product">
+                <h2 class="case-title">Product</h2>
+                <p class="case-subtitle">Maestro Nest</p>
             </div>
-            <div class="info-case">
-                <h2 class="case-title">Maestro APP Version</h2>
+
+            <div class="info-case" data-target="overlay-software">
+                <h2 class="case-title">Softwere</h2>
                 <p class="case-subtitle">V0.0.2</p>
-            </div>
-            <div class="info-case" style="flex: 0 0 100%;">
-                <h2 class="case-title">Firmware Version</h2>
-                <p class="case-subtitle">development</p>
             </div>
             
 
             <div class="btn btn-secondary">Github</div>
-            <div class="btn btn-secondary">Mistral</div>
-            <div class="btn btn-primary">Check for updates</div>
 
         </div>
     </div>
 
 <!--Overlays-->
+
+    <!--Sofware Overlay-->
+    <div id="overlay-software" class="overlay" style="display: none;">
+        <div class="overlay-panel">
+            
+            <div class="overlay-body">
+
+                <h2 class="overlay-title">Sofware</h2>
+
+                <div class="case-container">
+
+                    <div class="title-header">
+                        <span class="title">Details</span>
+                    </div>
+                    
+                    <div class="row-container">
+                        <div class="text-left">Firmware version</div>
+                        <div class="text-right">development...</div>
+                    </div>
+
+                    <div class="row-container">
+                        <div class="text-left">App version</div>
+                        <div class="text-right">V0.0.2</div>
+                    </div>
+
+                    <div class="btn btn-primary">Check for updates</div>
+                </div> 
+            </div>
+
+            <div class="overlay-footer">
+                <button class="btn btn-primary close-overlay-btn" style="max-width: 200px;">Close</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!--Product Overlay-->
+    <div id="overlay-product" class="overlay" style="display: none;">
+        <div class="overlay-panel">
+            
+            <div class="overlay-body">
+
+                <h2 class="overlay-title">Product</h2>
+
+                <div class="case-container">
+
+                    <img src="./posters/MaestroNest.png" alt="Logo" class="centred-component"></img>
+
+                    <div class="title-header">
+                        <span class="title">Details</span>
+                    </div>
+                    
+                    <div class="row-container">
+                        <div class="text-left">Product's name</div>
+                        <div class="text-right">Maestro Nest</div>
+                    </div>
+
+                    <div class="row-container">
+                        <div class="text-left">Serial number</div>
+                        <div class="text-right">1</div>
+                    </div>
+
+                    <div class="title-header">
+                        <span class="title">Status</span>
+                    </div>
+                    
+                    <div class="row-container">
+                        <div class="text-left">IP Adress</div>
+                        <div class="text-right">disconected</div>
+                    </div>
+
+                    <div class="row-container">
+                        <div class="text-left">MAC Adress</div>
+                        <div class="text-right">disconected</div>
+                    </div>
+
+                    <div class="row-container">
+                        <div class="text-left">Wifi network (SSID)</div>
+                        <div class="text-right">disconected</div>
+                    </div>
+
+                </div> 
+            </div>
+
+            <div class="overlay-footer">
+                <button class="btn btn-primary close-overlay-btn" style="max-width: 200px;">Close</button>
+            </div>
+
+        </div>
+    </div>
 
     <!--Language Overlay-->
     <div id="overlay-language" class="overlay" style="display: none;">
@@ -443,6 +528,7 @@
                                 <input type="radio" id="long-press-next" name="press-long-press">
                                 <label class="selector-item item-text" for="long-press-next">Next widget</label>
                                 <input type="radio" id="long-press-custom" name="press-long-press" checked>
+                                <label class="selector-item item-text" for="long-press-custom">Shut Down</label>
                                 <label class="selector-item item-text" for="long-press-custom">Custom action</label>
                             </div>
                         </div>
@@ -579,6 +665,13 @@
                             <img src="./posters/widgets/Temperature.png" alt="Temperature" class="card-image">
                             <span class="card-label">Temperature</span>
                         </label>
+
+                        <input type="radio" id="WindSpeed" name="widget">
+                        <label class="selector-item item-card" for="WindSpeed">
+                            <img src="./posters/widgets/WindSpeed.png" alt="Wind Speed" class="card-image">
+                            <span class="card-label">Wind Speed</span>
+                        </label>
+
                     </div>
                 </div>
 
@@ -588,6 +681,13 @@
                     </div>
                     
                     <div class="selector-container is-scrollable">
+
+                        <input type="radio" id="Sunrise" name="widget">
+                        <label class="selector-item item-card" for="Sunrise">
+                            <img src="./posters/widgets/Sunrise.png" alt="Sunrise" class="card-image">
+                            <span class="card-label">Sunrise</span>
+                        </label>
+
                         <input type="radio" id="MoonPosition" name="widget">
                         <label class="selector-item item-card" for="MoonPosition">
                             <img src="./posters/widgets/MoonPosition.png" alt="Moon Position" class="card-image">
@@ -605,8 +705,43 @@
                             <img src="./posters/widgets/SunCycle.png" alt="Sun Cycle" class="card-image">
                             <span class="card-label">Sun Cycle</span>
                         </label>
+                        
                     </div>
                 </div>
+
+                <div class="case-container">
+                    <div class="title-header">
+                        <span class="title">Shapes</span>
+                    </div>
+                    
+                    <div class="selector-container is-scrollable">
+                        <input type="radio" id="MaestroFlower" name="widget">
+                        <label class="selector-item item-card" for="MaestroFlower">
+                            <img src="./posters/widgets/MaestroFlower.png" alt="MaestroFlower" class="card-image">
+                            <span class="card-label">Maestro Flower</span>
+                        </label>
+
+                        <input type="radio" id="Target" name="widget">
+                        <label class="selector-item item-card" for="Target">
+                            <img src="./posters/widgets/Target.png" alt="Target" class="card-image">
+                            <span class="card-label">Target</span>
+                        </label>
+
+                        <input type="radio" id="Pyramids" name="widget">
+                        <label class="selector-item item-card" for="Pyramids">
+                            <img src="./posters/widgets/Pyramids.png" alt="Pyramids" class="card-image">
+                            <span class="card-label">Pyramids</span>
+                        </label>
+
+                        <input type="radio" id="BalancedCircle" name="widget">
+                        <label class="selector-item item-card" for="BalancedCircle">
+                            <img src="./posters/widgets/BalancedCircle.png" alt="Balanced Circle" class="card-image">
+                            <span class="card-label">Balanced Circle</span>
+                        </label>
+
+                    </div>
+                </div>
+
             </div>
 
             <div class="overlay-footer">
@@ -660,7 +795,7 @@
 
         //-- Overlays
 
-        const disclosureElements = document.querySelectorAll('.disclosure-case');
+        const disclosureElements = document.querySelectorAll('.disclosure-case, .info-case');
         const closeBtns = document.querySelectorAll('.close-overlay-btn');
         const allOverlays = document.querySelectorAll('.overlay');
 
