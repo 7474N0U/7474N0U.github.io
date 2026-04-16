@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#FF1A1A">
 
@@ -759,14 +759,38 @@
         const navItems = document.querySelectorAll('.nav-item');
         const pages = document.querySelectorAll('.page-content');
 
+        function switchPage(targetId) {
+            const currentPage = document.querySelector('.page-content[style*="display: flex"]');
+            const newPage = document.getElementById(targetId);
+
+            if (currentPage && currentPage !== newPage) {
+                // Fade out current page
+                currentPage.style.opacity = '0';
+                setTimeout(() => {
+                    currentPage.style.display = 'none';
+                    currentPage.style.opacity = '1'; // reset for next time
+
+                    // Fade in new page
+                    newPage.style.display = 'flex';
+                    newPage.style.opacity = '0';
+                    setTimeout(() => {
+                        newPage.style.opacity = '1';
+                    }, 10);
+                }, 100);
+            } else {
+                // Instant switch for initial load
+                newPage.style.display = 'flex';
+                newPage.style.opacity = '1';
+            }
+        }
+
         navItems.forEach(item => {
             item.addEventListener('click', (e) => {
                 e.preventDefault();
-                pages.forEach(p => p.style.display = 'none');
                 navItems.forEach(nav => nav.classList.remove('active'));
                 item.classList.add('active');
                 const targetId = item.id.replace('nav-', 'page-');
-                document.getElementById(targetId).style.display = 'flex';
+                switchPage(targetId);
             });
         });
 

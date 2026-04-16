@@ -13,6 +13,8 @@ body {
   padding-bottom: env(safe-area-inset-bottom);
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 body::-webkit-scrollbar {
@@ -66,6 +68,8 @@ body::-webkit-scrollbar {
   min-width: 170px;
   margin-top: 290px;
   margin: 90px auto;
+  opacity: 1;
+  transition: opacity 0.1s ease;
 }
 
 /* --- Ajustements de flexibilité interne --- */
