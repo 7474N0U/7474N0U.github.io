@@ -408,7 +408,7 @@ body::-webkit-scrollbar {
 /* VARIANTE VERTICALE */
 .selector-container.is-vertical {
   flex-direction: column;
-  min-width: 200px;
+  width: 70% !important;
 }
 
 .selector-container input[type="radio"] {
