@@ -123,65 +123,79 @@
                 <span class="title">Settings</span>
             </div>
 
-            <div class="info-case">
-                <h2 class="case-title">SelfDrive</h2>
-                <p class="case-subtitle">Creating scripts to complete hard tasks.</p>
-                <div class="toggle-wrapper">
-                    <label class="toggle-switch">
-                        <input type="checkbox" class="toggle-input">
-                        <div class="toggle-slider">
-                            <span class="label-off">OFF</span>
-                            <span class="label-on">ON</span>
-                            <div class="indicator"></div>
-                        </div>
-                    </label>
+            <div class="case-container" style="padding: 0px;">
+
+                <div class="disclosure-case" data-target="overlay-theme">
+                    <img src="./icons/auto.svg" alt="Settings" class="icon">
+
+                    <h2 class="case-title">Theme Mod</h2>
+                    <p class="disclosure-subtitle">state</p>
                 </div>
-            </div>
-
-            <div class="info-case">
-                <h2 class="case-title">Voice wake-up</h2>
-                <p class="case-subtitle">Activate the assistant with a voice command.</p>
-                <div class="toggle-wrapper">
-                    <label class="toggle-switch">
-                        <input type="checkbox" class="toggle-input">
-                        <div class="toggle-slider">
-                            <span class="label-off">OFF</span>
-                            <span class="label-on">ON</span>
-                            <div class="indicator"></div>
-                        </div>
-                    </label>
+                
+                <div class="disclosure-case" data-target="overlay-language">
+                    <img src="./icons/language.svg" alt="Settings" class="icon">
+                    
+                    <h2 class="case-title">Language</h2>
+                    <p class="disclosure-subtitle">state</p>
                 </div>
-            </div>
 
-            <div class="info-case" style="flex: 0 0 100%;">
-                <h2 class="case-title">Screen</h2>
-                <p class="case-subtitle">Indicate the states with screen.</p>
-                <div class="toggle-wrapper">
-                    <label class="toggle-switch">
-                        <input type="checkbox" class="toggle-input">
-                        <div class="toggle-slider">
-                            <span class="label-off">OFF</span>
-                            <span class="label-on">ON</span>
-                            <div class="indicator"></div>
-                        </div>
-                    </label>
+                <div class="disclosure-case" data-target="overlay-wifi">
+                    <img src="./icons/wifi_on.svg" alt="Wifi" class="icon">
+                    
+                    <h2 class="case-title">Wifi</h2>
+                    <p class="disclosure-subtitle">state</p>
                 </div>
-            </div>
 
-            <div class="disclosure-case" data-target="overlay-theme">
-                <img src="./icons/auto.svg" alt="Settings" class="icon">
-
-                <h2 class="case-title">Theme Mod</h2>
-                <p class="disclosure-subtitle">state</p>
             </div>
             
-            <div class="disclosure-case" data-target="overlay-language">
-                <img src="./icons/language.svg" alt="Settings" class="icon">
-                
-                <h2 class="case-title">Language</h2>
-                <p class="disclosure-subtitle">state</p>
-            </div>
+            <div class="case-container" style="padding: 0px;">
+            
+                <div class="info-case">
+                    <h2 class="case-title">SelfDrive</h2>
+                    <p class="case-subtitle">Creating scripts to complete hard tasks.</p>
+                    <div class="toggle-wrapper">
+                        <label class="toggle-switch">
+                            <input type="checkbox" class="toggle-input">
+                            <div class="toggle-slider">
+                                <span class="label-off">OFF</span>
+                                <span class="label-on">ON</span>
+                                <div class="indicator"></div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
 
+                <div class="info-case">
+                    <h2 class="case-title">Voice wake-up</h2>
+                    <p class="case-subtitle">Activate the assistant with a voice command.</p>
+                    <div class="toggle-wrapper">
+                        <label class="toggle-switch">
+                            <input type="checkbox" class="toggle-input">
+                            <div class="toggle-slider">
+                                <span class="label-off">OFF</span>
+                                <span class="label-on">ON</span>
+                                <div class="indicator"></div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="info-case">
+                    <h2 class="case-title">Screen</h2>
+                    <p class="case-subtitle">Indicate the states with screen.</p>
+                    <div class="toggle-wrapper">
+                        <label class="toggle-switch">
+                            <input type="checkbox" class="toggle-input">
+                            <div class="toggle-slider">
+                                <span class="label-off">OFF</span>
+                                <span class="label-on">ON</span>
+                                <div class="indicator"></div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
         <div class="case-container">
@@ -208,50 +222,47 @@
                 <span class="title">Informations</span>
             </div>
 
-            <div class="info-case" data-target="overlay-product">
-                <h2 class="case-title">Product</h2>
+            <div class="info-case" data-target="overlay-device">
+                <h2 class="case-title">Device</h2>
                 <p class="case-subtitle">Maestro Nest</p>
             </div>
 
-            <div class="info-case" data-target="overlay-software">
-                <h2 class="case-title">Softwere</h2>
+            <div class="info-case">
+                <h2 class="case-title">App Version</h2>
                 <p class="case-subtitle">V0.0.2</p>
             </div>
             
 
-            <div class="btn btn-secondary">Github</div>
+            <div class="btn btn-secondary" style="flex: 0 0 100%;">Github</div>
 
         </div>
     </div>
 
 <!--Overlays-->
 
-    <!--Sofware Overlay-->
-    <div id="overlay-software" class="overlay" style="display: none;">
+    <!--Wifi Overlay-->
+    <div id="overlay-wifi" class="overlay" style="display: none;">
         <div class="overlay-panel">
             
             <div class="overlay-body">
+                <div class="case-container" style="flex: 0 0 auto; flex-direction: column; align-items: center; text-align: center;">
+                    <h2 class="overlay-title">Wi-Fi</h2>
 
-                <h2 class="overlay-title">Sofware</h2>
-
-                <div class="case-container">
-
-                    <div class="title-header">
-                        <span class="title">Details</span>
-                    </div>
-                    
-                    <div class="row-container">
-                        <div class="text-left">Firmware version</div>
-                        <div class="text-right">development...</div>
+                    <div class="overlay-state">
+                        <img src="./icons/wifi_on.svg" class="overlay-state-icon">
+                        <span class="overlay-state-text">English</span>
+                        <h4 class="overlay-subtitle">Select the Wi-Fi of your choice.</h4>
                     </div>
 
-                    <div class="row-container">
-                        <div class="text-left">App version</div>
-                        <div class="text-right">V0.0.2</div>
-                    </div>
+                    <div class="selector-container is-vertical">
+                        <input type="radio" id="wifi1" name="wifi-select">
+                        <label class="selector-item item-text" for="wifi1">Wi-Fi 1</label>
 
-                    <div class="btn btn-primary">Check for updates</div>
-                </div> 
+                        <input type="radio" id="wifi2" name="wifi-select">
+                        <label class="selector-item item-text" for="wifi2">Wi-Fi 2</label>
+                    </div>
+                </div>
+
             </div>
 
             <div class="overlay-footer">
@@ -262,19 +273,19 @@
     </div>
 
     <!--Product Overlay-->
-    <div id="overlay-product" class="overlay" style="display: none;">
+    <div id="overlay-device" class="overlay" style="display: none;">
         <div class="overlay-panel">
             
             <div class="overlay-body">
 
-                <h2 class="overlay-title">Product</h2>
+                <h2 class="overlay-title">Device</h2>
 
                 <div class="case-container">
 
-                    <img src="./posters/MaestroNest.png" alt="Logo" class="centred-component"></img>
+                    <img src="./posters/MaestroNest.png" alt="Logo" class="centred-component" style="max-width: 400px;"></img>
 
                     <div class="title-header">
-                        <span class="title">Details</span>
+                        <span class="title">Infomations</span>
                     </div>
                     
                     <div class="row-container">
@@ -288,23 +299,34 @@
                     </div>
 
                     <div class="title-header">
-                        <span class="title">Status</span>
+                        <span class="title">Connectivity</span>
                     </div>
                     
                     <div class="row-container">
-                        <div class="text-left">IP Adress</div>
-                        <div class="text-right">disconected</div>
+                        <div class="text-left">IP Address</div>
+                        <div class="text-right">disconnected</div>
                     </div>
 
                     <div class="row-container">
-                        <div class="text-left">MAC Adress</div>
-                        <div class="text-right">disconected</div>
+                        <div class="text-left">MAC Address</div>
+                        <div class="text-right">disconnected</div>
                     </div>
 
                     <div class="row-container">
-                        <div class="text-left">Wifi network (SSID)</div>
-                        <div class="text-right">disconected</div>
+                        <div class="text-left">Wi-Fi network (SSID)</div>
+                        <div class="text-right">disconnected</div>
                     </div>
+
+                    <div class="title-header">
+                        <span class="title">System</span>
+                    </div>
+                    
+                    <div class="row-container">
+                        <div class="text-left">Firmware version</div>
+                        <div class="text-right">Unknown</div>
+                    </div>
+                    
+                    <button class="btn btn-primary" style="max-width: 100%;">Check for updates</button>
 
                 </div> 
             </div>
