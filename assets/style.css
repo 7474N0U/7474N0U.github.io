@@ -69,7 +69,7 @@ body::-webkit-scrollbar {
   margin-top: 290px;
   margin: 90px auto;
   opacity: 1;
-  transition: opacity 0.1s ease;
+  transition: opacity 0.15s ease;
 }
 
 /* --- Ajustements de flexibilité interne --- */
@@ -910,5 +910,124 @@ input[type="radio"]:checked + .selector-item.item-card .card-label {
   }
   100% {
     opacity: 0;
+  }
+}
+
+/* =========================================
+   Maestro Logo
+========================================= */
+
+.maestro-logo {
+  width: 80%; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.025);
+  opacity: 0;
+  animation: start-end 2.5s forwards; 
+}
+
+@keyframes start-end {
+  0% {
+    transform: translate(-50%, -50%) scale(0.025);
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  45%, 65% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  99% {
+    transform: translate(-50%, -50%) scale(2.2);
+    opacity: 0;
+  }
+  
+  100% {
+    transform: translate(-50%, -50%) scale(0.1);
+    opacity: 0;
+  }
+}
+
+/* =========================================
+   Level Container
+========================================= */
+
+.level-container {
+  width: 80vw;
+  height: 80vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.level-container.active {
+    display: flex;
+}
+
+.starting-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0px 20px 30px 20px;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+  background: linear-gradient(to bottom, rgba(255, 246, 234, 0) 0%, rgba(255, 246, 234, 1) 100%);
+  opacity: 0;
+  animation: push-up 1s cubic-bezier(0.16, 1, 0.3, 1) 4.5s forwards;
+}
+
+@keyframes push-up {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.starting-glow {
+  position: absolute;
+  top: -670px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 65%;
+  height: 900px;
+  background-color: #ff1a1a;
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
+  animation: splash 4s cubic-bezier(0.16, 1, 0.3, 1) 1.57s forwards;
+}
+
+@keyframes splash {
+  50% {
+    transform: translate(-50%, 40vh) scale(3); 
+    opacity: 1;
+  }
+
+  85% {
+    transform: translate(-50%, 300%) scale(2);
+    opacity: 0;
+  }
+
+  85.1% {
+    transform: translate(-50%, -100vh) scale(1);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(-50%) scale(1);
+    opacity: 1;
   }
 }
