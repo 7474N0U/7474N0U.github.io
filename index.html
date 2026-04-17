@@ -20,28 +20,30 @@
 
     <div class="glow-background"></div>
 
-    <nav class="bottom-nav">
-        <a href="#" class="nav-item" id="nav-history">
-            <img src="./icons/history.svg" alt="History" class="nav-icon">
-            <span class="nav-label">History</span>
-        </a>
-        <a href="#" class="nav-item" id="nav-console">
-            <img src="./icons/console.svg" alt="Console" class="nav-icon">
-            <span class="nav-label">Console</span>
-        </a>
-        <a href="#" class="nav-item" id="nav-settings">
-            <img src="./icons/settings.svg" alt="Settings" class="nav-icon">
-            <span class="nav-label">Settings</span>
-        </a>
-    </nav>
+    <div class="filled-bar">
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item" id="nav-history">
+                <img src="./icons/history.svg" alt="History" class="nav-icon">
+                <span class="nav-label">History</span>
+            </a>
+            <a href="#" class="nav-item" id="nav-console">
+                <img src="./icons/console.svg" alt="Console" class="nav-icon">
+                <span class="nav-label">Console</span>
+            </a>
+            <a href="#" class="nav-item" id="nav-settings">
+                <img src="./icons/settings.svg" alt="Settings" class="nav-icon">
+                <span class="nav-label">Settings</span>
+            </a>
+        </nav>
+    </div>
+
+    <img class="centred-component" style="margin-top: 100px; width: 65%; max-width: 450px;" src="./icons/maestro.svg" alt="Logo">
+
 
 <!-- History -->
 
     <div id="page-history" class="main-container page-content">
-        
-        <div class="case-container">
-            <img class="centred-component" src="./icons/maestro.svg" alt="Logo" style="margin-bottom: 50px">
-        </div>
+    
 
         <div class="case-container">
 
@@ -58,10 +60,6 @@
 
 
     <div id="page-console" class="main-container page-content">
-
-        <div class="case-container">
-            <img class="centred-component" src="./icons/maestro.svg" alt="Logo">
-        </div>
 
         <div class="case-container">
             <img class="centred-component" src="./posters/maestro-product.png" style="width: 350px;" alt="Product image">
@@ -112,10 +110,6 @@
 
 
     <div id="page-settings" class="main-container page-content">
-
-        <div class="case-container">
-            <img class="centred-component" src="./icons/maestro.svg" alt="Logo" style="margin-bottom: 50px">
-        </div>
 
         <div class="case-container">
 
@@ -776,66 +770,53 @@
 </body>
 
     <script>
+        
+            //-- Navbar
+        document.addEventListener("DOMContentLoaded", () => {
+            const pagesOrder = {
+                'nav-history': 1,
+                'nav-console': 2,
+                'nav-settings': 3
+            };
 
-        // -- Navigation Bar --
-        const navItems = document.querySelectorAll('.nav-item');
-        const pages = document.querySelectorAll('.page-content');
+            const pages = {
+                'nav-history': document.getElementById('page-history'),
+                'nav-console': document.getElementById('page-console'),
+                'nav-settings': document.getElementById('page-settings')
+            };
 
-        function switchPage(targetId) {
-            const currentPage = document.querySelector('.page-content[style*="display: flex"]');
-            const newPage = document.getElementById(targetId);
+            let currentPageId = 'nav-console';
 
-            if (currentPage && currentPage !== newPage) {
-                // Fade out current page
-                currentPage.style.opacity = '0';
-                setTimeout(() => {
-                    currentPage.style.display = 'none';
-                    currentPage.style.opacity = '1'; // reset for next time
-
-                    // Fade in new page
-                    newPage.style.display = 'flex';
-                    newPage.style.opacity = '0';
-                    setTimeout(() => {
-                        newPage.style.opacity = '1';
-                    }, 10);
-                }, 100);
-            } else {
-                // Instant switch for initial load
-                newPage.style.display = 'flex';
-                newPage.style.opacity = '1';
-            }
-        }
-
-        navItems.forEach(item => {
-            item.addEventListener('click', (e) => {
-                e.preventDefault();
-                navItems.forEach(nav => nav.classList.remove('active'));
-                item.classList.add('active');
-                const targetId = item.id.replace('nav-', 'page-');
-                switchPage(targetId);
-            });
-        });
-
-        document.getElementById('nav-console').click();
-
-
-        //-- Save radio button state in localStorage
-        const allRadios = document.querySelectorAll('.selector-container input[type="radio"]');
-        const groupNames = [...new Set(Array.from(allRadios).map(radio => radio.name))];
-
-        groupNames.forEach(name => {
-            const savedId = localStorage.getItem(`saved_${name}`);
-            if (savedId) {
-                const element = document.getElementById(savedId);
-                if (element) {
-                    element.checked = true;
+            Object.keys(pages).forEach(id => {
+                if (pages[id]) {
+                    pages[id].style.display = (id === currentPageId) ? 'flex' : 'none';
                 }
-            }
-        });
+            });
 
-        allRadios.forEach(radio => {
-            radio.addEventListener('change', (e) => {
-                localStorage.setItem(`saved_${e.target.name}`, e.target.id);
+            document.querySelectorAll('.nav-item').forEach(navItem => {
+                navItem.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    const targetPageId = navItem.id;
+                    if (targetPageId === currentPageId || !pages[targetPageId]) return;
+
+                    const isGoingLeft = pagesOrder[targetPageId] > pagesOrder[currentPageId];
+
+                    pages[currentPageId].style.display = 'none';
+                    pages[currentPageId].style.animation = '';
+                    window.scrollTo(0, 0);
+
+                    const targetPage = pages[targetPageId];
+                    targetPage.style.display = 'flex'; 
+
+                    if (isGoingLeft) {
+                        targetPage.style.animation = 'slideInRight 0.3s forwards ease-out';
+                    } else {
+                        targetPage.style.animation = 'slideInLeft 0.3s forwards ease-out';
+                    }
+
+                    currentPageId = targetPageId;
+                });
             });
         });
 
@@ -904,46 +885,6 @@
             navigator.serviceWorker.register('./sw.js');
         }
 
-        // -- State Sync radio buttons subtitles and icons --
-        document.addEventListener('change', (e) => {
-            if (e.target.type !== 'radio') return;
-
-            const overlay = e.target.closest('.overlay');
-            const label = document.querySelector(`label[for="${e.target.id}"]`);
-            
-            if (!overlay || !label) return; 
-
-            // --- EXTRACTION DES DONNÉES ---
-            const iconSrc = label.querySelector('img.icon')?.src;
-            const rawText = label.textContent.trim() || label.querySelector('img')?.alt.replace(' icon', '') || e.target.id;
-            const text = rawText.charAt(0).toUpperCase() + rawText.slice(1);
-
-            // --- CIBLAGE DES PARENTS À METTRE À JOUR ---
-            const targets = [
-                { 
-                    container: document.querySelector(`.disclosure-case[data-target="${overlay.id}"]`), 
-                    textSel: '.disclosure-subtitle', 
-                    iconSel: 'img.icon' 
-                },
-                { 
-                    container: overlay, 
-                    textSel: '.overlay-state-text', 
-                    iconSel: 'img.overlay-state-icon' 
-                }
-            ];
-
-            // --- APPLICATION (Boucle DRY) ---
-            targets.forEach(({ container, textSel, iconSel }) => {
-                if (!container) return;
-                
-                const textEl = container.querySelector(textSel);
-                const iconEl = container.querySelector(iconSel);
-
-                if (textEl) textEl.textContent = text;
-                if (iconEl && iconSrc) iconEl.src = iconSrc;
-            });
-        });
-
         // --- Initialisation au chargement ---
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.overlay input[type="radio"]:checked').forEach(radio => {
@@ -976,6 +917,8 @@
             }
         }
         // --- Caroussel Indicator ---
+
+        
 
     </script>
 

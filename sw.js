@@ -2,6 +2,7 @@
 const ASSETS = [
   './', 
   './index.html', 
+  './starting.html', 
   './components.html', 
   './assets/style.css', 
   './manifest.json',
