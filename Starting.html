@@ -22,23 +22,119 @@
     <img src="./icons/maestro.svg" class="maestro-logo">
 
     <div class="level-container" data-step="1">
-        <h1>Welcome</h1>
+        <h1 style="margin: auto auto; font-weight: lighter;">Welcome</h1>
     </div>
 
     <div class="level-container" data-step="2">
-        <h1>Step 2</h1>
+        <div class="case-container" style="flex: 0 0 auto; flex-direction: column; align-items: center; text-align: center;">
+            <h1 class="overlay-title">Language</h1>
+
+            <div class="overlay-state">
+                <img src="./icons/language.svg" class="overlay-state-icon">
+                <span class="overlay-state-text">English</span>
+                <h4 class="overlay-subtitle">Select the language of your choice.</h4>
+            </div>
+
+            <div class="selector-container is-vertical" style="margin-bottom: 40px;">
+                <input type="radio" id="lang2" name="choix-lang" checked>
+                <label class="selector-item item-text" for="lang2">English</label>
+
+                <input type="radio" id="lang1" name="choix-lang">
+                <label class="selector-item item-text" for="lang1">French</label>
+            </div>
+        </div>
     </div>
 
     <div class="level-container" data-step="3">
-        <h1>Step 3</h1>
+        <div class="case-container" style="flex: 0 0 auto; flex-direction: column; align-items: center; text-align: center;">
+            <h1 class="overlay-title">Conexion</h1>
+
+        </div>
     </div>
 
     <div class="level-container" data-step="4">
-        <h1>Step 4</h1>
+        <div class="overlay-body">
+            <div class="case-container" style="flex: 0 0 auto; flex-direction: column; align-items: center; text-align: center;">
+                <h2 class="overlay-title">Wi-Fi</h2>
+
+                <div class="overlay-state">
+                    <img src="./icons/wifi_on.svg" class="overlay-state-icon">
+                    <span class="overlay-state-text">English</span>
+                    <h4 class="overlay-subtitle">Select the Wi-Fi of your choice.</h4>
+                </div>
+
+                <div class="selector-container is-vertical">
+                    <input type="radio" id="wifi1" name="wifi-select">
+                    <label class="selector-item item-text" for="wifi1">Wi-Fi 1</label>
+
+                    <input type="radio" id="wifi2" name="wifi-select">
+                    <label class="selector-item item-text" for="wifi2">Wi-Fi 2</label>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <div class="level-container" data-step="5">
+        <div class="overlay-body">
+            <div class="case-container" style="flex: 0 0 auto; flex-direction: column; align-items: center; text-align: center;">
+                <h2 class="overlay-title">Voice</h2>
+
+                <div class="overlay-state">
+                    <img src="./icons/female1.svg" class="overlay-state-icon">
+                    <span class="overlay-state-text">Female 1</span>
+                    <h4 class="overlay-subtitle">Select the voice of your choice.</h4>
+                </div>
+
+                <div class="selector-container">
+                    <input type="radio" id="voice1" name="voice" checked>
+                    <label class="selector-item item-icon" for="voice1">
+                        <img src="./icons/female1.svg" alt="Female 1 icon" class="icon">
+                    </label>
+
+                    <input type="radio" id="voice2" name="voice">
+                    <label class="selector-item item-icon" for="voice2">
+                        <img src="./icons/female2.svg" alt="Female 2 icon" class="icon">
+                    </label>
+
+                    <input type="radio" id="voice3" name="voice">
+                    <label class="selector-item item-icon" for="voice3">
+                        <img src="./icons/female3.svg" alt="Female 3 icon" class="icon">
+                    </label>
+
+                    <input type="radio" id="voice4" name="voice">
+                    <label class="selector-item item-icon" for="voice4">
+                        <img src="./icons/male1.svg" alt="Male 1 icon" class="icon">
+                    </label>
+
+                    <input type="radio" id="voice5" name="voice">
+                    <label class="selector-item item-icon" for="voice5">
+                        <img src="./icons/male2.svg" alt="Male 2 icon" class="icon">
+                    </label>
+
+                    <input type="radio" id="voice6" name="voice">
+                    <label class="selector-item item-icon" for="voice6">
+                        <img src="./icons/male3.svg" alt="Male 3 icon" class="icon">
+                    </label>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="level-container" data-step="6">
+        <div class="overlay-body">
+            <div class="case-container" style="flex: 0 0 auto; flex-direction: column; align-items: center; text-align: center;">
+                <h2 class="overlay-title">Setup Complete</h2>
+                <img src="./posters/favicon.png" class="starting-icon">
+            </div>
+
+        </div>
+    </div>
+
+
     <div class="starting-footer">
-        <button class="btn btn-primary" style="max-width: 50%;" onclick="nextStep()">Next</button>
+        <button class="btn btn-primary" style="width: 65%;" onclick="nextStep()">Next</button>
+        <button id="backBtn" class="btn btn-secondary" style="width: 65%;" onclick="backStep()">Back</button>
     </div>
 
 
@@ -47,16 +143,44 @@
 
         function showStep(step) {
             document.querySelectorAll('.level-container').forEach(el => {
-                el.classList.toggle('active', el.dataset.step == step);
+                const elStep = parseInt(el.dataset.step);
+                
+                if (elStep === step) {
+                    el.classList.add('active');
+                    el.classList.remove('exited');
+                } else if (elStep < step) {
+                    el.classList.remove('active');
+                    el.classList.add('exited');
+                } else {
+                    el.classList.remove('active');
+                    el.classList.remove('exited');
+                }
             });
 
-            const total = document.querySelectorAll('.level-container').length;
-            document.querySelector('.btn-primary').style.display = step >= total ? 'none' : '';
+            const backBtn = document.getElementById('backBtn');
+            if (backBtn) {
+                if (step === 0 || step === 1 || step === 6) {
+                    backBtn.style.display = 'none';
+                } else {
+                    backBtn.style.display = 'block';
+                }
+            }
         }
 
         function nextStep() {
-            currentStep++;
-            showStep(currentStep);
+            if (currentStep === 6) {
+                window.location.href = "index.html";
+            } else {
+                currentStep++;
+                showStep(currentStep);
+            }
+        }
+
+        function backStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+            }
         }
 
         showStep(0);
@@ -66,7 +190,7 @@
                 currentStep = 1;
                 showStep(currentStep);
             }
-        }, 6300);
+        }, 4500);
     </script>
 
 </body>
