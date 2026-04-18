@@ -35,13 +35,11 @@
         </a>
     </nav>
 
+    <img class="centred-component" src="./icons/maestro.svg" alt="Logo" style="margin-top: 100px;">
+
 <!-- History -->
 
     <div id="page-history" class="main-container page-content">
-        
-        <div class="case-container">
-            <img class="centred-component" src="./icons/maestro.svg" alt="Logo" style="margin-bottom: 50px">
-        </div>
 
         <div class="case-container">
 
@@ -58,10 +56,6 @@
 
 
     <div id="page-console" class="main-container page-content">
-
-        <div class="case-container">
-            <img class="centred-component" src="./icons/maestro.svg" alt="Logo">
-        </div>
 
         <div class="case-container">
             <img class="centred-component" src="./posters/maestro-product.png" style="width: 350px;" alt="Product image">
@@ -112,10 +106,6 @@
 
 
     <div id="page-settings" class="main-container page-content">
-
-        <div class="case-container">
-            <img class="centred-component" src="./icons/maestro.svg" alt="Logo" style="margin-bottom: 50px">
-        </div>
 
         <div class="case-container">
 
@@ -785,14 +775,14 @@
             const currentPage = document.querySelector('.page-content[style*="display: flex"]');
             const newPage = document.getElementById(targetId);
 
+            window.scrollTo(0, 0); 
+
             if (currentPage && currentPage !== newPage) {
-                // Fade out current page
                 currentPage.style.opacity = '0';
                 setTimeout(() => {
                     currentPage.style.display = 'none';
-                    currentPage.style.opacity = '1'; // reset for next time
+                    currentPage.style.opacity = '1';
 
-                    // Fade in new page
                     newPage.style.display = 'flex';
                     newPage.style.opacity = '0';
                     setTimeout(() => {
@@ -800,7 +790,6 @@
                     }, 10);
                 }, 100);
             } else {
-                // Instant switch for initial load
                 newPage.style.display = 'flex';
                 newPage.style.opacity = '1';
             }

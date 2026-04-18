@@ -133,44 +133,39 @@
 
 
     <div class="starting-footer">
-        <button class="btn btn-primary" style="width: 65%;" onclick="nextStep()">Next</button>
+        <button id="nextBtn" class="btn btn-primary" style="width: 65%;" onclick="nextStep()">Next</button>
         <button id="backBtn" class="btn btn-secondary" style="width: 65%;" onclick="backStep()">Back</button>
     </div>
 
 
     <script>
+        const nextBtn = document.getElementById('nextBtn');
+        const backBtn = document.getElementById('backBtn');
+        const levels = document.querySelectorAll('.level-container');
         let currentStep = 0;
 
         function showStep(step) {
-            document.querySelectorAll('.level-container').forEach(el => {
+            levels.forEach(el => {
                 const elStep = parseInt(el.dataset.step);
-                
-                if (elStep === step) {
-                    el.classList.add('active');
-                    el.classList.remove('exited');
-                } else if (elStep < step) {
-                    el.classList.remove('active');
-                    el.classList.add('exited');
-                } else {
-                    el.classList.remove('active');
-                    el.classList.remove('exited');
-                }
+                el.classList.toggle('active', elStep === step);
+                el.classList.toggle('exited', elStep < step);
             });
 
-            const backBtn = document.getElementById('backBtn');
-            if (backBtn) {
-                if (step === 0 || step === 1 || step === 6) {
-                    backBtn.style.display = 'none';
-                } else {
-                    backBtn.style.display = 'block';
-                }
+            if (backBtn && nextBtn) {
+
+                backBtn.style.display = (step <= 1 || step === 6) ? 'none' : 'block';
+                nextBtn.style.display = (step === 0 || step === 6) ? 'none' : 'block';
+            }
+
+            if (step === 6) {
+                setTimeout(() => {
+                    window.location.href = "index.html";
+                }, 2400);
             }
         }
 
         function nextStep() {
-            if (currentStep === 6) {
-                window.location.href = "index.html";
-            } else {
+            if (currentStep < 6) {
                 currentStep++;
                 showStep(currentStep);
             }
