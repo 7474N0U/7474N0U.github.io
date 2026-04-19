@@ -795,9 +795,16 @@
                 navItems.forEach(nav => nav.classList.remove('active'));
                 item.classList.add('active');
                 
-                setTimeout(() => {
-                    switchPage(item.id.replace('nav-', 'page-'));
-                }, 300);
+                const targetId = item.id.replace('nav-', 'page-');
+                
+                const checkScroll = () => {
+                    if (window.scrollY <= 0) {
+                        switchPage(targetId);
+                    } else {
+                        requestAnimationFrame(checkScroll);
+                    }
+                };
+                checkScroll();
             });
         });
 
@@ -815,7 +822,7 @@
                     newPage.style.opacity = '1';
                 }, 15);
             }
-        } 
+        }
 
 
         //-- Save radio button state in localStorage
