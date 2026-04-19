@@ -788,45 +788,34 @@
             item.addEventListener('click', (e) => {
                 e.preventDefault();
                 
-                const activePage = document.querySelector('.page-content[style*="display: flex"]');
-                
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-                if (activePage) activePage.scrollTo({ top: 0, behavior: 'smooth' });
 
                 if (item.classList.contains('active')) return;
 
                 navItems.forEach(nav => nav.classList.remove('active'));
                 item.classList.add('active');
                 
-                const targetId = item.id.replace('nav-', 'page-');
-                
-                setTimeout(() => switchPage(targetId), 150);
+                setTimeout(() => {
+                    switchPage(item.id.replace('nav-', 'page-'));
+                }, 300);
             });
         });
 
         function switchPage(targetId) {
-            const activePage = document.querySelector('.page-content[style*="display: flex"]');
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.style.display = 'none';
+                page.style.opacity = '0';
+            });
+
             const newPage = document.getElementById(targetId);
-
-            if (activePage && activePage.id !== targetId) {
-                activePage.style.opacity = '0';
-                
-                setTimeout(() => {
-                    activePage.style.display = 'none';
-                    activePage.style.opacity = '1';
-
-                    newPage.style.display = 'flex';
-                    newPage.style.opacity = '0';
-
-                    requestAnimationFrame(() => {
-                        newPage.style.opacity = '1';
-                    });
-                }, 150);
-            } else {
+            
+            if (newPage) {
                 newPage.style.display = 'flex';
-                newPage.style.opacity = '1';
+                setTimeout(() => {
+                    newPage.style.opacity = '1';
+                }, 15);
             }
-        }
+        } 
 
 
         //-- Save radio button state in localStorage
