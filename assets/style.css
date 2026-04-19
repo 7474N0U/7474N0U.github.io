@@ -557,7 +557,7 @@ input[type="radio"]:checked + .selector-item.item-card .card-label {
   max-width: 800px;
   height: 90vh;
   background-color: #fff6ea;
-  border-top: 2px solid #ff1a1a;
+  border-radius: 15px 15px 0px 0px;
   display: flex;
   flex-direction: column;
   animation: OverlayslideUp 0.3s ease-out forwards;

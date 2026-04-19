@@ -64,7 +64,7 @@
         <div class="case-container">
 
             <div class="title-header">
-                <span class="title">Custom</span>
+                <span class="title">Preferences</span>
             </div>
 
             <div class="disclosure-case" data-target="overlay-aod">
@@ -87,7 +87,7 @@
 
             <div class="disclosure-case"data-target="overlay-press">
                 <img src="./icons/press.svg" alt="Press icon" class="icon">
-                <h2 class="case-title">Press Button</h2>
+                <h2 class="case-title" style="margin-bottom: 5px;">Press Button</h2>
             </div>
 
         </div>  
@@ -110,7 +110,7 @@
         <div class="case-container">
 
             <div class="title-header">
-                <span class="title">Settings</span>
+                <span class="title">General</span>
             </div>
 
             <div class="case-container" style="padding: 0px;">
@@ -118,7 +118,7 @@
                 <div class="disclosure-case" data-target="overlay-theme">
                     <img src="./icons/auto.svg" alt="Settings" class="icon">
 
-                    <h2 class="case-title">Theme Mod</h2>
+                    <h2 class="case-title">Theme</h2>
                     <p class="disclosure-subtitle">state</p>
                 </div>
                 
@@ -606,7 +606,7 @@
     <div id="overlay-aod" class="overlay" style="display: none;">
         <div class="overlay-panel">
             
-            <div class="overlay-fixed-header">
+            <div class="overlay-fixed-header" style="margin-top: 15px;">
                 <h2 class="overlay-title">Always On Display</h2>
                 
                 <div class="screen-maestro">
@@ -752,8 +752,19 @@
                         </label>
 
                     </div>
-                </div>
 
+                    <div class="case-container">
+                        <div class="title-header">
+                            <span class="title">Custom</span>
+                        </div>
+
+                        <div class="selector-container is-scrollable">
+                            
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
 
             <div class="overlay-footer">
@@ -767,45 +778,55 @@
 
     <script>
 
-        // -- Navigation Bar --
+        // --- Navigation Bottom Bar ---
         const navItems = document.querySelectorAll('.nav-item');
-        const pages = document.querySelectorAll('.page-content');
+
+        switchPage('page-console');
+        document.getElementById('nav-console').classList.add('active');
+
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                const activePage = document.querySelector('.page-content[style*="display: flex"]');
+                
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                if (activePage) activePage.scrollTo({ top: 0, behavior: 'smooth' });
+
+                if (item.classList.contains('active')) return;
+
+                navItems.forEach(nav => nav.classList.remove('active'));
+                item.classList.add('active');
+                
+                const targetId = item.id.replace('nav-', 'page-');
+                
+                setTimeout(() => switchPage(targetId), 150);
+            });
+        });
 
         function switchPage(targetId) {
-            const currentPage = document.querySelector('.page-content[style*="display: flex"]');
+            const activePage = document.querySelector('.page-content[style*="display: flex"]');
             const newPage = document.getElementById(targetId);
 
-            window.scrollTo(0, 0); 
-
-            if (currentPage && currentPage !== newPage) {
-                currentPage.style.opacity = '0';
+            if (activePage && activePage.id !== targetId) {
+                activePage.style.opacity = '0';
+                
                 setTimeout(() => {
-                    currentPage.style.display = 'none';
-                    currentPage.style.opacity = '1';
+                    activePage.style.display = 'none';
+                    activePage.style.opacity = '1';
 
                     newPage.style.display = 'flex';
                     newPage.style.opacity = '0';
-                    setTimeout(() => {
+
+                    requestAnimationFrame(() => {
                         newPage.style.opacity = '1';
-                    }, 10);
-                }, 100);
+                    });
+                }, 150);
             } else {
                 newPage.style.display = 'flex';
                 newPage.style.opacity = '1';
             }
         }
-
-        navItems.forEach(item => {
-            item.addEventListener('click', (e) => {
-                e.preventDefault();
-                navItems.forEach(nav => nav.classList.remove('active'));
-                item.classList.add('active');
-                const targetId = item.id.replace('nav-', 'page-');
-                switchPage(targetId);
-            });
-        });
-
-        document.getElementById('nav-console').click();
 
 
         //-- Save radio button state in localStorage
