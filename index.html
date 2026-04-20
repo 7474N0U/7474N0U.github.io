@@ -470,6 +470,39 @@
                         <span class="overlay-state-text">State</span>
                     </div>
 
+                    <div class="dynamic-sentence-container">
+                    <p class="dynamic-sentence">
+                        Maestro appears <span id="tag-mood" class="var-tag active-var">Neutral</span>, 
+                        opting for <span id="tag-style" class="var-tag">Common</span> style 
+                        in order to deliver <span id="tag-tone" class="var-tag">Balanced</span> informations.
+                    </p>
+                    </div>
+
+                    <div class="controls-section">
+                        <div class="button-group" id="mood-controls">
+                            <button class="state-btn" data-type="mood" data-value="disgruntled">Disgruntled</button>
+                            <button class="state-btn" data-type="mood" data-value="enthusiastic">Enthusiastic</button>
+                            <button class="state-btn active" data-type="mood" data-value="neutral">Neutral</button>
+                            <button class="state-btn" data-type="mood" data-value="gloomy">Gloomy</button>
+                            <button class="state-btn" data-type="mood" data-value="stressed">Stressed</button>
+                            <button class="state-btn" data-type="mood" data-value="happy">Happy</button>
+                            <button class="state-btn" data-type="mood" data-value="calm">Calm</button>
+                        </div>
+
+                        <div class="button-group" id="style-controls">
+                            <button class="state-btn" data-type="style" data-value="disgruntled">Common</button>
+                            <button class="state-btn" data-type="style" data-value="formal">Formal</button>
+                            <button class="state-btn active" data-type="style" data-value="informal">Informal</button>
+                        </div>
+
+                        <div class="button-group" id="tone-controls">
+                            <button class="state-btn" data-type="tone" data-value="concise">Concise</button>
+                            <button class="state-btn" data-type="tone" data-value="balanced">Balanced</button>
+                            <button class="state-btn active" data-type="tone" data-value="exhaustive">Exhaustive</button>
+                        </div>
+                    </div>
+                    
+
                 </div>
 
             </div>
@@ -982,6 +1015,55 @@
             }
         }
         // --- Caroussel Indicator ---
+
+        // --- Gestion de la Personnalité ---
+        const state = { mood: 'Neutral', style: 'Common', tone: 'Balanced' };
+        const tags = {
+            mood: document.getElementById('tag-mood'),
+            style: document.getElementById('tag-style'),
+            tone: document.getElementById('tag-tone')
+        };
+        const controls = {
+            mood: document.getElementById('mood-controls'),
+            style: document.getElementById('style-controls'),
+            tone: document.getElementById('tone-controls')
+        };
+
+        const switchActiveSection = (activeType) => {
+            Object.keys(controls).forEach(type => {
+                if(controls[type]) controls[type].style.display = 'none';
+                if(tags[type]) tags[type].classList.remove('active-var');
+            });
+            
+            if(controls[activeType]) controls[activeType].style.display = 'flex';
+            if(tags[activeType]) tags[activeType].classList.add('active-var');
+        };
+
+        Object.keys(state).forEach(key => {
+            if(!tags[key]) return;
+            
+            tags[key].textContent = state[key];
+            
+            tags[key].style.cursor = 'pointer'; 
+            
+            tags[key].addEventListener('click', () => switchActiveSection(key));
+        });
+
+        switchActiveSection('mood');
+
+        document.querySelectorAll('.state-btn').forEach(btn => {
+            btn.addEventListener('click', ({ currentTarget }) => {
+                const { type, value } = currentTarget.dataset; 
+
+                if (!(type in state)) return;
+
+                state[type] = value;
+                tags[type].textContent = value;
+
+                document.querySelector(`.state-btn.active[data-type="${type}"]`)?.classList.remove('active');
+                currentTarget.classList.add('active');
+            });
+        });
 
     </script>
 
