@@ -61,6 +61,25 @@
             <img class="centred-component" src="./posters/maestro-product.png" style="width: 350px;" alt="Product image">
         </div>
 
+        <div class="notif-container">
+             <div class="info-case">
+                <h2 class="case-title">Maestro Nest is not connected</h2>
+                <p class="case-subtitle">Your Nest Maestro device is not connected to your smartphone. Check your Wi-Fi and Bluetooth conection. Then try again</p>
+                
+                <div class="toggle-wrapper">
+                    <div class="btn btn-primary" style="margin: 0px 15%; max-width: 300px;">Connect</div>
+                </div>
+
+            </div>
+            <div class="info-case">
+                <h2 class="case-title">Firmware Update Available</h2>
+                <p class="case-subtitle">Version 1.0.1 is ready to be installed.</p>
+                <div class="toggle-wrapper">
+                    <div class="btn btn-primary" data-target="overlay-update" style="margin: 0px 15%; max-width: 300px;">Learn more</div>
+                </div>
+            </div>
+        </div>
+
         <div class="case-container">
 
             <div class="title-header">
@@ -269,12 +288,12 @@
                 <div class="case-container" style="flex: 0 0 auto; flex-direction: column; align-items: center; text-align: center;">
                     <h2 class="overlay-title">Device</h2>
 
-                    <div class="case-container">
+                    <div class="case-container" style="padding: 0px;">
 
-                        <img src="./posters/MaestroNest.png" alt="Logo" class="centred-component" style="max-width: 400px;"></img>
+                        <img src="./posters/MaestroNest.png" alt="Logo" style="max-width: 100%;"></img>
 
                         <div class="title-header">
-                            <span class="title">Infomations</span>
+                            <span class="title">Informations</span>
                         </div>
                         
                         <div class="row-container">
@@ -312,7 +331,7 @@
                         
                         <div class="row-container">
                             <div class="text-left">Firmware version</div>
-                            <div class="text-right">Unknown</div>
+                            <div class="text-right">1.0.0</div>
                         </div>
                         
                         <button class="btn btn-primary" style="max-width: 100%;">Check for updates</button>
@@ -326,6 +345,57 @@
             </div>
 
         </div>
+    </div>
+
+    <!--Update Overlay-->
+    <div id="overlay-update" class="overlay" style="display: none;">
+        <div class="overlay-panel">
+            <div class="overlay-body">
+                <div class="case-container" style="flex: 0 0 auto; flex-direction: column; align-items: center; text-align: center;">
+                    <h2 class="overlay-title">Firmware Update</h2>
+
+                    <img src="./posters/MaestroUpdate.png" alt="Logo" class="centred-component" style="max-width: 100%;"></img>
+
+                    <div class="case-container" style="padding: 0px;">
+
+                        <div class="title-header">
+                            <span class="title">Patch Notes</span>
+                        </div>
+                        
+                        <div class="row-container">
+                            <div class="text-left">- New features</div>
+                        </div>
+
+                        <div class="row-container">
+                            <div class="text-left">- Bug fixes</div>
+                        </div>
+
+                        <div class="title-header">
+                            <span class="title">Informations</span>
+                        </div>
+                        
+                        <div class="row-container">
+                            <div class="text-left">Firmware version</div>
+                            <div class="text-right">1.0.1</div>
+                        </div>
+
+                        <div class="row-container">
+                            <div class="text-left">Size</div>
+                            <div class="text-right">32.54 Mo</div>
+                        </div>
+                        
+                        <button class="btn btn-primary" style="max-width: 100%;">Download & Install</button>
+
+                    </div> 
+                </div>
+            </div>
+
+            <div class="overlay-footer">
+                <button class="btn btn-primary close-overlay-btn" style="max-width: 200px;">Close</button>
+            </div>
+
+        </div>
+
     </div>
 
     <!--Language Overlay-->
@@ -817,12 +887,23 @@
         switchPage('page-console');
         document.getElementById('nav-console').classList.add('active');
 
+        function fastScrollTop(onComplete) {
+            const step = () => {
+                const currentY = window.scrollY;
+                if (currentY > 0) {
+                    window.scrollTo(0, Math.floor(currentY * 0.75));
+                    requestAnimationFrame(step);
+                } else {
+                    if(onComplete) onComplete();
+                }
+            };
+            requestAnimationFrame(step);
+        }
+
         navItems.forEach(item => {
             item.addEventListener('click', (e) => {
                 e.preventDefault();
                 
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-
                 if (item.classList.contains('active')) return;
 
                 navItems.forEach(nav => nav.classList.remove('active'));
@@ -830,14 +911,7 @@
                 
                 const targetId = item.id.replace('nav-', 'page-');
                 
-                const checkScroll = () => {
-                    if (window.scrollY <= 0) {
-                        switchPage(targetId);
-                    } else {
-                        requestAnimationFrame(checkScroll);
-                    }
-                };
-                checkScroll();
+                fastScrollTop(() => switchPage(targetId));
             });
         });
 
@@ -880,7 +954,7 @@
 
         //-- Overlays
 
-        const disclosureElements = document.querySelectorAll('.disclosure-case, .info-case');
+        const disclosureElements = document.querySelectorAll('[data-target]');
         const closeBtns = document.querySelectorAll('.close-overlay-btn');
         const allOverlays = document.querySelectorAll('.overlay');
 

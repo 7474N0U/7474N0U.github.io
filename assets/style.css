@@ -57,12 +57,16 @@ body::-webkit-scrollbar {
   box-sizing: border-box;
 }
 
+/* Cible le case-container spécifiquement quand il est dans un overlay */
+.overlay .case-container {
+  max-width: 500px; /* Ou la valeur que vous souhaitez pour l'overlay */
+}
+
 .main-container {
   display: none;
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
   width: 100%;
   max-width: 1200px;
   min-width: 170px;
@@ -70,6 +74,17 @@ body::-webkit-scrollbar {
   margin: 90px auto;
   opacity: 1;
   transition: opacity 0.15s ease;
+}
+
+.notif-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 800px;
+  padding: 15px 15px 25px 15px;
+  min-width: 170px;
+  box-sizing: border-box;
 }
 
 /* --- Ajustements de flexibilité interne --- */
@@ -123,7 +138,7 @@ body::-webkit-scrollbar {
   cursor: pointer;
   transition: filter 0.3s ease;
   box-sizing: border-box;
-  width: 100%;
+  width: auto;
   text-align: center;
   flex: 1;
   min-width: 160px;
