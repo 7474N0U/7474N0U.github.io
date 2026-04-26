@@ -82,7 +82,7 @@ body::-webkit-scrollbar {
   width: 100%;
   max-width: 1200px;
   min-width: 170px;
-  margin-top: 290px;
+  left: 50% !important;
   margin: 0 auto;
   opacity: 1;
   transition: opacity 0.15s ease;

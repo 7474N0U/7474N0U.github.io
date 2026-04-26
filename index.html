@@ -13,7 +13,7 @@
     <link rel="icon" type="image/png" href="./posters/favicon.png">
     <link rel="stylesheet" href="./assets/style.css">
     
-    <title>Maestro Application</title>
+    <title>Maestro Connect</title>
 
 </head>
 <body>
@@ -35,7 +35,7 @@
 
     <div class="app-scroll-area">
         <div class="glow-background"></div>
-        <img class="centred-component" src="./icons/maestro.svg" alt="Logo" style="padding: 100px 0px;">
+        <img class="centred-component" src="./icons/maestro.svg" alt="Logo" style="padding: 100px 0px 80px 0px;">
 
         <div id="page-history" class="main-container page-content">
             <div class="case-container">
@@ -923,7 +923,7 @@
             });
 
             const targetPage = document.getElementById(pageId);
-            targetPage.style.display = 'block';
+            targetPage.style.display = 'flex';
 
             targetPage.animate([
                 { opacity: 0 },
