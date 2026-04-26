@@ -33,9 +33,34 @@
         </a>
     </nav>
 
+    
     <div class="app-scroll-area">
+       
         <div class="glow-background"></div>
+
+        <div style="position: absolute; top: 20px; right: 15px; display: flex; flex-direction: row; gap: 5px; align-items: center;">
+            <div class="selector-container is-scrollable">
+                <input type="radio" id="product" name="nest" checked>
+                <label class="selector-item item-card" for="product1" style="padding: 5px; width: auto;">
+                    <img src="./posters/nest-product.png" alt="Nest Product" class="card-image" style="width: 30px;">
+                </label>
+
+                <input type="radio" id="product" name="nest">
+                <label class="selector-item item-card" for="product2" style="padding: 5px; width: auto;">
+                    <img src="./posters/nest-product.png" alt="Nest Product" class="card-image" style="width: 30px;">
+                </label>
+            </div> 
+            
+            <div class="btn btn-primary" onclick="window.location.href='starting.html'" style="padding: 0; min-width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; cursor: pointer;">
+                <div style="font-size: 20px; line-height: 1;">+</div>
+            </div>
+        </div>
+
         <img class="centred-component" src="./icons/maestro.svg" alt="Logo" style="padding: 100px 0px 80px 0px;">
+
+        
+
+<!-- History -->
 
         <div id="page-history" class="main-container page-content">
             <div class="case-container">
@@ -47,9 +72,11 @@
             </div>  
         </div>
 
+<!-- Console -->
+
         <div id="page-console" class="main-container page-content">
             <div class="case-container">
-                <img class="centred-component" src="./posters/maestro-product.png" style="width: 350px;" alt="Product image">
+                <img class="centred-component" src="./posters/maestro-product.png" style="width: 315px;" alt="Product image">
             </div>
 
             <div class="notif-container">
@@ -652,7 +679,7 @@
                             </div>   
                             <div class="selector-container is-vertical" style="height: auto;">
                                 <input type="radio" id="slide-up-vol-up" name="press-slide-up" checked>
-                                <label class="selector-item item-text" for="slide-up-vol-up">Volume Up</label>
+                                <label class="selector-item item-text" for="slide-up-vol-up">Volu me Up</label>
                                 <input type="radio" id="slide-up-vol-down" name="press-slide-up">
                                 <label class="selector-item item-text" for="slide-up-vol-down">Volume Down</label>
                                 <input type="radio" id="slide-up-next" name="press-slide-up">

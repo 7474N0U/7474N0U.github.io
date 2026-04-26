@@ -82,8 +82,8 @@ body::-webkit-scrollbar {
   width: 100%;
   max-width: 1200px;
   min-width: 170px;
-  left: 50% !important;
   margin: 0 auto;
+  padding-bottom: 30px;
   opacity: 1;
   transition: opacity 0.15s ease;
 }
@@ -576,6 +576,7 @@ input[type="radio"]:checked + .selector-item.item-card .card-label {
   display: none;
   align-items: flex-end;
   justify-content: center;
+  will-change: transform, opacity;
 }
 
 /* --- OVERLAY PANEL --- */
