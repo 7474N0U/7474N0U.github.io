@@ -13,8 +13,21 @@ body {
   padding-bottom: env(safe-area-inset-bottom);
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
+  height: 100dvh;
+  overflow: hidden;
   -webkit-user-select: none;
   user-select: none;
+}
+
+.app-scroll-area {
+    height: calc(100% - 65px);
+    overflow-y: auto;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+}
+
+.app-scroll-area::-webkit-scrollbar {
+    display: none;
 }
 
 body::-webkit-scrollbar {
@@ -70,7 +83,7 @@ body::-webkit-scrollbar {
   max-width: 1200px;
   min-width: 170px;
   margin-top: 290px;
-  margin: 90px auto;
+  margin: 0 auto;
   opacity: 1;
   transition: opacity 0.15s ease;
 }

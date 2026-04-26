@@ -18,8 +18,6 @@
 </head>
 <body>
 
-    <div class="glow-background"></div>
-
     <nav class="bottom-nav">
         <a href="#" class="nav-item" id="nav-history">
             <img src="./icons/history.svg" alt="History" class="nav-icon">
@@ -35,218 +33,208 @@
         </a>
     </nav>
 
-    <img class="centred-component" src="./icons/maestro.svg" alt="Logo" style="margin-top: 100px;">
+    <div class="app-scroll-area">
+        <div class="glow-background"></div>
+        <img class="centred-component" src="./icons/maestro.svg" alt="Logo" style="padding: 100px 0px;">
 
-<!-- History -->
+        <div id="page-history" class="main-container page-content">
+            <div class="case-container">
 
-    <div id="page-history" class="main-container page-content">
-
-        <div class="case-container">
-
-            <div class="title-header">
-                <span class="title">Date</span>
-            </div>
-        
-        </div>  
-
-    </div>
-
-
-<!-- Console -->
-
-
-    <div id="page-console" class="main-container page-content">
-
-        <div class="case-container">
-            <img class="centred-component" src="./posters/maestro-product.png" style="width: 350px;" alt="Product image">
-        </div>
-
-        <div class="notif-container">
-             <div class="info-case">
-                <h2 class="case-title">Maestro Nest is not connected</h2>
-                <p class="case-subtitle">Your Nest Maestro device is not connected to your smartphone. Check your Wi-Fi and Bluetooth conection. Then try again</p>
-                
-                <div class="toggle-wrapper">
-                    <div class="btn btn-primary" style="margin: 0px 15%; max-width: 300px;">Connect</div>
+                <div class="title-header">
+                    <span class="title">Date</span>
                 </div>
-
-            </div>
-            <div class="info-case">
-                <h2 class="case-title">Firmware Update Available</h2>
-                <p class="case-subtitle">Version 1.0.1 is ready to be installed.</p>
-                <div class="toggle-wrapper">
-                    <div class="btn btn-primary" data-target="overlay-update" style="margin: 0px 15%; max-width: 300px;">Learn more</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="case-container">
-
-            <div class="title-header">
-                <span class="title">Preferences</span>
-            </div>
-
-            <div class="disclosure-case" data-target="overlay-aod">
-                <img src="./icons/screen.svg" alt="Screen icon" class="icon">
-                <h2 class="case-title">Always On Display</h2>
-                <p class="disclosure-subtitle">state</p>
-            </div>
             
-            <div class="disclosure-case" data-target="overlay-voice">
-                <img src="./icons/female1.svg" alt="Voice icon" class="icon">
-                <h2 class="case-title">Voice</h2>
-                <p class="disclosure-subtitle">state</p>
-            </div>
-
-            <div class="disclosure-case"data-target="overlay-personality">
-                <img src="./icons/profil.svg" alt="Personality icon" class="icon">
-                <h2 class="case-title">Personality</h2>
-                <p class="disclosure-subtitle">state</p>
-            </div>
-
-            <div class="disclosure-case"data-target="overlay-press">
-                <img src="./icons/press.svg" alt="Press icon" class="icon">
-                <h2 class="case-title" style="margin-bottom: 5px;">Press Button</h2>
-            </div>
-
-        </div>  
-        
-        <div class="case-container">
-        
-            <div class="title-header">
-                <span class="title">Volume</span>
-            </div>
-
+            </div>  
         </div>
 
-    </div>
-
-<!-- Settings -->
-
-
-    <div id="page-settings" class="main-container page-content">
-
-        <div class="case-container">
-
-            <div class="title-header">
-                <span class="title">General</span>
+        <div id="page-console" class="main-container page-content">
+            <div class="case-container">
+                <img class="centred-component" src="./posters/maestro-product.png" style="width: 350px;" alt="Product image">
             </div>
 
-            <div class="case-container" style="padding: 0px;">
-
-                <div class="disclosure-case" data-target="overlay-theme">
-                    <img src="./icons/auto.svg" alt="Settings" class="icon">
-
-                    <h2 class="case-title">Theme</h2>
-                    <p class="disclosure-subtitle">state</p>
-                </div>
-                
-                <div class="disclosure-case" data-target="overlay-language">
-                    <img src="./icons/language.svg" alt="Settings" class="icon">
+            <div class="notif-container">
+                <div class="info-case">
+                    <h2 class="case-title">Maestro Nest is not connected</h2>
+                    <p class="case-subtitle">Your Nest Maestro device is not connected to your smartphone. Check your Wi-Fi and Bluetooth conection. Then try again</p>
                     
-                    <h2 class="case-title">Language</h2>
+                    <div class="toggle-wrapper">
+                        <div class="btn btn-primary" style="margin: 0px 15%; max-width: 300px;">Connect</div>
+                    </div>
+
+                </div>
+                <div class="info-case">
+                    <h2 class="case-title">Firmware Update Available</h2>
+                    <p class="case-subtitle">Version 1.0.1 is ready to be installed.</p>
+                    <div class="toggle-wrapper">
+                        <div class="btn btn-primary" data-target="overlay-update" style="margin: 0px 15%; max-width: 300px;">Learn more</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-container">
+
+                <div class="title-header">
+                    <span class="title">Preferences</span>
+                </div>
+
+                <div class="disclosure-case" data-target="overlay-aod">
+                    <img src="./icons/screen.svg" alt="Screen icon" class="icon">
+                    <h2 class="case-title">Always On Display</h2>
                     <p class="disclosure-subtitle">state</p>
                 </div>
-
-                <div class="disclosure-case" data-target="overlay-wifi">
-                    <img src="./icons/wifi_on.svg" alt="Wifi" class="icon">
-                    
-                    <h2 class="case-title">Wi-Fi</h2>
-                    <p class="disclosure-subtitle">state</p>
-                </div>
-
-            </div>
-            
-            <div class="case-container" style="padding: 0px;">
-            
-                <div class="info-case">
-                    <h2 class="case-title">SelfDrive</h2>
-                    <p class="case-subtitle">Creating scripts to complete hard tasks.</p>
-                    <div class="toggle-wrapper">
-                        <label class="toggle-switch">
-                            <input type="checkbox" class="toggle-input">
-                            <div class="toggle-slider">
-                                <span class="label-off">OFF</span>
-                                <span class="label-on">ON</span>
-                                <div class="indicator"></div>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="info-case">
-                    <h2 class="case-title">Voice wake-up</h2>
-                    <p class="case-subtitle">Activate the assistant with a voice command.</p>
-                    <div class="toggle-wrapper">
-                        <label class="toggle-switch">
-                            <input type="checkbox" class="toggle-input">
-                            <div class="toggle-slider">
-                                <span class="label-off">OFF</span>
-                                <span class="label-on">ON</span>
-                                <div class="indicator"></div>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="info-case">
-                    <h2 class="case-title">Screen</h2>
-                    <p class="case-subtitle">Indicate the states with screen.</p>
-                    <div class="toggle-wrapper">
-                        <label class="toggle-switch">
-                            <input type="checkbox" class="toggle-input">
-                            <div class="toggle-slider">
-                                <span class="label-off">OFF</span>
-                                <span class="label-on">ON</span>
-                                <div class="indicator"></div>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="case-container">
-
-            <div class="title-header">
-                <span class="title">Google Workspace</span>
-            </div>
-        
-            <div class="info-case">
-                <h2 class="case-title">Google Workspace Integration</h2>
-                <p class="case-subtitle">Sync your Google tools to streamline your workflow and unlock advanced AI features.</p>
                 
-                <div class="toggle-wrapper">
-                    <div class="btn btn-primary" style="margin: 0px 15%; max-width: 300px;">Connect Google account</div>
+                <div class="disclosure-case" data-target="overlay-voice">
+                    <img src="./icons/female1.svg" alt="Voice icon" class="icon">
+                    <h2 class="case-title">Voice</h2>
+                    <p class="disclosure-subtitle">state</p>
+                </div>
+
+                <div class="disclosure-case"data-target="overlay-personality">
+                    <img src="./icons/profil.svg" alt="Personality icon" class="icon">
+                    <h2 class="case-title">Personality</h2>
+                    <p class="disclosure-subtitle">state</p>
+                </div>
+
+                <div class="disclosure-case"data-target="overlay-press">
+                    <img src="./icons/press.svg" alt="Press icon" class="icon">
+                    <h2 class="case-title" style="margin-bottom: 5px;">Press Button</h2>
+                </div>
+
+            </div>  
+            
+            <div class="case-container">
+            
+                <div class="title-header">
+                    <span class="title">Volume</span>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="page-settings" class="main-container page-content">
+            <div class="case-container">
+
+                <div class="title-header">
+                    <span class="title">General</span>
+                </div>
+
+                <div class="case-container" style="padding: 0px;">
+
+                    <div class="disclosure-case" data-target="overlay-theme">
+                        <img src="./icons/auto.svg" alt="Settings" class="icon">
+
+                        <h2 class="case-title">Theme</h2>
+                        <p class="disclosure-subtitle">state</p>
+                    </div>
+                    
+                    <div class="disclosure-case" data-target="overlay-language">
+                        <img src="./icons/language.svg" alt="Settings" class="icon">
+                        
+                        <h2 class="case-title">Language</h2>
+                        <p class="disclosure-subtitle">state</p>
+                    </div>
+
+                    <div class="disclosure-case" data-target="overlay-wifi">
+                        <img src="./icons/wifi_on.svg" alt="Wifi" class="icon">
+                        
+                        <h2 class="case-title">Wi-Fi</h2>
+                        <p class="disclosure-subtitle">state</p>
+                    </div>
+
+                </div>
+                
+                <div class="case-container" style="padding: 0px;">
+                
+                    <div class="info-case">
+                        <h2 class="case-title">SelfDrive</h2>
+                        <p class="case-subtitle">Creating scripts to complete hard tasks.</p>
+                        <div class="toggle-wrapper">
+                            <label class="toggle-switch">
+                                <input type="checkbox" class="toggle-input">
+                                <div class="toggle-slider">
+                                    <span class="label-off">OFF</span>
+                                    <span class="label-on">ON</span>
+                                    <div class="indicator"></div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="info-case">
+                        <h2 class="case-title">Voice wake-up</h2>
+                        <p class="case-subtitle">Activate the assistant with a voice command.</p>
+                        <div class="toggle-wrapper">
+                            <label class="toggle-switch">
+                                <input type="checkbox" class="toggle-input">
+                                <div class="toggle-slider">
+                                    <span class="label-off">OFF</span>
+                                    <span class="label-on">ON</span>
+                                    <div class="indicator"></div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="info-case">
+                        <h2 class="case-title">Screen</h2>
+                        <p class="case-subtitle">Indicate the states with screen.</p>
+                        <div class="toggle-wrapper">
+                            <label class="toggle-switch">
+                                <input type="checkbox" class="toggle-input">
+                                <div class="toggle-slider">
+                                    <span class="label-off">OFF</span>
+                                    <span class="label-on">ON</span>
+                                    <div class="indicator"></div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="case-container">
+
+                <div class="title-header">
+                    <span class="title">Google Workspace</span>
+                </div>
+            
+                <div class="info-case">
+                    <h2 class="case-title">Google Workspace Integration</h2>
+                    <p class="case-subtitle">Sync your Google tools to streamline your workflow and unlock advanced AI features.</p>
+                    
+                    <div class="toggle-wrapper">
+                        <div class="btn btn-primary" style="margin: 0px 15%; max-width: 300px;">Connect Google account</div>
+                    </div>
+
                 </div>
 
             </div>
 
-        </div>
+            <div class="case-container">
 
-        <div class="case-container">
+                <div class="title-header">
+                    <span class="title">Informations</span>
+                </div>
 
-            <div class="title-header">
-                <span class="title">Informations</span>
+                <div class="info-case">
+                    <h2 class="case-title">Device</h2>
+                    <p class="case-subtitle">Maestro Nest</p>
+                </div>
+
+                <div class="info-case">
+                    <h2 class="case-title">App Version</h2>
+                    <p class="case-subtitle">V0.0.2</p>
+                </div>
+                
+                <div class="btn btn-secondary" style="flex: 0 0 100%;" data-target="overlay-device">About</div>
+                <div class="btn btn-secondary" style="flex: 0 0 100%;">Github</div>
+                <h5 class="centred-component" style="font-weight: lighter; margin-top: 20px; color: #555555;">Maestro ©2026</h5>
+
             </div>
-
-            <div class="info-case">
-                <h2 class="case-title">Device</h2>
-                <p class="case-subtitle">Maestro Nest</p>
-            </div>
-
-            <div class="info-case">
-                <h2 class="case-title">App Version</h2>
-                <p class="case-subtitle">V0.0.2</p>
-            </div>
-            
-            <div class="btn btn-secondary" style="flex: 0 0 100%;" data-target="overlay-device">About</div>
-            <div class="btn btn-secondary" style="flex: 0 0 100%;">Github</div>
-            <h5 class="centred-component" style="font-weight: lighter; margin-top: 20px; color: #555555;">Maestro ©2026</h5>
-
         </div>
     </div>
+
 
 <!--Overlays-->
 
@@ -888,21 +876,29 @@
     <script>
 
         // --- Navigation Bottom Bar ---
+        const scrollArea = document.querySelector('.app-scroll-area');
         const navItems = document.querySelectorAll('.nav-item');
 
         switchPage('page-console');
         document.getElementById('nav-console').classList.add('active');
 
         function fastScrollTop(onComplete) {
+            if (scrollArea.scrollTop === 0) {
+                onComplete();
+                return;
+            }
+
             const step = () => {
-                const currentY = window.scrollY;
+                const currentY = scrollArea.scrollTop;
+                
                 if (currentY > 0) {
-                    window.scrollTo(0, Math.floor(currentY * 0.75));
+                    scrollArea.scrollTop = Math.floor(currentY * 0.8);
                     requestAnimationFrame(step);
                 } else {
-                    if(onComplete) onComplete();
+                    onComplete();
                 }
             };
+            
             requestAnimationFrame(step);
         }
 
@@ -916,25 +912,26 @@
                 item.classList.add('active');
                 
                 const targetId = item.id.replace('nav-', 'page-');
-                
+
                 fastScrollTop(() => switchPage(targetId));
             });
         });
 
-        function switchPage(targetId) {
+        function switchPage(pageId) {
             document.querySelectorAll('.page-content').forEach(page => {
                 page.style.display = 'none';
-                page.style.opacity = '0';
             });
 
-            const newPage = document.getElementById(targetId);
-            
-            if (newPage) {
-                newPage.style.display = 'flex';
-                setTimeout(() => {
-                    newPage.style.opacity = '1';
-                }, 15);
-            }
+            const targetPage = document.getElementById(pageId);
+            targetPage.style.display = 'block';
+
+            targetPage.animate([
+                { opacity: 0 },
+                { opacity: 1 }
+            ], {
+                duration: 200,
+                easing: 'ease-in-out'
+            });
         }
 
 
@@ -1060,13 +1057,6 @@
 
                 if (textEl) textEl.textContent = text;
                 if (iconEl && iconSrc) iconEl.src = iconSrc;
-            });
-        });
-
-        // --- Initialisation au chargement ---
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.overlay input[type="radio"]:checked').forEach(radio => {
-                radio.dispatchEvent(new Event('change', { bubbles: true }));
             });
         });
 
