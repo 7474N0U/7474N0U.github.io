@@ -907,11 +907,11 @@
         document.addEventListener('DOMContentLoaded', () => {
     
             const vibrateSimple = () => {
-                if ("vibrate" in navigator) navigator.vibrate(50);
+                if ("vibrate" in navigator) navigator.vibrate(20);
             };
 
             const vibrateToggle = () => {
-                if ("vibrate" in navigator) navigator.vibrate([30, 50, 30]);
+                if ("vibrate" in navigator) navigator.vibrate([20, 40, 20]);
             };
 
             document.querySelectorAll('.btn').forEach(button => {
@@ -1186,6 +1186,8 @@
                 currentTarget.classList.add('active');
             });
         });
+
+        navigator.serviceWorker.register('/MaestroConnect/sw.js');
 
     </script>
 

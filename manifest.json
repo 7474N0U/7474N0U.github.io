@@ -1,7 +1,7 @@
 {
   "name": "Maestro Connect",
-  "short_name": "Maestro",
-  "start_url": "/",
+  "short_name": "Maestro Connect",
+  "start_url": "/MaestroConnect/",
   "display": "standalone",
   "theme_color": "#FF1A1A",
   "background_color": "#FFF6EA",
