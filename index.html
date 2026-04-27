@@ -1065,7 +1065,10 @@
         });
 
         // -- Service Worker Registration --
-        if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js');
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/MaestroConnect/sw.js')
+            .then(() => console.log("Service Worker Registered sur MaestroConnect"));
+        }
 
         // -- State Sync radio buttons subtitles and icons --
         if ('serviceWorker' in navigator) {
@@ -1186,8 +1189,6 @@
                 currentTarget.classList.add('active');
             });
         });
-
-        navigator.serviceWorker.register('/MaestroConnect/sw.js');
 
     </script>
 

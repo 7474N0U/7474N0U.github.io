@@ -1,5 +1,5 @@
-/*const CACHE = 'maestro-v0.0.2';
-const ASSETS = [
+const CACHE = 'maestro-v1.0.1';
+/*const ASSETS = [
   './', 
   './index.html', 
   './components.html', 
@@ -49,9 +49,11 @@ const ASSETS = [
   './icons/sentiment_stressed.svg',
   './icons/sentiment_very_satisfied.svg'
 ];
-
+*/
 // install
 self.addEventListener('install', e => e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS))));
 
 // fetch
 self.addEventListener('fetch', e => e.respondWith(caches.match(e.request).then(res => res || fetch(e.request))));
+
+navigator.serviceWorker.register('/MaestroConnect/sw.js');
