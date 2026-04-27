@@ -38,7 +38,7 @@
        
         <div class="glow-background"></div>
 
-        <div style="position: fixed; top: 20px; right: 15px; display: flex; flex-direction: row; gap: 7px; align-items: center;">
+        <div style="position: fixed; top: 20px; right: 15px; display: flex; flex-direction: row; gap: 7px; align-items: center; z-index: 100;">
             <div class="selector-container is-scrollable">
                 <input type="radio" id="product" name="nest" checked>
                 <label class="selector-item item-card" for="product1" style="padding: 5px; width: auto;">
@@ -255,9 +255,9 @@
                 </div>
                 
                 <div class="btn btn-secondary" style="flex: 0 0 100%;" data-target="overlay-device">About</div>
-                <div class="btn btn-secondary" style="flex: 0 0 100%;">Github</div>
-                <h5 class="centred-component" style="font-weight: lighter; margin-top: 20px; color: #555555;">Maestro ©2026</h5>
-
+                <a class="btn btn-secondary" style="flex: 0 0 100%; display: flex; justify-content: center; align-items: center; text-decoration: none;" href="https://github.com/7474N0U/MaestroConnect.github.io" target="_blank">Github</a>
+                <h5 class="centred-component" style="font-weight: lighter; margin-top: 10px; color: #555555; text-align: center; flex: 0 0 100%;">Maestro ©2026</h5>
+                <h6 class="centred-component" style="font-weight: lighter; color: #555555; text-align: center; flex: 0 0 100%;">AI may provide inaccurate info. Please verify important details.</h6>
             </div>
         </div>
     </div>
@@ -319,7 +319,7 @@
 
                         <div class="row-container">
                             <div class="text-left">Serial number</div>
-                            <div class="text-right">1</div>
+                            <div class="text-right">Unknown</div>
                         </div>
 
                         <div class="title-header">
@@ -347,7 +347,7 @@
                         
                         <div class="row-container">
                             <div class="text-left">Firmware version</div>
-                            <div class="text-right">1.0.0</div>
+                            <div class="text-right">Unknown</div>
                         </div>
                         
                         <div class="row-container">
@@ -902,6 +902,31 @@
 
     <script>
 
+        // --- Vibrations ---
+
+        document.addEventListener('DOMContentLoaded', () => {
+    
+            const vibrateSimple = () => {
+                if ("vibrate" in navigator) navigator.vibrate(50);
+            };
+
+            const vibrateToggle = () => {
+                if ("vibrate" in navigator) navigator.vibrate([30, 50, 30]);
+            };
+
+            document.querySelectorAll('.btn').forEach(button => {
+                button.addEventListener('click', vibrateSimple);
+            });
+
+            document.querySelectorAll('.selector-item').forEach(selector => {
+                selector.addEventListener('click', vibrateSimple);
+            });
+
+            document.querySelectorAll('.toggle-input').forEach(toggle => {
+                toggle.addEventListener('change', vibrateToggle);
+            });
+        });
+
         // --- Navigation Bottom Bar ---
         const scrollArea = document.querySelector('.app-scroll-area');
         const navItems = document.querySelectorAll('.nav-item');
@@ -1106,7 +1131,7 @@
                 body.addEventListener('scroll', () => {
                     const scrollFactor = Math.min(Math.max(body.scrollTop, 0) / 150, 1);
 
-                    maestro.style.width = `${70 - (scrollFactor * 25)}%`;
+                    maestro.style.width = `${70 - (scrollFactor * 27)}%`;
                     header.style.paddingBottom = `${10 - (scrollFactor * 10)}px`;
                 });
             }
