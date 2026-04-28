@@ -1,4 +1,4 @@
-const CACHE = 'maestro-v1.0.1';
+const CACHE = 'maestro-v0.0.2';
 /*const ASSETS = [
   './', 
   './index.html', 
